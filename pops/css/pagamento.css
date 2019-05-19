@@ -1,0 +1,128 @@
+/* remove a borda azul padrão dos inputs ao serem focados */
+a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
+    outline: none;
+}
+
+/* *********** PADRÕES ************ */
+.label_estilo{
+    font-size: 18px;
+    font-family: Helvetica;
+    margin-left: 5px;
+    color: #000;
+}
+
+
+.font-texto{
+    font-family: Helvetica;
+}
+
+.div_direita{
+    float: right;
+}
+
+.div_esquerda{
+    float: left;
+}
+
+/* ****** Conteúdo ******* */
+
+.caixa_central_pagamento{
+    width: 1200px;
+    height: 530px;
+    padding-top: 25px;
+    margin: auto;
+
+}
+
+.caixa_grupo_form{
+    width: 400px;
+    height: 400px;
+
+}
+
+.caixa_form_pagamento{
+    width: 770px;
+    height: 490px;
+    padding-top: 10px;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.caixa_grupo_form{
+    width: 380px;
+    height: 250px;
+    margin-bottom: 70px;
+
+}
+
+.caixa_campos_form{
+    width: 365px;
+    height: 70px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+
+.input_estilo{
+    height: 35px;
+    margin-left: 5px;
+    border: none;
+    border: 2px solid #ddddddb5;
+    transition: 0.4s;
+
+    color: #000;
+    font-size: 15px;
+}
+
+/* tamanho dos input */
+.input_titular_e_cartao{
+    width: 350px;
+}
+
+.input_validade{
+    width: 300px;
+}
+
+.input_seguranca{
+    width: 240px;
+}
+
+.margin_top_form_2{
+    margin-top: 80px;
+}
+
+.imagem_cartao{
+    width: 40px;
+    height: 40px;
+
+    margin-right: 60px;
+    border-radius: 2px;
+}
+
+.caixa_botao_pagamento{
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+.botao_pagamento{
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 19px;
+    color: #fff;
+    background-color: #416baf;
+    border: none;
+}
+
+.botao_pagamento:hover{
+    cursor: pointer;
+    background-color: #15233a;
+    color:#fff;
+    transition: 0.4s;
+}
