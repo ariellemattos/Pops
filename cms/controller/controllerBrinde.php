@@ -163,7 +163,7 @@ class ControllerBrinde
       $_SESSION['carrinho'][$id]['quantidade'] = 1;
       $quantidade = $_SESSION['carrinho'][$id]['quantidade'];
     }
-    $subtotal = $listaProduto->getValorUnitario() * $_SESSION['carrinho'][$id]['quantidade'];
+    $subtotal = $listaProduto->getValorUnitario() *  $_SESSION['carrinho'][$id]['quantidade'] ;
 
     //se não, adiciona o item ao carrinho com as informações do produto
 		$_SESSION['carrinho'][$id] = array('id'=>$listaProduto->getId(), 'nome'=>$listaProduto->getNome(), 'valorUnitario'=>$listaProduto->getValorUnitario(), 'quantidade'=>$quantidade, 'subtotal'=>$subtotal,'imagem'=>$listaProduto->getImagem());
@@ -178,12 +178,7 @@ class ControllerBrinde
 
     return '$total';
 
-    // Retorna o registro a partir do id
-    // return $this->brindeDAO->selectById($id);
-
   }
-
-  // post
 
 }
 

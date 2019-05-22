@@ -37,7 +37,7 @@
     var value = parseInt(document.getElementById("quant"+num).value);
     value+=quant;
 
-    const retorno = atualizarCarrinho(id, quant);
+    const retorno = atualizarCarrinhoPJ(id, quant);
 
     if(value < 1){
       document.getElementById("quant"+num).value = 1;
@@ -47,6 +47,7 @@
     window.location.reload();
   }
   </script>
+
   <body>
     <header><?php require_once 'header.php'; ?></header>
 
@@ -66,13 +67,13 @@
                 <div class="inf_produto inf_valor_produto font-titulo inf_produto_texto centralizar_texto">Valor<br>Total</div>
             </div>
 
-
+            <div class="scroll centralizarX">
             <?php
                 //contador
                 $cont = 0;
 
                 //percorrendo os produtos do carrinho
-                foreach($_SESSION['carrinhoPJ'] as $produtos) {
+                foreach($_SESSION['carrinhoPJ'] as $bebidas) {
             ?>
 
             <!-- Div do carrinho / fazer while aqui -->
@@ -80,46 +81,52 @@
 
                 <!-- caixa da imagem do produto -->
                 <div class="caixa_imagem_carrinho">
-                  <img src="<?= "$path_url/cms/view/img/temp/".$produtos['imagem'] ?>" alt="">
-                </div>
-                <!-- Caixa nome e preço do produto -->
-                <div class="caixa_nome_preco">
-                        <p class="font-texto nome_produto">
-                          <?php echo($produtos['nome']) ?>
-                        <p>
-                        <p class="font-texto font-negrito">
-                          <!-- R$<?php echo $produtos['valorUnitario']; ?> -->
-                        </p>
-                </div>
-                <!-- Caixa da quantidade do produto -->
-                <div class="caixa_qtd">
-                    <div class="caixa_botao_qtd">
-                        <input class="botao_qtd" type="button" id="plus" value='-' onclick="process(<?php echo($produtos['id']) ?>, <?php echo $cont?>, -1)">
-                    </div>
-                    <div class="caixa_quantidade">
-                        <input class="quantidade" id="quant<?php echo $cont?>" name="quant<?php echo $cont?>" class="text" min="0" size="1" type="text" value="<?php echo $produtos['quantidade']; ?>" maxlength="5" >
-                    </div>
-                    <div class="caixa_botao_qtd">
-                        <input class="botao_qtd" type="button" id="minus" value='+' onclick="process(<?php echo($produtos['id']) ?>, <?php echo $cont?>, 1)">
-                    </div>
+                  <img src="<?= "$path_url/cms/view/img/temp/".$bebidas['imagem'] ?>" alt="">
                 </div>
 
+                  <!-- Caixa nome e preço do produto -->
+                  <div class="caixa_nome_preco">
+                          <p class="font-texto nome_produto">
+                            Fardo com <?php echo ($bebidas['qtd_fado']) ?> <?php echo ($bebidas['nome']) ?> de <?php echo ($bebidas['unidade_medida']) ?>ml
+                          <p>
+
+                          <p class="font-texto font-negrito">
+                             R$<?php echo $bebidas['valorUnitario'] *  $bebidas['qtd_fado'] ?>,00
+                          </p>
+                  </div>
+
+                  <!-- Caixa da quantidade do produto -->
+                  <div class="caixa_qtd">
+                      <div class="caixa_botao_qtd">
+                          <input class="botao_qtd" type="button" id="plus" value='-' onclick="process(<?php echo($bebidas['id']) ?>, <?php echo $cont?>, -1)">
+                      </div>
+                      <div class="caixa_quantidade">
+                          <input class="quantidade" id="quant<?php echo $cont?>" name="quant<?php echo $cont?>" class="text" min="0" size="1" type="text" value="<?php echo $bebidas['quantidade']; ?>" maxlength="5" >
+                      </div>
+                      <div class="caixa_botao_qtd">
+                          <input class="botao_qtd" type="button" id="minus" value='+' onclick="process(<?php echo($bebidas['id']) ?>, <?php echo $cont?>, 1)">
+                      </div>
+                  </div>
+
+
                 <div class="caixa_valor borda_caixa_valor">
-                    <!-- <p>R$<?php echo $produtos['valorUnitario']; ?></p> -->
+                    <p>R$<?php echo $bebidas['valorUnitario'] *  $bebidas['qtd_fado'] ?>,00</p>
                 </div>
                 <div class="caixa_valor ">
-                    <p> R$<?php echo $produtos['subtotal']; ?></p>
+                    <p> R$<?php echo $bebidas['subtotal']; ?>,00</p>
                 </div>
             </div>
+
             <?php
                 $cont++;
                 }
             ?>
+          </div>
             <!-- DIV SUB TOTAL -->
               <div class="div_subtotal">
                     <p>Total:
                       <span class="font-negrito" id="pre">
-                        <input style="min-width:150px; width:auto;" class="quantidade" id="total" name="quant" class="text" size="5" type="text" value="R$ <?php  echo($_SESSION['totalCarrinho'])?>" readonly >
+                        <input style="min-width:150px; width:auto;" class="quantidade" id="total" name="quant" class="text" size="5" type="text" value="R$ <?php  echo($_SESSION['totalCarrinhoPJ'])?>" readonly >
                       </span>
                     </p>
                     <input type="button" value="Continuar" id="btnContinuar" name="btnContinuar">

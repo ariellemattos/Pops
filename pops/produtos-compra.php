@@ -23,24 +23,8 @@
       <header><?php require_once 'header.php'; ?></header>
 
       <div class="principal">
-        <div class="menu_filtos-produtos">
-            <form action="index.html" method="post">
-              <h3 class"title-menu-produtos">
-                <img id="direita" src="img/triangulo.png" alt="">
-                 Marca:
-              </h3>
-              <select class="input-select" name=""> </select>
-
-              <h3 class"title-menu-produtos">
-                <img id="direita" src="img/triangulo.png" alt="">
-                 Preço:
-              </h3>
-              <select class="input-select" name=""> </select>
-            </form>
-        </div>
-
         <div class="area-produtos">
-          <a href="carrinho.php">
+          <a href="carrinhoPJ.php">
             <div class="carrinho-compras"></div>
           </a>
 
@@ -56,8 +40,8 @@
               <img src="../cms/view/img/temp/<?php echo ($result['imagem'])?>" alt="">
             </div>
             <div class="section-six-text-products">
-              <h2>Fardo com  <?php echo (utf8_decode($result['qtd_fardo'])) ?> <?php echo (utf8_decode($result['nome'])) ?></h2>
-              <p><?php echo (utf8_decode($result['qtd_fardo']*$result['valor_unitario'])) ?></p>
+              <h2>Fardo com  <?php echo (utf8_decode($result['qtd_fardo'])) ?> <?php echo (utf8_decode($result['nome'])) ?> de <?php echo (utf8_decode($result['unidade_medida'])) ?>ml </h2>
+              <p>R$ <?php echo ($result['qtd_fardo']*$result['valor_unitario']) ?>,00</p>
             </div>
             <div class="section-six-button">
               <input type="button" name="" value="Adicionar o fardo" onclick="adicionarFardo(<?= ($result['id_produto'])?>, event)">

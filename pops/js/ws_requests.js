@@ -433,3 +433,29 @@ function callModalWithData(obj){
       }
     });
   }
+
+
+
+    function atualizarCarrinhoPJ(id, quant){
+      if (quant == 1){
+        // alert(host);
+        $.ajax({
+          type: 'POST',
+          url: `http://${host}/pops/backend/services/PJService.php/?acao=mais`,
+          data: {id:id},
+          success: function(dados){
+            console.log(dados);
+          }
+        });
+      } else if (quant == -1) {
+
+        $.ajax({
+          type: 'POST',
+          url: `http://${host}/pops/backend/services/PJService.php/?acao=menos`,
+          data: {id:id},
+          success: function(dados){
+            console.log(dados);
+          }
+        });
+      }
+    }

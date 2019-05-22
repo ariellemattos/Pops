@@ -29,6 +29,15 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
     text-align: center;
 }
 
+
+.scroll{
+ width: 1000px;
+ height: 370px;
+ overflow-x: hidden;
+ overflow-y: scroll;
+
+}
+
 /* ************************** Contéudo ************************** */
 
 

@@ -14,17 +14,17 @@
    <script src="js/effects.js"></script>
 </head>
 <body>
-      <?php        
+      <?php
   // Variáveis que recebem a URL e o caminho local
         $path_url = "http://".$_SERVER['HTTP_HOST']."/Tcc";
         $path_local = $_SERVER['DOCUMENT_ROOT']."/Tcc";
-        
+
         session_start();
         // Criando variáveis de sessões que recebem esses valores
         $_SESSION['path_url'] = $path_url;
         $_SESSION['path_local'] = $path_local;
-        
-        require_once('../cms/model/DAO/conexao.php');   
+
+        require_once('../cms/model/DAO/conexao.php');
 
         require_once('../cms/model/DAO/promocaoDAO.php');
         $conex = new Conexao();
@@ -52,11 +52,11 @@
         <h1 class="titulo_sections">Produtos em destaque</h1>
         <div class="section-six-conteudo centralizar_elemento">
 
-          <?php		
+          <?php
             $sql = "SELECT * FROM tbl_produto WHERE status_home = 1 ORDER BY RAND() LIMIT 4";
             $stm = $con->prepare($sql);
             $success = $stm->execute();
-            foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){	
+            foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
         	?>
             <div id="box_products" class="section-six-div-products fadeInTop">
               <div class="section-six-products">
@@ -66,13 +66,12 @@
 
                 </div>
                 <div class="section-six-text-products">
-                  <h2><?php echo (utf8_decode($result['nome'])) ?></h2>
-                  <p><?php echo (utf8_decode($result['valor_unitario'])) ?></p>
+                  <h2><?php echo ($result['nome']) ?></h2>
                 </div>
 
                 <div class="section-six-button">
-                  <input type="button" value="Adicionar o fardo">
-                  
+                  <input type="button" value="Tabela nutrional">
+
                 </div>
 
               </div>
@@ -130,8 +129,8 @@
       <section class="section-three">
         <h1 class="titulo_sections">Promoção do mês</h1>
         <div id="promo" class="section-three-conteudo centralizar_elemento fadeInTop">
-          <div class="section-three-conteudo-infomarcao"> 
-            <?php		
+          <div class="section-three-conteudo-infomarcao">
+            <?php
               $sql = "SELECT * FROM tbl_promocao WHERE status_home = 1 ORDER BY rand() LIMIT 1";
               $stm = $con->prepare($sql);
               $success = $stm->execute();
@@ -158,13 +157,13 @@
       <section class="section-four">
         <h1 class="titulo_sections">Fique de olho na POP'S</h1>
         <div  id="news" class="section-four-conteudo centralizar_elemento fadeInLeft">
-            <?php		
+            <?php
               $sql = "SELECT * FROM tbl_noticia WHERE status_home = 1 ORDER BY rand() LIMIT 1";
               $stm = $con->prepare($sql);
               $success = $stm->execute();
               foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
             ?>
-          
+
           <div class="caixa_noticia ">
             <div class="caixa_noticia-imagem centralizarY">
               <img class="centralizar_elemento" src="../cms/view/img/temp/<?php echo ($result['imagem']) ?>" alt="Notícia">
@@ -205,7 +204,7 @@
       <!-- SECTION 5 -->
       <section class="section-five">
         <h1 class="titulo_sections">POP'S Ecológico</h1>
-        <?php		
+        <?php
           $sql = "SELECT * FROM tbl_sustentavel WHERE status = 1 LIMIT 1";
           $stm = $con->prepare($sql);
           $success = $stm->execute();
@@ -233,7 +232,7 @@
         <h1 class="titulo_sections">Comentários POP'S</h1>
         <div id="comments" class="section-eight-conteudo centralizar_elemento">
           <div class="caixa_comentario centralizar_elemento">
-          <?php		
+          <?php
             $sql = "SELECT comentario.*, pessoa_fisica.nome AS pessoa_nome
             FROM tbl_comentario AS comentario
             INNER JOIN tbl_pessoa_fisica AS pessoa_fisica ON pessoa_fisica.id_p_fisica = comentario.id_p_fisica";
@@ -252,7 +251,7 @@
                 <?php echo ($result['descricao']) ?>
               </div>
             </div>
-			
+
             <div class="section-eight-resposta">
               <div class="caixa_input">
                 <label for="txt_resposta">Resposta</label>
@@ -267,7 +266,7 @@
           </div>
         </div>
 
-        
+
 
 
     </section>

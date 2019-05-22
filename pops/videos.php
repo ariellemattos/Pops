@@ -17,9 +17,9 @@
          <script src="js/effects.js"></script>
     </head>
     <body>
-        <?php 
+        <?php
             session_start();
-            require_once('../cms/model/DAO/Conexao.php');   
+            require_once('../cms/model/DAO/Conexao.php');
             $conex = new Conexao();
             $con = $conex->connectDatabase();
 
@@ -36,29 +36,30 @@
 
         <!--- caixa video -->
         <div class="caixa_central_video caixa_aumentar">
-        <?php		
+        <?php
             $sql = "SELECT * FROM tbl_video";
             $stm = $con->prepare($sql);
             $success = $stm->execute();
-            foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){	
+            foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
         ?>
             <!-- caixa que guarda os videos -->
             <div class="caixa_principal_video">
                 <!-- caixa do video que contém titulo e o vídeo box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);-->
                 <div class="caixa_video div_esquerda caixa_aumentar">
-                    <div class="titulo_video caixa_aumentar">
-                        <h1><?php echo ($result['titulo']) ?></h1>
-                    </div>
-                    <video class="video">
-                        <iframe width='560' height='315' src="<?php echo ($result['caminho']) ?>" frameborder='0' allowfullscreen></iframe>";
-                    </video>
+                  <video autoplay poster="posterimage.jpg">
+                      <source src="http://www.youtube.com/v/tIBxavsiHzM" type="video/mp4">
+                  </video>
+
+                  <!-- <object width="425" height="350">
+                    <param name="movie" value="http://www.youtube.com/v/tIBxavsiHzM" />
+                    <embed src="http://www.youtube.com/v/tIBxavsiHzM" type="application/x-shockwave-flash" width="425" height="350" /> -->
                 </div>
             </div>
 
         <?php } ?>
 
         </div>
-        <footer> <?php require_once('footer.html')?> </footer> 
+        <footer> <?php require_once('footer.html')?> </footer>
     </body>
 
 </html>

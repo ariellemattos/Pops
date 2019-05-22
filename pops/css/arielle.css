@@ -288,6 +288,7 @@ a.modal-fechar{
   margin-left: auto;
   margin-right: auto;
   background-color: white;
+  margin-bottom: 15px;
 
 }
 
@@ -347,7 +348,7 @@ a.modal-fechar{
 }
 
 .area-produtos{
-  width: 955px;
+  width: 1200px;
   min-height: 500px;
   height: auto;
   background-color: white;
@@ -357,10 +358,9 @@ a.modal-fechar{
 
 .area-brindes{
   width: 1150px;
-  min-height: 500px;
+  min-height: 600px;
   height: auto;
   background-color: white;
-  float: right;
   margin-left: auto;
   margin-right: auto;
 
@@ -426,12 +426,13 @@ a.modal-fechar{
 .descricao-brinde input[type="submit"]{
   background-color: #5fa83a;
   color: white;
+  width: 250px;
   padding: 14px 20px;
   border: 1px solid rgba(27,31,35,.2);
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  margin-top: 5px;
+  margin-bottom: 5px;
   font-family: Gadugi;
   font-size:17px;
   margin-left: 15px;

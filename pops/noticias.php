@@ -18,9 +18,9 @@
     </head>
 
     <body>
-        <?php 
+        <?php
             session_start();
-            require_once('../cms/model/DAO/Conexao.php');   
+            require_once('../cms/model/DAO/Conexao.php');
             $conex = new Conexao();
             $con = $conex->connectDatabase();
 
@@ -35,11 +35,11 @@
 
         <!-- caixa que guarda todo o conteudo da página -->
         <div id="caixa_geral_noticias">
-            <?php		
+            <?php
 					$sql = "SELECT * FROM tbl_noticia WHERE status = 1 ";
 					$stm = $con->prepare($sql);
 					$success = $stm->execute();
-					foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){	
+					foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
         	?>
 
             <!-- caixa que guarda todas as noticias -->
@@ -50,10 +50,10 @@
                 </div>
                 <div class="caixa_titulo_noticias">
                     <h1 class="titulo_noticias padding_noticias">
-                        <?php echo (utf8_decode($result['titulo'])) ?>
+                        <?php echo ($result['titulo'])?>
                     </h1>
                     <p class="texto_noticias padding_noticias">
-                        <?php echo (utf8_decode($result['descricao'])) ?>
+                        <?php echo ($result['descricao']) ?>
                     </p>
                     <p class="data_noticias">
                         <?php echo date('d/m/Y', strtotime($result['dt_noticia'])); ?>

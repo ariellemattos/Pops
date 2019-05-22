@@ -133,7 +133,7 @@
                 $cont++;
                 }
             ?>
-          
+
             <!-- DIV SUB TOTAL -->
               <div class="div_subtotal">
                     <p>Total:

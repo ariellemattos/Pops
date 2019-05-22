@@ -43,7 +43,6 @@
                <p> <?php echo (utf8_decode($result['nome'])) ?> </p>
                <span> R$ <?php echo ($result['valor_unitario'])?></span> <p></p>
                <input type="submit" name="btnCompra" Value="Comprar" onclick="adicionarCarrinho(<?= ($result['id_brinde'])?>, event)">
-               <input type="submit" name="btnCompra" Value="Adicionar">
              </div>
            </div>
 
@@ -51,6 +50,6 @@
 
          </div>
        </div>
-       <!-- <footer> <?php require_once 'footer.html' ?></footer> -->
+       <footer> <?php require_once 'footer.html' ?></footer>
    </body>
  </html>

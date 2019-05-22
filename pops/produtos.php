@@ -13,9 +13,9 @@
     <script src="js/effects.js"></script>
   </head>
   <body>
-    <?php 
+    <?php
       session_start();
-      require_once('../cms/model/DAO/Conexao.php');   
+      require_once('../cms/model/DAO/Conexao.php');
       $conex = new Conexao();
       $con = $conex->connectDatabase();
 
@@ -23,31 +23,12 @@
     <header><?php require_once 'header.php'; ?></header>
     <div class="teste_produto">
       <div class="principal">
-        <div class="menu_filtos-produtos">
-            <form action="index.html" method="post">
-              <h3 class="title-menu-produtos">
-                 Marca:
-              </h3>
-              <select class="input-select" name="selectfiltro"> </select>
-
-              <h3 class="title-menu-produtos">
-                 Preço:
-              </h3>
-              <select class="input-select" name="selectfiltro"> </select>
-
-              <h3 class="title-menu-produtos">
-                 Quantidade:
-              </h3>
-              <select class="input-select" name="selectfiltro"> </select>
-            </form>
-        </div>
-
         <div class="area-produtos">
-          <?php		
+          <?php
             $sql = "SELECT * FROM tbl_produto WHERE status = 1";
             $stm = $con->prepare($sql);
             $success = $stm->execute();
-            foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){	
+            foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
         	?>
           <div class="section-six-products">
             <div class="section-six-image-products centralizar_elemento">
