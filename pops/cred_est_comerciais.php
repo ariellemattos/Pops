@@ -26,7 +26,9 @@
             <h1 class="font-titulo font-cor2">Credenciamento de estabelecimentos comerciais</h1>
             <h3 class="font-titulo font-cor2">Quer anunciar o seu estabelecimento aqui no site da POP'S?</h3>
             <div id="caixa_botao_estabelecimento">
-                <input class="botao_estabelecimento font-cor2" type="button" value="Participe da POP'S" id="btnParticipe" name="btnParticipe">
+              <a href="cadastro_pessoa_juridica.php">
+                  <input class="botao_estabelecimento font-cor2" type="button" value="Participe da POP'S" id="btnParticipe" name="btnParticipe">
+              </a>
             </div>
         </section>
 
