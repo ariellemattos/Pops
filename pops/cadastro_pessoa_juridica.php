@@ -25,7 +25,7 @@
 
         <!-- Título da página -->
         <div class="titulo_pagina font-titulo">
-            <h1>Cadastro de pessoa juridica</h1>
+            <h1>Cadastro - pessoa juridica</h1>
         </div>
 
         <!-- Caixa central do formulário que ocupa 1200 da tela -->
@@ -37,19 +37,16 @@
                     <div class="caixa_input">
                         <!-- CNPJ -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <label for="txtCnpjPj" class="label_estilo">CNPJ:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtCnpjPj" id="txtCnpjPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpjPj" id="txtCnpjPj">
                         </div>
                         <!-- Razão Social -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <label for="txtRazaoSocialPj" class="label_estilo">Razão Social:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtRazaoSocialPj" id="txtRazaoSocialPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Razão Social"name="txtRazaoSocialPj" id="txtRazaoSocialPj">
                         </div>
 
                         <!-- Nome Fantasia-->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <label for="txtNomeFantasiaPj" class="label_estilo">Nome fantasia:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtNomeFantasiaPj" id="txtNomeFantasiaPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Nome fantasia" name="txtNomeFantasiaPj" id="txtNomeFantasiaPj">
                         </div>
                     </div>
 
@@ -57,37 +54,58 @@
                     <div class="caixa_input">
                         <!-- Logradouro-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <label for="txtLogradouroPj" class="label_estilo">Logradouro:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtLogradouroPj" id="txtLogradouroPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouroPj" id="txtLogradouroPj">
                         </div>
                         <!-- num -->
                         <div class="caixa_inputs_form caixa_inputs_form_minima">
-                            <label for="txtNumPj" class="label_estilo">Nº:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtNumPj" id="txtNumPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Nº" name="txtNumPj" id="txtNumPj">
                         </div>
                         <!-- Bairro-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <label for="txtBairroPj" class="label_estilo">Bairro:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtBairroPj" id="txtBairroPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairroPj" id="txtBairroPj">
                         </div>
                         <!-- CEP-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <label for="txtCepPj" class="label_estilo">CEP:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtCepPj" id="txtCepPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CEP" name="txtCepPj" id="txtCepPj">
                         </div>
                         <!-- Cidade -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <label for="txtCidadePj" class="label_estilo">Cidade:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtCidadePj" id="txtCidadePj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Cidade" name="txtCidadePj" id="txtCidadePj">
                         </div>
                         <!-- Estado -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <label class="label_estilo">Estado:</label><br>
-                            <select class="input_estilo inputs_form" name="txtEstadoPj" id="txtEstadoPj">
-                                <option value="1">
-                                    SP
-                                </option>
-                            </select>
+                            <div class="caixa_input largura_fixa_div_3 selectForm">
+                                <select class="slt_estado formatacao_inputs borda_inputs largura_fixa_inputs_3 slt_estado" id="sltEstado" name="sltEstado">
+                                    <option disabled selected name="slcEstado">Estado:</option>
+                                    <option value="Acre">AC</option>
+                                    <option value="Alagoas">AL</option>
+                                    <option value="Amapá">AP</option>
+                                    <option value="Amazonas">AM</option>
+                                    <option value="Bahia">BA</option>
+                                    <option value="Ceará">CE</option>
+                                    <option value="Distrito Federal">DF</option>
+                                    <option value="Espito Santo">ES</option>
+                                    <option value="Goias">GO</option>
+                                    <option value="Maranhao">MA</option>
+                                    <option value="Mato Grosso">MT</option>
+                                    <option value="Mato Grosso do Sul">MS</option>
+                                    <option value="Minas Gerais">MG</option>
+                                    <option value="Para">PA</option>
+                                    <option value="Paraiba">PB</option>
+                                    <option value="Parana">PR</option>
+                                    <option value="Pernambuco">PE</option>
+                                    <option value="Piaui">PI</option>
+                                    <option value="Rio de Janeiro">RJ</option>
+                                    <option value="Rio Grande do Norte">RN</option>
+                                    <option value="Rio Grande do Sul">RS</option>
+                                    <option value="Rondonia">RO</option>
+                                    <option value="Roraima">RR</option>
+                                    <option value="Santa Catarina">SC</option>
+                                    <option value="Sao Paulo">SP</option>
+                                    <option value="Sergipe">SE</option>
+                                    <option value="Tocantins">TO</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
 
@@ -95,20 +113,17 @@
                     <div class="caixa_input">
                         <!-- Responsavel pelo Contato -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <label for="txtRespContatoPj" class="label_estilo">Responsável pelo contato:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtRespContatoPj" id="txtRespContatoPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Responsável pelo contato" name="txtRespContatoPj" id="txtRespContatoPj">
                         </div>
 
                         <!-- Email-->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <label for="txtEmailPj" class="label_estilo">Email:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtEmailPj" id="txtEmailPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Email" name="txtEmailPj" id="txtEmailPj">
                         </div>
 
                         <!-- Telefone -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <label for="txtTelefonePj" class="label_estilo">Telefone:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtTelefonePj" id="txtTelefonePj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Telefone" name="txtTelefonePj" id="txtTelefonePj">
                         </div>
                     </div>
 
@@ -122,14 +137,12 @@
                         </div>
                         <!-- Usuário -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <label for="txtUserPj" class="label_estilo">User:</label><br>
-                            <input class="input_estilo inputs_form" type="text" name="txtUserPj" id="txtUserPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="User" name="txtUserPj" id="txtUserPj">
                         </div>
 
                         <!-- Senha -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <label for="txtSenhaPj" class="label_estilo">Senha:</label><br>
-                            <input class="input_estilo inputs_form" type="password" name="txtSenhaPj" id="txtSenhaPj">
+                            <input class="input_estilo inputs_form" type="password" placeholder="Senha" name="txtSenhaPj" id="txtSenhaPj">
                         </div>
                     </div>
 
