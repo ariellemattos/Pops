@@ -17,6 +17,13 @@
     </head>
 
     <body>
+        <?php
+            session_start();
+            require_once('../cms/model/DAO/Conexao.php');
+            $conex = new Conexao();
+            $con = $conex->connectDatabase();
+
+        ?>
         <!-- header -->
         <header>
           <?php require_once('header.php') ?>
@@ -37,7 +44,7 @@
 
                     <!-- E-mail: -->
                     <div class="campos-form bordas-form">
-                        <input class="bordas-form" type="text" id="txtEmail" name="txtEmail" placeholder="Email">
+                        <input class="bordas-form" type="email" id="txtEmail" name="txtEmail" placeholder="Email">
                     </div>
 
                     <!-- Telefone e Celular -->
@@ -75,6 +82,6 @@
         </div>
 
         <!-- footer -->
-       <footer> <?php require_once('footer.html')?> </footer>  
+       <footer> <?php require_once('footer.html')?> </footer>
     </body>
 </html>

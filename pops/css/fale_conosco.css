@@ -25,7 +25,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 90px;  
+    margin-bottom: 90px;
 }
 
 
@@ -40,19 +40,19 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 10px;
-    
+
 }
 
 /* div que contém os campos e os labels */
 .campos-form{
     width: 90%;
-    min-height: 80px; 
+    min-height: 80px;
     height: auto;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 5px;   
-    /*background-color: #FF3;*/  
+    margin-bottom: 5px;
+    /*background-color: #FF3;*/
 }
 
 /* texto do formulário Nome:, Email:, etc */
@@ -64,7 +64,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
 }
 
 /* input text dos campos */
-.campos-form input[type="text"]{
+.campos-form input[type="text"],[type="email"]{
     width: 99%;
     height: 40px;
     border: none;
@@ -111,7 +111,7 @@ input:focus::-webkit-input-placeholder {
     margin-right: auto;
     margin-top: 40px;
     width: 200px;
-    height: 45px;  
+    height: 45px;
 }
 
 #btnEnviar{

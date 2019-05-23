@@ -13,6 +13,14 @@
   <script src="js/event.js"></script>
 </head>
 <body>
+  <?php
+      session_start();
+      require_once('../cms/model/DAO/Conexao.php');
+      $conex = new Conexao();
+      $con = $conex->connectDatabase();
+
+  ?>
+
   <header><?php require_once 'header.php';?></header>
         <!-- Conteúdo chamativo -->
         <div id="caixa_conteudo_chamativo" style="background-image: url(img/estabelecimento1.jpg);">
@@ -27,199 +35,45 @@
 
         <!-- Anuncio -->
         <section class="caixa_geral_anuncios">
+            <?php
+              $sql = "SELECT a.*, e.logradouro, e.numero, e.cidade, pj.nome_fantasia
+                  	  FROM tbl_anuncio AS a
+                        INNER JOIN tbl_pessoa_juridica AS pj ON a.cnpj = pj.cnpj
+                  	    INNER JOIN tbl_p_juridica_endereco AS pje ON a.cnpj = pje.cnpj
+                  	    INNER JOIN tbl_endereco AS e ON pje.id_endereco = e.id_endereco WHERE a.status =1";
+
+              $stm = $con->prepare($sql);
+              $success = $stm->execute();
+              foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
+            ?>
 
             <div class="caixa_anuncios sombra">
-                <h3 style="font-family:Helvetica">Atacadão</h3>
+                <h3 style="font-family:Helvetica"> <?php echo ($result['nome_fantasia'])?></h3>
                 <div class="img_anuncios">
-                    <img src="img/atacadao.jpg" width="280" height="200" title="Ola" alt="Imagem não encontrada">
+                    <img src="../cms/view/img/temp/<?php echo ($result['img_anuncios']) ?>" width="200" height="200" title="ola" alt="Imagem não encontrada">
                 </div>
                 <p class="caixa_anuncios_texto" style="font-size:20px">
-                    O Atacadão é um supermecado que revende varejo e atacado.
+                    <?php echo ($result['descricao'])?>
                 </p>
 
                 <div class="caixa_endereco">
                     <div class="endereco div_tamanho_fixo_endereco">
                         <p class="texto_negrito_anuncios">Logradouro:</p>
-                        <span>Avenida Sebastião Jordão</span>
+                        <span><?php echo ($result['logradouro'])?></span>
                     </div>
 
                     <div class="endereco div_tamanho_fixo_endereco_2">
                         <p class="texto_negrito_anuncios">Nº:</p>
-                        <span>400 </span>
+                        <span><?php echo ($result['numero'])?></span>
                     </div>
 
                     <div class="endereco div_tamanho_fixo_endereco_3">
                         <p class="texto_negrito_anuncios">Cidade:</p>
-                        <span>Jandira</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Estado:</p>
-                        <span>São Paulo</span>
+                        <span><?php echo ($result['cidade'])?></span>
                     </div>
                 </div>
             </div>
-
-            <div class="caixa_anuncios sombra">
-                <h3 style="font-family:Helvetica">Atacadão</h3>
-                <div class="img_anuncios">
-                    <img src="img/atacadao.jpg" width="280" height="200" title="Ola" alt="Imagem não encontrada">
-                </div>
-                <p class="caixa_anuncios_texto" style="font-size:20px">
-                O Atacadão é um supermecado que revende varejo e atacado.
-                </p>
-
-                <div class="caixa_endereco">
-                    <div class="endereco div_tamanho_fixo_endereco">
-                        <p class="texto_negrito_anuncios">Logradouro:</p>
-                        <span>Avenida Sebastião Jordão</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_2">
-                        <p class="texto_negrito_anuncios">Nº:</p>
-                        <span>400 </span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Cidade:</p>
-                        <span>Jandira</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Estado:</p>
-                        <span>São Paulo</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caixa_anuncios sombra">
-                <h3 style="font-family:Helvetica">Atacadão</h3>
-                <div class="img_anuncios">
-                    <img src="img/atacadao.jpg" width="280" height="200" title="Ola" alt="Imagem não encontrada">
-                </div>
-                <p class="caixa_anuncios_texto" style="font-size:20px">
-                O Atacadão é um supermecado que revende varejo e atacado.
-                </p>
-
-                <div class="caixa_endereco">
-                    <div class="endereco div_tamanho_fixo_endereco">
-                        <p class="texto_negrito_anuncios">Logradouro:</p>
-                        <span>Avenida Sebastião Jordão</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_2">
-                        <p class="texto_negrito_anuncios">Nº:</p>
-                        <span>400 </span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Cidade:</p>
-                        <span>Jandira</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Estado:</p>
-                        <span>São Paulo</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caixa_anuncios sombra">
-                <h3 style="font-family:Helvetica">Atacadão</h3>
-                <div class="img_anuncios">
-                    <img src="img/atacadao.jpg" width="280" height="200" title="Ola" alt="Imagem não encontrada">
-                </div>
-                <p class="caixa_anuncios_texto" style="font-size:20px">
-                    O Atacadão é um supermecado que revende varejo e atacado.
-                </p>
-
-                <div class="caixa_endereco">
-                    <div class="endereco div_tamanho_fixo_endereco">
-                        <p class="texto_negrito_anuncios">Logradouro:</p>
-                        <span>Avenida Sebastião Jordão</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_2">
-                        <p class="texto_negrito_anuncios">Nº:</p>
-                        <span>400 </span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Cidade:</p>
-                        <span>Jandira</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Estado:</p>
-                        <span>São Paulo</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caixa_anuncios sombra">
-                <h3 style="font-family:Helvetica">Atacadão</h3>
-                <div class="img_anuncios">
-                    <img src="img/atacadao.jpg" width="280" height="200" title="Ola" alt="Imagem não encontrada">
-                </div>
-                <p class="caixa_anuncios_texto" style="font-size:20px">
-                O Atacadão é um supermecado que revende varejo e atacado.
-                </p>
-
-                <div class="caixa_endereco">
-                    <div class="endereco div_tamanho_fixo_endereco">
-                        <p class="texto_negrito_anuncios">Logradouro:</p>
-                        <span>Avenida Sebastião Jordão</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_2">
-                        <p class="texto_negrito_anuncios">Nº:</p>
-                        <span>400 </span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Cidade:</p>
-                        <span>Jandira</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Estado:</p>
-                        <span>São Paulo</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="caixa_anuncios sombra">
-                <h3 style="font-family:Helvetica">Atacadão</h3>
-                <div class="img_anuncios">
-                    <img src="img/atacadao.jpg" width="280" height="200" title="Ola" alt="Imagem não encontrada">
-                </div>
-                <p class="caixa_anuncios_texto" style="font-size:20px">
-                O Atacadão é um supermecado que revende varejo e atacado.
-                </p>
-
-                <div class="caixa_endereco">
-                    <div class="endereco div_tamanho_fixo_endereco">
-                        <p class="texto_negrito_anuncios">Logradouro:</p>
-                        <span>Avenida Sebastião Jordão</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_2">
-                        <p class="texto_negrito_anuncios">Nº:</p>
-                        <span>400 </span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Cidade:</p>
-                        <span>Jandira</span>
-                    </div>
-
-                    <div class="endereco div_tamanho_fixo_endereco_3">
-                        <p class="texto_negrito_anuncios">Estado:</p>
-                        <span>São Paulo</span>
-                    </div>
-                </div>
-            </div>
-
+            <?php } ?>
         </section>
       <footer> <?php require_once('footer.html');?>  </footer>
     </body>
