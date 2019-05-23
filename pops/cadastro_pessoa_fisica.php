@@ -24,7 +24,7 @@
 
         <!-- Título da página -->
         <div class="titulo_pagina font-titulo">
-            <h1>Cadastro perfil pessoa física</h1>
+            <h1>Cadastro - pessoa física</h1>
         </div>
 
         <!-- Caixa central do formulário que ocupa 1200 da tela -->
@@ -33,84 +33,109 @@
             <div class="caixa_form_fisica">
                 <!-- div dos labels e inputs do form -->
                 <!-- nome completo -->
-                <div class="campos_form_fisica">
-                    <label for="txtNomePessoaFisica" class="label_estilo font-texto">Nome Completo: </label><br>
-                    <input class="input_estilo input_largura_grande" type="text" name="txtNomePessoaFisica" id="txtNomePessoaFisica">
+                
+                <div class="caixa_input">
+                    <!-- Nome completo -->
+                    <div class="caixa_inputs_form caixa_inputs_form_medio">
+                        <input class="input_estilo inputs_form" type="text" placeholder="Nome completo" name="txtNome">
+                    </div>
+                    <!-- CPF -->
+                    <div class="caixa_inputs_form caixa_inputs_form_2">
+                        <input class="input_estilo inputs_form" placeholder="CPF" type="text" name="txtCpf">
+                    </div>
                 </div>
 
-                <!-- Email -->
-                <div class="campos_form_fisica">
-                    <label for="txtEmailpessoaFisica" class="label_estilo font-texto">Email: </label><br>
-                    <input class="input_estilo input_largura_grande" type="text" name="txtEmailPessoaFisica" id="txtEmailPessoaFisica">
+                <div class="caixa_input">
+                    <!-- E-mail -->
+                    <div class="caixa_inputs_form caixa_inputs_form_medio">
+                        <input class="input_estilo inputs_form" type="text" placeholder="E-mail" name="txtNome">
+                    </div>
+                    <!-- Celular -->
+                    <div class="caixa_inputs_form caixa_inputs_form_2">
+                        <input class="input_estilo inputs_form" placeholder="Celular" type="text" name="txtCpf">
+                    </div>
                 </div>
 
-                <!-- CPF: -->
-                <div class="campos_form_fisica">
-                    <label for="txtCpfPessoaFisica" class="label_estilo font-texto">CPF: </label><br>
-                    <input class="input_estilo input_largura_media" type="text" name="txtCpfPessoaFisica" id="txtCpfPessoaFisica">
+                <div class="caixa_input">
+                    <!-- Logradouro -->
+                    <div class="caixa_inputs_form caixa_inputs_form_medio">
+                        <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtNome">
+                    </div>
+                    <!-- Número -->
+                    <div class="caixa_inputs_form caixa_inputs_form_2">
+                        <input class="input_estilo inputs_form" placeholder="N°" type="text" name="txtCpf">
+                    </div>
                 </div>
 
-                <!-- Celular -->
-                <div class="campos_form_fisica">
-                    <label for="txtCelPessoaFisica" class="label_estilo font-texto">Celular: </label><br>
-                    <input class="input_estilo input_largura_media" type="text" name="txtCelPessoaFisica" id="txtCelPessoaFisica">
+                <div class="caixa_input">
+                    <!-- Bairro -->
+                    <div class="caixa_inputs_form caixa_inputs_form_4">
+                        <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtNome">
+                    </div>
+                    <!-- Cidade -->
+                    <div class="caixa_inputs_form caixa_inputs_form_4">
+                        <input class="input_estilo inputs_form" placeholder="Cidade" type="text" name="txtCpf">
+                    </div>
+                    
                 </div>
 
-                <!-- Foto -->
-                <div class="campos_form_fisica">
-                    <label class="label_estilo font-texto">Foto: </label><br>
-                    <img width="150" height="150" src="imagens/a.jpg" alt="Imagem não encontrada" title="ola">
-                    <input id="btnSalvarImagem" type="file" value="Salvar"><br>
+                <div class="caixa_input">
+                    <!-- Estado -->
+                    <div class="caixa_input largura_fixa_div_3 selectForm">
+                        <select class="slt_estado formatacao_inputs borda_inputs largura_fixa_inputs_3 slt_estado" id="sltEstado" name="sltEstado">
+                            <option disabled selected name="slcEstado">Estado:</option>
+                            <option value="Acre">AC</option>
+                            <option value="Alagoas">AL</option>
+                            <option value="Amapá">AP</option>
+                            <option value="Amazonas">AM</option>
+                            <option value="Bahia">BA</option>
+                            <option value="Ceará">CE</option>
+                            <option value="Distrito Federal">DF</option>
+                            <option value="Espito Santo">ES</option>
+                            <option value="Goias">GO</option>
+                            <option value="Maranhao">MA</option>
+                            <option value="Mato Grosso">MT</option>
+                            <option value="Mato Grosso do Sul">MS</option>
+                            <option value="Minas Gerais">MG</option>
+                            <option value="Para">PA</option>
+                            <option value="Paraiba">PB</option>
+                            <option value="Parana">PR</option>
+                            <option value="Pernambuco">PE</option>
+                            <option value="Piaui">PI</option>
+                            <option value="Rio de Janeiro">RJ</option>
+                            <option value="Rio Grande do Norte">RN</option>
+                            <option value="Rio Grande do Sul">RS</option>
+                            <option value="Rondonia">RO</option>
+                            <option value="Roraima">RR</option>
+                            <option value="Santa Catarina">SC</option>
+                            <option value="Sao Paulo">SP</option>
+                            <option value="Sergipe">SE</option>
+                            <option value="Tocantins">TO</option>
+                        </select>
+                    </div>
+
+                    <!-- Foto -->
+                    <div class="imagem_pf">
+                        <label class="label_estilo">Foto:</label><br>
+                        <img src="imagens/a.jpg" width="150" height="150" alt="ola" title="ola"><br>
+                        <input type="file" name="txtFotoPj" id="txtFotoPj">
+                    </div>
                 </div>
 
-                <!-- Logradouro -->
-                <div class="campos_form_fisica">
-                    <label for="txtLogradouroFisica" class="label_estilo font-texto">Logradouro: </label><br>
-                    <input class="input_estilo input_largura_grande" type="text" name="txtLogradouroFisica" id="txtLogradouroFisica">
+                <div class="caixa_input">
+                    <!-- User -->
+                    <div class="caixa_inputs_form caixa_inputs_form_5">
+                        <input class="input_estilo inputs_form" type="text" placeholder="User" name="txtNome">
+                    </div>
+                    <!-- Senha -->
+                    <div class="caixa_inputs_form caixa_inputs_form_4">
+                        <input class="input_estilo inputs_form" placeholder="Senha" type="password" name="txtCpf">
+                    </div>
+                    
                 </div>
 
-                <!-- Número -->
-                <div class="campos_form_fisica">
-                    <label for="txtNumFisica" class="label_estilo font-texto">Nº: </label><br>
-                    <input class="input_estilo input_largura_pequena" type="text" name="txtNumFisica" id="txtNumFisica">
-                </div>
-
-                <!-- Bairro -->
-                <div class="campos_form_fisica">
-                    <label for="txtBairroFisica" class="label_estilo font-texto">Bairro: </label><br>
-                    <input class="input_estilo input_largura_grande" type="text" name="txtBairroFisica" id="txtBairroFisica">
-                </div>
-
-                <!-- Cidade -->
-                <div class="campos_form_fisica">
-                    <label for="txtCidade" class="label_estilo font-texto">Cidade: </label><br>
-                    <input class="input_estilo input_largura_grande" type="text" name="txtLogradouroFisica" id="txtCidade">
-                </div>
-
-                <!-- Estado -->
-                <div class="campos_form_fisica">
-                    <label class="label_estilo font-texto">Estado: </label><br>
-                    <select class="input_estilo input_largura_media" name="txtCelPessoaFisica" id="txtEstadoPessoaFisica">
-                        <option> SP </option>
-                    </select>
-                </div>
-
-                <!-- Usuário -->
-                <div class="campos_form_fisica">
-                    <label for="txtCelPessoaFisica" class="label_estilo font-texto">User: </label><br>
-                    <input class="input_estilo input_largura_media" type="text" name="txtUserPessoaFisica" id="txtUserPessoaFisica">
-                </div>
-
-                <!-- Senha -->
-                <div class="campos_form_fisica">
-                    <label for="txtSenhaPessoaFisica" class="label_estilo font-texto">Senha: </label><br>
-                    <input class="input_estilo input_largura_media" type="text" name="txtCelPessoaFisica" id="txtSenhaPessoaFisica">
-                </div>
-
-                <!-- Celular -->
-                <div id="caixa_botao">
-
-                    <input class="botao" type="button" name="btnCadPessoaFisica" id="txtCelPessoaFisica" value="Cadastrar">
+                <div class="botao">
+                    <input class="botao" type="button" value="Enviar" name="btnEnviar" id="btnEnviar">
                 </div>
             </div>
         </div>
