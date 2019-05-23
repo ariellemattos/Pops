@@ -40,13 +40,6 @@ class ControllerFaleConosco
 
   }
 
-  public function inserirRegistro(){
-    //verifica qual método tá sendo requisitado do form (POST ou GET)
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
-      $txtNome =
-      $
-    }
-  }
 
 
   public function excluirRegistro()

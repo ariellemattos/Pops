@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
@@ -11,6 +12,21 @@
     <script src="js/jquery.js"></script>
     <script src="js/event.js"></script>
     <script src="js/effects.js"></script>
+
+    <script type="text/javascript">
+
+      function consulta(id){
+        $.ajax({
+          type: "GET",
+          url: "tabela_nutricional.php?id="+id,
+          success: function(dados){
+            $(".modal").html(dados)
+          }
+        });
+
+        $('#container').fadeIn(600);
+      }
+    </script>
   </head>
   <body>
     <?php
@@ -21,8 +37,14 @@
 
     ?>
     <header><?php require_once 'header.php'; ?></header>
-    <div class="teste_produto">
+
       <div class="principal">
+        <div id="container">
+          <div class="modal">
+
+          </div>
+        </div>
+
         <div class="area-produtos">
           <?php
             $sql = "SELECT * FROM tbl_produto WHERE status = 1";
@@ -35,20 +57,16 @@
               <img src="../cms/view/img/temp/<?php echo ($result['imagem']) ?>" alt="Produto">
             </div>
             <div class="section-six-text-products">
-              <h2><?php echo (utf8_decode($result['nome'])) ?></h2>
+              <h2><?php echo ($result['nome']) ?></h2>
             </div>
 
             <div class="section-six-button">
-              <input type="button" name="btn_tabelanutricional" value="Tabela nutrional">
+              <input type="button" name="btn_tabelanutricional" value="Tabela nutrional" onclick="consulta(<?= $result["id_produto"]?>)">
             </div>
-
           </div>
-
           <?php } ?>
           </div>
         </div>
-      </div>
-    </div>
     <footer><?php require_once 'footer.html'; ?></footer>
   </body>
 </html>
