@@ -23,7 +23,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
 }
 
 .titulo_pagina h1{
-  font-size: 2.5em;
+  font-size: 50px;
   text-align: center;
   color: #000;
   font-family: Helvetica;
@@ -32,16 +32,16 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
 /* caixa central da página */
 .caixa_central_formulario{
   width: 1200px;
-  height: 1150px;
+  height: 700px;
   margin: auto;
 
 }
 
 /* caixa que guarda todo o formulario */
 .caixa_form_fisica{
-  width: 800px;
+  width: 600px;
   padding-top: 10px;
-  height: 1080px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -118,4 +118,127 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
 .botao:hover{
   background-color: #15233a;
   color: #fff;
+}
+/*Formulário*/
+.caixa_input{
+  width: 100%;
+  height: 70px;
+
+  margin-bottom: 20px;
+}
+
+
+
+.caixa_inputs_form{
+  height: 70px;
+  margin-left: 9px;
+  float: left;
+}
+
+.caixa_inputs_form_minima{
+  width: 8%;
+}
+
+.caixa_inputs_form_pequena{
+  width: 17%;
+}
+
+.caixa_inputs_form_medio{
+  width: 60%;
+}
+.caixa_inputs_form_2{
+  width: 35%;
+}
+.caixa_inputs_form_3{
+  width: 39%;
+}
+
+.inputs_form{
+  width: 99%;
+}
+
+
+.input_estilo {
+  height: 35px;
+  margin-top: 2px;
+  border:none;
+  font-size: 18px;
+  font-family: Helvetica;
+  color: #15233a;
+  border-bottom: 2px solid #15233a;
+  margin-bottom: 30px;
+  transition: 0.4s;
+  font-size: 17px;
+  background-color: transparent;
+  padding: 1px 1px;
+  border-radius: 1px;
+}
+.input_estilo:hover{
+  border-bottom: 2px solid #15233a;
+}
+
+.label_estilo{
+  font-size: 19px;
+  color: #15233a;
+  padding-top: 2px;
+  font-family: Gadugi;
+}
+
+.slt_estado{
+  margin-top: 4px;
+}
+.formatacao_inputs{
+  height: 35px;
+  border: none;
+  border-bottom: 2px solid #15233a;
+  margin-bottom: 30px;
+  transition: 0.4s;
+  font-size: 17px;
+  color: #828282;
+  background-color: transparent;
+  font-family: Gadugi;
+}
+.borda_inputs{
+  border-radius: 2px;
+}
+.largura_fixa_inputs_3{
+  width: 200px;
+}
+.slt_estado{
+  margin-top: 4px;
+}
+.selectForm{
+  position: absolute;
+  margin-left:390px;
+  margin-top: 14px;
+}
+.imagem_pf{
+  width: 40px;
+  height: 200px;
+  margin-left: 10px;
+  margin-right: 15px;
+
+  float: left;
+}
+.caixa_inputs_form_4{
+  width: 47.5%;
+}
+.caixa_inputs_form_5{
+  width: 47.5%;
+  margin-left: -55px;
+}
+.botao{
+  border: none;
+  width: 200px;
+  height: 30px;
+  clear: both;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff;
+  font-family: Gadugi;
+  font-size: 20px;
+  background-color: #416baf;
+  transition: 0.4s;
+  border-radius: 20px;
+  margin-top: -60px;
 }
