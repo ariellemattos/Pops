@@ -100,7 +100,7 @@
                     </form>
                 </section>
             </div>
-            <?php } ?>
+           
         </div>
         <footer>  <?php require_once('footer.html')?> </footer>
         <!-- CHAMANDO O ARQUIVO DE REQUESTS EM JQUERY -->

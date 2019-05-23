@@ -459,3 +459,27 @@ function callModalWithData(obj){
         });
       }
     }
+	
+	//Insert escola
+    $("#frmPopsEscola").submit(function(evt){
+        alert('Cadastro efetuado com sucesso!')
+        evt.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: `http://${host}/pops/backend/services/PEService.php/?op=addEscola`,
+            data: new FormData($("#frmPopsEscola")[0]),
+            cache: false,
+            contentType: false,
+            processData: false,
+            async: true,
+            dataType:"json",
+            success: function(data){
+                var html = "<div>"+data.message+"</div>";
+                $("#msg_add").html(html);
+                $("#frmPopsEscola")[0].reset();
+            },
+            error: function(){
+                alert('deu erro');
+            }
+        });
+    });
