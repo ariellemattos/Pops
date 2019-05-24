@@ -118,7 +118,7 @@ class ControllerEventos{
   }
 
   public function buscarEvento(){
-  
+
     $idEventos = $_GET['id'];
 
     return $this->eventosDAO->selectByIdEvento($idEventos);

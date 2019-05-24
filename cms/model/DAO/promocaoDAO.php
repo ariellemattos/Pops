@@ -22,12 +22,12 @@
             $insertSql = "INSERT INTO
                             tbl_promocao (titulo, descricao, status, img_promo, precisa_cadastro, status_home)
                          VALUES
-                            ('".$promocoes->getTitulo()."', '".$promocoes->getDescricao()."', 
-                            '".$promocoes->getStatus()."', '".$promocoes->getImagem()."', 
-                            '".$promocoes->getPrecisaCadastro()."', '".$promocoes->getStatusHome."')";
+                            ('".$promocoes->getTitulo()."', '".$promocoes->getDescricao()."',
+                            '".$promocoes->getStatus()."', '".$promocoes->getImagem()."',
+                            '".$promocoes->getPrecisaCadastro()."', '".$promocoes->getStatusHome()."')";
 
             $conn = $this->conexao->connectDatabase();
-            
+
 
             //enviando pro banco
             if(!$conn->query($insertSql)){
@@ -59,7 +59,7 @@
         //Método para atualizar uma promocao
         public function updatePromocao(Promocao $promocoes, $idPromocoes){
 
-            
+
             if($promocoes->getImagem() == null){
                 //script para atualizar uma promocao
                 $updateSql = "UPDATE tbl_promocao
@@ -102,7 +102,7 @@
                 }
                 //fechando a conexao
                 $this->conexao->closeDatabase();
-            }        
+            }
         }
 
 
@@ -122,9 +122,9 @@
 
             //Loop que coloca todo as promocoes em um rs
             while($rsPromocoes = $select->fetch(PDO::FETCH_ASSOC)){
-                //Array de dados do tipo promocoes         
+                //Array de dados do tipo promocoes
                 $promocoes[] = new Promocao();
-                
+
                 //Setando os valores do obj
                 $promocoes[$cont]->setIdPromocao($rsPromocoes['id_promocao']);
                 $promocoes[$cont]->setTitulo($rsPromocoes['titulo']);

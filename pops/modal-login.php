@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <title>Login</title>
     <link rel="stylesheet" href="css/arielle.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" >
     <script src="js/ws_requests.js"></script>
   </head>
   <body>
@@ -43,7 +47,7 @@
           </div>
         </div>
       </div>
-      <div id="msg_login"></div>
+      <div id="msg_login"  class="centralizarX"></div>
       <div class="modal-footer-login">
         <a href="cadastro.php" id="escolha">Paticipe da rede Pop's</a>
       </div>

@@ -1,3 +1,10 @@
+<?php
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -45,6 +52,7 @@
                         <div class="caixa_inputs_form caixa_inputs_form_2">
                             <input class="input_estilo inputs_form" placeholder="CPF" type="text" name="txtCpf" id="txtCpf" onkeypress="return validarCampos(event, 'caracter', this.id);" required>
                         </div>
+
                     </div>
 
                     <div class="caixa_input">
@@ -69,17 +77,19 @@
                         </div>
                     </div>
 
-                    <div class="caixa_input">
-                        <!-- Bairro -->
-                        <div class="caixa_inputs_form caixa_inputs_form_4">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairro" id="txtBairro" onkeypress="return validarCampos(event, 'number', this.id);" required>
-                        </div>
-                        <!-- Cidade -->
-                        <div class="caixa_inputs_form caixa_inputs_form_4">
-                            <input class="input_estilo inputs_form" placeholder="Cidade" type="text" name="txtCidade" id="txtCidade" required onkeypress="return validarCampos(event, 'number', this.id);">
-                        </div>
-                        
+
+                <div class="caixa_input">
+                    <!-- Bairro -->
+                    <div class="caixa_inputs_form caixa_inputs_form_4">
+                        <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairro">
                     </div>
+                    <!-- Cidade -->
+                    <div class="caixa_inputs_form caixa_inputs_form_4">
+                        <input class="input_estilo inputs_form" placeholder="Cidade" type="text" name="txtCidade">
+                    </div>
+
+                </div>
+
 
                     <div class="caixa_input">
                         <!-- Estado -->
@@ -121,6 +131,7 @@
                             <label class="label_estilo">Foto:</label><br>
                             <input type="file" name="txtFotoPj" id="txtFotoPj" required>
                         </div>
+
                     </div>
 
                     <div class="caixa_input">
@@ -131,8 +142,7 @@
                         <!-- Senha -->
                         <div class="caixa_inputs_form caixa_inputs_form_4">
                             <input class="input_estilo inputs_form" placeholder="Senha" type="password" name="txtSenha" id="txtSenha" required>
-                        </div>
-                        
+                       </div>      
                     </div>
 
                     <div class="botao">
@@ -142,7 +152,7 @@
             </div>
         </div>
        <footer> <?php require_once('footer.html') ?> </footer> 
-       
+
        <script src="js/jquery.mask.js"></script>
         <script>
             $(document).ready(function(){

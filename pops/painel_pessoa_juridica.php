@@ -132,8 +132,9 @@
                     </div>
                     <!-- Razão Social -->
                     <p class="centralizar_texto font-titulo font-negrito identidade_pj_font" id='razao_social'></p>
+                     <a href="#" onclick="logout()" class="centralizar_texto font-texto" id='logout'>Fazer Logout</a>
                     <p class="centralizar_texto font-texto" id='responsavel'></p>
-                    <p class="centralizar_texto font-texto" id='user'></p>
+                   
                 </div>
                 
                 <!-- Caixa dos dados -->

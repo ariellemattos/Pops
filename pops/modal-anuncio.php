@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Anuncio</title>
     <link rel="stylesheet" href="css/arielle.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="js/ws_requests.js"></script>
   </head>
   <body>
@@ -69,7 +70,7 @@
               </p>
 
               <input type="submit" name="btnok" id="btnok" value="Criar anuncio" >
-              <p id="msg_add"></p>
+               <p id="msg_add" class="centralizarX"></p>
             </form>
           </div>
         </div>

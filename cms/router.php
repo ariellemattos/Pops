@@ -436,8 +436,8 @@ if (isset($_GET['controller'])) {
         // Chamando o método de inserir um novo eventos
         $controllerEventos->inserirEvento();
 
-        // Chamando a função que preenche a página com a lista de eventos
-        echo "<script>eventos();</script>";
+        // // Chamando a função que preenche a página com a lista de eventos
+        // echo "<script>eventos();</script>";
 
       break;
 

@@ -14,6 +14,20 @@ body{
 
 }
 
+#msg_login{
+  width: 280px;
+  height: 20px;
+  padding-top: 5px;
+  color: #fff;
+  font-family: Gadugi;
+  text-align: center;
+  background-color: #f00;
+  display: none;
+}
+
+
+
+
 .cadastar{
     width: 100%;
     background-color: #EA720F;
@@ -42,7 +56,7 @@ body{
 
 .modal-body-login{
   width: 450px;
-  height:300px;
+  height:310px;
   background-color: white;
 
 }
@@ -288,7 +302,6 @@ a.modal-fechar{
   margin-left: auto;
   margin-right: auto;
   background-color: white;
-  margin-bottom: 15px;
 
 }
 
@@ -348,7 +361,7 @@ a.modal-fechar{
 }
 
 .area-produtos{
-  width: 1200px;
+  width: 955px;
   min-height: 500px;
   height: auto;
   background-color: white;
@@ -358,9 +371,10 @@ a.modal-fechar{
 
 .area-brindes{
   width: 1150px;
-  min-height: 600px;
+  min-height: 500px;
   height: auto;
   background-color: white;
+  float: right;
   margin-left: auto;
   margin-right: auto;
 
@@ -426,13 +440,12 @@ a.modal-fechar{
 .descricao-brinde input[type="submit"]{
   background-color: #5fa83a;
   color: white;
-  width: 250px;
   padding: 14px 20px;
   border: 1px solid rgba(27,31,35,.2);
   border-radius: 4px;
   cursor: pointer;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-top: 5px;
   font-family: Gadugi;
   font-size:17px;
   margin-left: 15px;
@@ -636,17 +649,17 @@ a.modal-fechar{
 
 .modal-tabela-nutrional{
   width: 500px;
-  height: 400px;
+  min-height: 400px;
+  height: auto;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 10px h 50px gray;
 
 }
 
 .modal-header-tabela-nutrional{
   width: 95%;
-  height: 85px;
+  height: 50px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
@@ -655,7 +668,7 @@ a.modal-fechar{
 
 .modal-header-tabela-nutrional h4{
   width: 85%;
-  height: 20px;
+  height: 10px;
   font-family: arial;
   font-weight: bold;
   text-align: center;
@@ -676,12 +689,6 @@ a.modal-fechar{
 
 }
 
-.modal-header-tabela-nutrional img{
-  width: 20px;
-  height: 20px;
-  float: right;
-
-}
 
 
 .modal-body-tabela-nutrional{
@@ -694,10 +701,11 @@ a.modal-fechar{
 }
 
 .quantidade-porcao{
-  width: 70%;
-  height: 255px;
+  width: 80%;
+  height: 50px;
   background-color: white;
   float: left;
+  padding-top: 20px;
 
 }
 
@@ -711,10 +719,11 @@ a.modal-fechar{
 }
 
 .porcentagem-porcao{
-  width: 30%;
-  height: 255px;
+  width: 20%;
+  height: 50px;
   background-color: white;
   margin-left: auto;
+  padding-top: 20px;
 
 }
 
@@ -725,6 +734,7 @@ a.modal-fechar{
   margin-top: 5px;
 
 }
+
 
 .modal-footer-tabela-nutrional{
   width: 95%;
@@ -737,11 +747,12 @@ a.modal-fechar{
 
 .modal_anuncio{
   width: 390px;
-  height: 560px;
+  height: 670px;
   background-color: white;
   margin-right: auto;
   margin-left: auto;
   margin-top: 10px;
+  font-family: Helvetica;
 }
 
 .modal-form-anuncio{
@@ -755,7 +766,7 @@ a.modal-fechar{
 
 .form-anuncio input{
   width: 288px;
-  height: 25px;
+  height: 20px;
   padding: 0.2em;
   border: 1px solid #CCC;
   box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
@@ -774,7 +785,7 @@ a.modal-fechar{
 }
 
 
-.form-anuncio input[type="button"]{
+.form-anuncio input[type="submit"]{
     width: 288px;
     height: 40px;
     background-color: #416baf;
@@ -783,6 +794,7 @@ a.modal-fechar{
    margin: 0 auto;
    padding: 15px 50px;
    margin-top: 5px;
+    padding: 9px 50px;
    border-radius: 4px;
    font-family: Helvetica;
    font-size: 17px;
@@ -791,6 +803,49 @@ a.modal-fechar{
     background-color: #15233a;
     color: #FFFFFF;
 }
+
+
+/*Css modal perfil juridico*/
+.form-perfil input{
+  width: 288px;
+  height: 20px;
+  padding: 0.2em;
+  border: 1px solid #CCC;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  display: block;
+  margin-bottom: 13px;
+}
+
+ .select-perfil{
+  width: 288px;
+  height: 30px;
+  padding: 0.2em;
+  border: 1px solid #CCC;
+  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  display: block;
+
+ }
+
+
+ .form-perfil input[type="submit"]{
+    width: 288px;
+    height: 40px;
+    background-color: #416baf;
+   color: #FFFFFF;
+   display: block;
+   margin: 0 auto;
+   padding: 9px 50px;
+   margin-top: 5px;
+   border-radius: 4px;
+   font-family: Helvetica;
+   font-size: 17px;
+}
+.form-perfil input[type="button"]:hover{
+    background-color: #15233a;
+    color: #FFFFFF;
+}
+
+
 
 p.modal-title-campos-anuncio{
   font-weight: lighter;

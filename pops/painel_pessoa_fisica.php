@@ -16,7 +16,7 @@
 	<script src="js/event.js">
 	</script>
 
-	
+
 </head>
     <body>
       <header>
@@ -30,7 +30,7 @@
                 <div class="caixa_identidade">
 
                     <img src="img/a.jpg" id="foto" width="245" height="250" title="">
-                    
+
 
                 </div>
 
@@ -100,20 +100,18 @@
                     </form>
                 </section>
             </div>
-           
         </div>
         <footer>  <?php require_once('footer.html')?> </footer>
-        <!-- CHAMANDO O ARQUIVO DE REQUESTS EM JQUERY -->
+      
+      <!-- CHAMANDO O ARQUIVO DE REQUESTS EM JQUERY -->
         <script src="js/ws_requests.js">
         </script>
-		<script>
-		
-			$(document).ready(function(){
-                //SELECIONAR DADOS VIA COOKIE
-				getAllData();
-            });
-            
-			
+		    <script>
+
+        $(document).ready(function(){
+                  //SELECIONAR DADOS VIA COOKIE
+          getAllData();
+              });
 		</script>
     </body>
 </html>

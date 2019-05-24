@@ -20,15 +20,20 @@ $("#btnlogar").click(function(){
                 $(location).attr('href',url);
 
             } else {
-                if(!loginPJ()){
-                    html = "<div class='msg_error'>"+data.message+"</div>";
-                    $("#msg_login").html(html);
-                }
+                    loginPJ()
             }
 
         }
     });
 });
+
+
+function logout(){
+    document.cookie = "cnpj="+null;
+    var url = `http://${host}/pops/index.php`;
+    $(location).attr('href',url);
+}
+
 
 //function que faz o login p/ Pessoa Juridica
 function loginPJ(){
@@ -49,7 +54,9 @@ function loginPJ(){
                 $(location).attr('href',url);
 
             } else {
-                return false;
+                html = "<div>"+data.message+"</div>";
+                $("#msg_login").fadeToggle(350);
+                $("#msg_login").html(html);
             }
 
         }
@@ -434,31 +441,29 @@ function callModalWithData(obj){
     });
   }
 
-
-
-    function atualizarCarrinhoPJ(id, quant){
-      if (quant == 1){
-        // alert(host);
-        $.ajax({
-          type: 'POST',
-          url: `http://${host}/pops/backend/services/PJService.php/?acao=mais`,
-          data: {id:id},
-          success: function(dados){
-            console.log(dados);
-          }
-        });
-      } else if (quant == -1) {
-
-        $.ajax({
-          type: 'POST',
-          url: `http://${host}/pops/backend/services/PJService.php/?acao=menos`,
-          data: {id:id},
-          success: function(dados){
-            console.log(dados);
-          }
-        });
+  function atualizarCarrinhoPJ(id, quant){
+  if (quant == 1){
+    // alert(host);
+    $.ajax({
+      type: 'POST',
+      url: `http://${host}/pops/backend/services/PJService.php/?acao=mais`,
+      data: {id:id},
+      success: function(dados){
+        console.log(dados);
       }
-    }
+    });
+  } else if (quant == -1) {
+
+    $.ajax({
+      type: 'POST',
+      url: `http://${host}/pops/backend/services/PJService.php/?acao=menos`,
+      data: {id:id},
+      success: function(dados){
+        console.log(dados);
+      }
+    });
+  }
+}
 	
 	//Insert escola
     $("#frmPopsEscola").submit(function(evt){
@@ -483,3 +488,4 @@ function callModalWithData(obj){
             }
         });
     });
+

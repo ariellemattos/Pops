@@ -80,7 +80,9 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
 .input_estilo:focus{
     border: 1px solid #e57510;
 }
-
+.caixa_central_formulario{
+  margin-top: 20px;
+}
 /* IMAGEM FORM */
 .caixa_imagem{
     width: 100%;
@@ -118,6 +120,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
 }
 
 .botao_pj{
+    border: none;
     width: 250px;
     height: 45px;
     font-size: 19px;
@@ -130,4 +133,47 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
 
 .botao_pj:hover{
     background-color: #15233a;
+}
+.input_estilo {
+  height: 35px;
+  margin-top: 2px;
+  border:none;
+  font-size: 18px;
+  font-family: Helvetica;
+  color: #15233a;
+  border-bottom: 2px solid #15233a;
+  margin-bottom: 30px;
+  transition: 0.4s;
+  font-size: 17px;
+  background-color: transparent;
+  padding: 1px 1px;
+  border-radius: 1px;
+}
+.input_estilo:hover{
+  border-bottom: 2px solid #15233a;
+}
+.selectForm{
+  position: absolute;
+  margin-top: 2px;
+  margin-left:15px;
+}
+.slt_estado{
+  margin-top: 4px;
+}
+.formatacao_inputs{
+  height: 35px;
+  border: none;
+  border-bottom: 2px solid #15233a;
+  margin-bottom: 30px;
+  transition: 0.4s;
+  font-size: 17px;
+  color: #828282;
+  background-color: transparent;
+  font-family: Gadugi;
+}
+.borda_inputs{
+  border-radius: 2px;
+}
+.largura_fixa_inputs_3{
+  width: 200px;
 }

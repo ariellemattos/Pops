@@ -84,44 +84,28 @@
       <section class="section-two">
         <h1 class="titulo_sections">Participe das enquetes da POP'S</h1>
         <div id="enquetes" class="div-geral-section-imagens centralizar_elemento fadeInTop">
+          <?php
+          $sql = "SELECT * FROM tbl_enquete WHERE status = 1 ORDER BY RAND() LIMIT 2";
+            // $sql = "SELECT enquetes.*, opcoes.text_opcao AS opcoes FROM tbl_enquete AS enquetes
+            //         INNER JOIN tbl_opcoes AS opcoes ON opcoes.id_enquete = enquetes.id_enquete WHERE enquetes.status = 1 ORDER BY RAND() LIMIT 2";
+            $stm = $con->prepare($sql);
+            $success = $stm->execute();
+            foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
+        	?>
+
           <div class="imagens-section-two centralizarY">
             <div  class="caixa_enquete centralizar_elemento">
-              <div class="titulo_enquete">Qual é o seu refrigerante favorito?</div>
+              <div class="titulo_enquete"><?php echo ($result['enunciado_enquete']) ?></div>
               <div class="itens_enquete centralizar_elemento">
                 <input type="checkbox" id="1">
-                <label for="1">7up</label>
+                <label for="1"></label>
                 <br><br>
-                <input type="checkbox" id="2">
-                <label for="2">Gini</label>
-                <br><br>
-                <input type="checkbox" id="3">
-                <label for="3">Crush</label>
-                <br><br>
-                <input type="checkbox" id="4">
-                <label for="4">Grapette</label>
               </div>
               <input type="submit" class="btn_votar" value="Votar">
             </div>
           </div>
-          <div class="imagens-section-two centralizarY">
-            <div  class="caixa_enquete centralizar_elemento">
-              <div class="titulo_enquete">Qual é o seu sabor de suco favorito?</div>
-              <div class="itens_enquete centralizar_elemento">
-                <input type="checkbox" id="5">
-                <label for="1">Laranja</label>
-                <br><br>
-                <input type="checkbox" id="6">
-                <label for="2">Uva</label>
-                <br><br>
-                <input type="checkbox" id="7">
-                <label for="3">Morango</label>
-                <br><br>
-                <input type="checkbox" id="8">
-                <label for="4">Maracujá</label>
-              </div>
-              <input type="submit" class="btn_votar" value="Votar">
-            </div>
-          </div>
+
+          <?php } ?>
         </div>
       </section>
 
