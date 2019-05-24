@@ -1,3 +1,10 @@
+<?php
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -33,7 +40,7 @@
             <div class="caixa_form_fisica">
                 <!-- div dos labels e inputs do form -->
                 <!-- nome completo -->
-                
+
                 <div class="caixa_input">
                     <!-- Nome completo -->
                     <div class="caixa_inputs_form caixa_inputs_form_medio">
@@ -48,35 +55,35 @@
                 <div class="caixa_input">
                     <!-- E-mail -->
                     <div class="caixa_inputs_form caixa_inputs_form_medio">
-                        <input class="input_estilo inputs_form" type="text" placeholder="E-mail" name="txtNome">
+                        <input class="input_estilo inputs_form" type="text" placeholder="E-mail" name="txtEmail">
                     </div>
                     <!-- Celular -->
                     <div class="caixa_inputs_form caixa_inputs_form_2">
-                        <input class="input_estilo inputs_form" placeholder="Celular" type="text" name="txtCpf">
+                        <input class="input_estilo inputs_form" placeholder="Celular" type="text" name="txtCelular">
                     </div>
                 </div>
 
                 <div class="caixa_input">
                     <!-- Logradouro -->
                     <div class="caixa_inputs_form caixa_inputs_form_medio">
-                        <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtNome">
+                        <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouro">
                     </div>
                     <!-- Número -->
                     <div class="caixa_inputs_form caixa_inputs_form_2">
-                        <input class="input_estilo inputs_form" placeholder="N°" type="text" name="txtCpf">
+                        <input class="input_estilo inputs_form" placeholder="N°" type="text" name="txtNumero">
                     </div>
                 </div>
 
                 <div class="caixa_input">
                     <!-- Bairro -->
                     <div class="caixa_inputs_form caixa_inputs_form_4">
-                        <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtNome">
+                        <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairro">
                     </div>
                     <!-- Cidade -->
                     <div class="caixa_inputs_form caixa_inputs_form_4">
-                        <input class="input_estilo inputs_form" placeholder="Cidade" type="text" name="txtCpf">
+                        <input class="input_estilo inputs_form" placeholder="Cidade" type="text" name="txtCidade">
                     </div>
-                    
+
                 </div>
 
                 <div class="caixa_input">
@@ -117,7 +124,7 @@
                     <!-- Foto -->
                     <div class="imagem_pf">
                         <label class="label_estilo">Foto:</label><br>
-                        <img src="imagens/a.jpg" width="150" height="150" alt="ola" title="ola"><br>
+                        <img src="imagens/a.jpg" width="150" height="150"><br>
                         <input type="file" name="txtFotoPj" id="txtFotoPj">
                     </div>
                 </div>
@@ -131,7 +138,7 @@
                     <div class="caixa_inputs_form caixa_inputs_form_4">
                         <input class="input_estilo inputs_form" placeholder="Senha" type="password" name="txtCpf">
                     </div>
-                    
+
                 </div>
 
                 <div class="botao">
@@ -139,6 +146,6 @@
                 </div>
             </div>
         </div>
-       <footer> <?php require_once('footer.html') ?> </footer> 
+       <footer> <?php require_once('footer.html') ?> </footer>
     </body>
 </html>

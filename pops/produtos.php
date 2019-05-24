@@ -18,9 +18,9 @@
       function consulta(id){
         $.ajax({
           type: "GET",
-          url: "tabela_nutricional.php?id="+id,
+          url: "tabela_nutricional.php",
           success: function(dados){
-            $(".modal").html(dados)
+             $(".modal").html(dados)
           }
         });
 
@@ -38,12 +38,13 @@
     ?>
     <header><?php require_once 'header.php'; ?></header>
 
-      <div class="principal">
-        <div id="container">
-          <div class="modal">
+    <div id="container">
+      <div class="modal">
 
-          </div>
-        </div>
+      </div>
+    </div>
+
+      <div class="principal">
 
         <div class="area-produtos">
           <?php
