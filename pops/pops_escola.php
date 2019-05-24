@@ -11,6 +11,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="js/jquery.js"></script>
   <script src="js/event.js"></script>
+  <<script src="js/jquery.mask.js"></script>
+  <script src="js/validarCampos.js"></script>
 </head>
 <body>
 
@@ -34,70 +36,60 @@
         
         </div>
     </div>
-
+    <!-- $nome = $_POST['txtNome'];
+            $telefone = $_POST['txtTelefone'];
+            $responsavel = $_POST['txtResponsavel'];
+            $localidade = $_POST['txtLocalidade'];
+            $cnpj = $_POST['txtCnpj'];
+            $motivo = $_POST['txtMotivo'];
+            $email = $_POST['txtEmail']; -->
     <!-- CAIXA DO CADASTRO DA ESCOLA -->
     <div id="caixa_geral_cadastro">
         <section class="caixa_central_cadastro div_centro">
-            <h1 class="titulo_pops" >Cadastro da escola</h1>
+                <h1 class="titulo_pops" >Cadastro da escola</h1>
+            <form name="frmEscola" id="frmPopsEscola" action="pops_escola.php" method="POST" autocomplete="off">
+                <!-- FORM DIREITO -->
+                <div class="caixa_principal_formulario">
+                    <!-- Nome da escola -->
+                    <div class="caixa_formulario">
+                        <input class="formatacao_inputs borda_inputs largura_fixa_inputs_1" type="text" placeholder="Nome da escola" id="txtNome" name="txtNome" onkeypress="return validarCampos(event, 'number', this.id);" required>
+                    </div>
+                    <!-- Telefone -->
+                    <div class="caixa_formulario">
+                        <input class="formatacao_inputs borda_inputs largura_fixa_inputs_1" type="text" placeholder="Telefone" id="txtTelefone" name="txtTelefone" onkeypress="return validarCampos(event, 'caracter', this.id);" required>
+                    </div>
+                    <!-- Responsável -->
+                    <div class="caixa_formulario">
+                        <input class="formatacao_inputs borda_inputs largura_fixa_inputs_1" type="text" placeholder="Responsável" id="txtResponsavel" name="txtResponsavel" onkeypress="return validarCampos(event, 'number', this.id);" required>
+                    </div>
+                    <!-- Localidade -->
+                    <div class="caixa_formulario">
+                        <input class="formatacao_inputs borda_inputs largura_fixa_inputs_1" type="text" placeholder="Localidade" id="txtLocalidade" name="txtLocalidade" required>
+                    </div>
+                </div>
 
-            <!-- FORM DIREITO -->
-            <div class="caixa_principal_formulario">
-                <!-- Nome da escola -->
-                <div class="caixa_formulario">
-                    <input class="formatacao_inputs borda_inputs largura_fixa_inputs_1" type="text" placeholder="Nome da escola" id="txtNomeEscola" name="txtNomeEscola" value="">
-                </div>
-                <!-- Nome do diretor -->
-                <div class="caixa_formulario">
-                    <input class="formatacao_inputs borda_inputs largura_fixa_inputs_1" type="text" placeholder="Nome do diretor" id="txtNomeDiretor" name="txtNomeDiretor" value="">
-                </div>
-                <!-- Telefone -->
-                <div class="caixa_formulario">
-                    <input class="formatacao_inputs borda_inputs largura_fixa_inputs_2" type="text" placeholder="Telefone" id="txtTelefone" name="txtTelefone" value="">
-                </div>
-                <!-- Email -->
-                <div class="caixa_formulario">
-                    <input class="formatacao_inputs borda_inputs largura_fixa_inputs_1" type="text" placeholder="Email" id="txtEmail" name="txtEmail" value="">
-                </div>
-            </div>
-
-            <!-- FORM ESQUERDO -->
-            <div class="caixa_principal_formulario">
-                <div class="caixa_formulario">
-                    <!-- Logradouro -->
-                    <div class="caixa_input largura_fixa_div">
-                        <input class="formatacao_inputs borda_inputs largura_fixa_inputs_1" type="text" placeholder="Logradouro" id="txtLogradouro" name="txtLogradouro" value="">
-                    </div>
-                    <!-- Número -->
-                    <div class="caixa_input largura_fixa_div_2">
-                        <input class="formatacao_inputs borda_inputs largura_fixa_inputs_3" type="text" placeholder="Nº" id="txtNumero" name="txtNumero" value="">
-                    </div>
-                    <!-- Bairro -->
-                    <div class="caixa_input largura_fixa_div_3">
-                        <input class="formatacao_inputs borda_inputs largura_fixa_inputs_2" type="text" placeholder="Bairro" id="txtBairro" name="txtBairro" value="">
-                    </div>
-                    <!-- CEP -->
-                    <div class="caixa_input largura_fixa_div_3">
-                        <input class="formatacao_inputs borda_inputs largura_fixa_inputs_2" type="text" placeholder="CEP" id="txtCep" name="txtCep" value="">
-                    </div>
-                    <!-- Cidade -->
-                    <div class="caixa_input largura_fixa_div_3">
-                        <input class="formatacao_inputs borda_inputs largura_fixa_inputs_2" type="text" placeholder="Cidade" id="txtCidade" name="txtCidade" value="">
-                    </div>
-                    <div class="caixa_input largura_fixa_div_3">
-
-                        <select class="slt_estado formatacao_inputs borda_inputs largura_fixa_inputs_3 slt_estado" id="sltEstado" name="sltEstado">
-                            <option disabled selected>Estado:</option>
-                            <option>SP</option>
-                            <option>RJ</option>
-                            <option>MG</option>
-                        </select>
-                    </div>
-                    <div class="botao">
-                        <input class="botao" type="button" value="Enviar" name="btnEnviar" id="btnEnviar">
+                <!-- FORM ESQUERDO -->
+                <div class="caixa_principal_formulario">
+                    <div class="caixa_formulario">
+                        <!-- CNPJ -->
+                        <div class="caixa_input largura_fixa_div">
+                            <input class="formatacao_inputs borda_inputs largura_fixa_inputs_1" type="text" placeholder="CNPJ" id="txtCnpj" name="txtCnpj" onkeypress="return validarCampos(event, 'caracter', this.id);" required>
+                        </div>
+                        <!-- motivo -->
+                        <div class="caixa_input largura_fixa_div">
+                            <textarea id="txtMotivo" rows="5" cols="10" placeholder="Motivo" name="txtMotivo" required></textarea>
+                        </div>
+                        <!-- email -->
+                        <div class="caixa_input largura_fixa_div">
+                            <input class="formatacao_inputs borda_inputs largura_fixa_inputs_1" type="email" placeholder="Email" id="txtEmail" name="txtEmail" required>
+                        </div>
+                        <!-- BOTÃO -->
+                        <div class="botao">
+                            <input class="botao" type="submit" value="Enviar" name="btnEnviar" id="btnEnviar">
+                        </div>
                     </div>
                 </div>
-            </div>
-
+            </form>
             <!-- AVISO -->
             <div class="aviso aviso_form div_centro">
                 <h2 ><strong>Aviso</strong></h2>
@@ -127,5 +119,12 @@
 
     <!-- FOOTER -->
     <footer>  <?php require_once('footer.html')?> </footer>
+    <script src="js/ws_requests.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#txtTelefone').mask('(00) 0000-0000');
+            $('#txtCnpj').mask('00.000.000/0000-00');
+        });
+    </script>
 </body>
 </html>

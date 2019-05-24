@@ -102,17 +102,16 @@
             </div>
         </div>
         <footer>  <?php require_once('footer.html')?> </footer>
-        <!-- CHAMANDO O ARQUIVO DE REQUESTS EM JQUERY -->
+      
+      <!-- CHAMANDO O ARQUIVO DE REQUESTS EM JQUERY -->
         <script src="js/ws_requests.js">
         </script>
-		<script>
+		    <script>
 
-			$(document).ready(function(){
-                //SELECIONAR DADOS VIA COOKIE
-				getAllData();
-            });
-
-
+        $(document).ready(function(){
+                  //SELECIONAR DADOS VIA COOKIE
+          getAllData();
+              });
 		</script>
     </body>
 </html>
