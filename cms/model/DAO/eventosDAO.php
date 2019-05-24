@@ -29,7 +29,7 @@
       $insertSql = "INSERT INTO tbl_eventos (titulo, descricao, localidade, dt_evento, status)
       VALUES('".$eventos->getTitulo()."', '".$eventos->getDescricao()."','".$eventos->getLocalidade()."', '".$eventos->getDataEvento()."', '".$eventos->getStatus()."')";
 
-
+      echo $insertSql;
 
       //Método que faz a conexão com o banco
       $conn = $this->conexao->connectDatabase();
@@ -78,7 +78,7 @@
                     WHERE id_eventos=".$idEventos;
 
       $conn = $this->conexao->connectDatabase();
-      
+
       if(!$conn->query($updateSql)){
         echo "Erro no script de update";
       }

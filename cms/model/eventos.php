@@ -58,18 +58,23 @@ class Eventos{
 			$this->localidade = $localidade;
 	}
 
-	public function getDataEvento(){
-    return $this->dataEvento;
-	}
+  public function getDataEvento()
+  {
 
-	public function setDataEvento($dataEvento){
-		if(strpos($dataEvento, "/")){
-			//Tratamento da data para enviar para o banco
-			$this->dataEvento = date("Y-m-d", strtotime($dataEvento));
-		}else if(strpos($dataEvento, "-")){
-				$this->dataEvento = date("d/m/Y", strtotime($dataEvento));
-		}
-	}
+    return $this->dataEvento;
+
+  }
+
+  public function setDataEvento($dataEvento){
+    if(strpos($dataEvento, "/")){
+      $dataEvento = date("Y-m-d", strtotime(str_replace("/", "-", $dataEvento)));
+    }elseif(strpos($dataEvento, "-")){
+      $dataEvento = date("d/m/Y", strtotime(str_replace("-", "/", $dataEvento)));
+    }
+
+    $this->dataEvento = $dataEvento;
+
+  }
 
 	public function getStatus(){
 			return $this->status;
