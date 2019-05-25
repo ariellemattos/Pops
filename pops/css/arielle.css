@@ -371,12 +371,11 @@ a.modal-fechar{
 
 .area-brindes{
   width: 1150px;
-  min-height: 500px;
+  min-height: 570px;
   height: auto;
-  background-color: white;
-  float: right;
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
 
 }
 

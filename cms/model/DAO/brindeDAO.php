@@ -45,17 +45,19 @@ class BrindeDAO
     $valor_unitario = $brinde->getValorUnitario();
     $descricao = $brinde->getDescricao();
     $peso = $brinde->getPeso();
+    $volume = $brinde->getVolume();
     $imagem = $brinde->getimagem();
     $status = $brinde->getStatus();
 
     // Query de insert
-    $sql = "INSERT INTO tbl_brinde(nome, valor_unitario, descricao, peso, imagem, status)
+    $sql = "INSERT INTO tbl_brinde(nome, valor_unitario, descricao, peso, volume, imagem, status)
             VALUES
             (
               '$nome',
               '$valor_unitario',
               '$descricao',
               '$peso',
+              '$volume',
               '$imagem',
               '$status'
             )";
@@ -99,6 +101,7 @@ class BrindeDAO
     $valor_unitario = $brinde->getValorUnitario();
     $descricao = $brinde->getDescricao();
     $peso = $brinde->getPeso();
+    $volume = $brinde->getVolume();
     $imagem = $brinde->getimagem();
     $status = $brinde->getStatus();
 
@@ -108,6 +111,7 @@ class BrindeDAO
             valor_unitario = '$valor_unitario',
             descricao = '$descricao',
             peso = '$peso',
+            volume = '$volume',
             imagem = '$imagem',
             status = '$status'
             WHERE id_brinde = $id";
@@ -192,6 +196,7 @@ class BrindeDAO
       $brinde->setValorUnitario($rsBrinde['valor_unitario']);
       $brinde->setDescricao($rsBrinde['descricao']);
       $brinde->setPeso($rsBrinde['peso']);
+      $brinde->setVolume($rsBrinde['volume']);
       $brinde->setImagem($rsBrinde['imagem']);
       $brinde->setStatus($rsBrinde['status']);
 

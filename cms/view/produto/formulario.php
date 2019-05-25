@@ -1,12 +1,17 @@
 <?php
+
 // Iniciando uma sessão
 @session_start();
+
 // Iniciando a variável em null para não haver erro
 $path_local = null;
-// Variável que recebe a variáveil de sessão
+
+// Variável que recebe a variável de sessão
 $path_local = $_SESSION['path_local'];
+
 // Verificando se o objeto existe
 if (isset($produto)) {
+
   // Pegando os dados do objeto e setando em variavéis locais
   $id = $produto->getId();
   $id_componente = $produto->getIdComponente();
@@ -41,36 +46,40 @@ if (isset($produto)) {
   $sodio = $produto->getSodio();
   $status = $produto->getStatus();
   $status_home = $produto->getStatusHome();
+
+  // Passando algumas variavéis por sessão para recuperar na controller
   $_SESSION['id_nutricional'] = $id_nutricional;
   $_SESSION['id_produto_componente'] = $id_produto_componente;
   $_SESSION['imagem'] = $imagem;
-  if ($status == 1) {
-    $selected_ativado = "SELECTED";
-    $selected_desativado = "";
-  }else {
-    $selected_ativado = "SELECTED";
-    $selected_desativado = "SELECTED";
-  }
 
   //Função do onclick para saber qual ação chama o router
   $router = "router('produto', 'atualizar', '$id')";
+
   // Muda o texto do botão e título
   $botao = "Atualizar";
   $titulo = "ATUALIZAR PRODUTO";
+
 }else {
+
   //Função do onclick para saber qual ação chama o router
   $router = "router('produto', 'inserir', 0)";
+
   // Muda o texto do botão e título
   $botao = "Salvar";
   $titulo = "CADASTRAR PRODUTO";
+
 }
+
 // Importando a controller do objeto
 require_once "$path_local/cms/controller/controllerComponente.php";
+
 // Instânciando a controller
 $controllerComponente = new ControllerComponente();
+
 // Chamando o método que lista os registros e colocando em um result set
 $rsMateriaPrima = $controllerComponente->listarMateriaPrima();
 $rsEmbalagem = $controllerComponente->listarEmbalagem();
+
 ?>
 
 <div class="title_paginas centralizarX">
@@ -85,13 +94,8 @@ $rsEmbalagem = $controllerComponente->listarEmbalagem();
 
         <label for="select_materia_prima">Matéria Prima: </label> <br>
         <select name="select_materia_prima">
-          <?php  foreach ($rsMateriaPrima as $componente) {
-            if ($componente->getId() == $id_componente)
-              $selected = "SELECTED";
-            else
-              $selected = "";
-          ?>
-          <option <?= $selected ?> value="<?= $componente->getId() ?>"><?= $componente->getNome() ?></option>
+          <?php  foreach ($rsMateriaPrima as $componente) { ?>
+          <option <?= ($componente->getId() == @$id_componente ? "SELECTED" : NULL) ?> value="<?= $componente->getId() ?>"><?= $componente->getNome() ?></option>
         <?php } ?>
         </select>
 
@@ -160,21 +164,21 @@ $rsEmbalagem = $controllerComponente->listarEmbalagem();
 
         <label for="select_tipo">Tipo de Produto: </label> <br>
         <select class="select_tipo" name="select_tipo">
-          <option <?= (@$tipo_produto == "Suco" ? "SELECTED" : "") ?> value="Suco"> Suco </option>
-          <option <?= (@$tipo_produto == "Água" ? "SELECTED" : "") ?> value="Água"> Água </option>
+          <option <?= (@$tipo_produto == "Suco" ? "SELECTED" : NULL) ?> value="Suco"> Suco </option>
+          <option <?= (@$tipo_produto == "Água" ? "SELECTED" : NULL) ?> value="Água"> Água </option>
           <option <?= (@$tipo_produto == "Refrigerante" ? "SELECTED" : "") ?> value="Refrigerante"> Refrigerante </option>
         </select>
 
         <label for="select_status">Status: </label> <br>
         <select class="select_status" name="select_status">
-          <option <?= @$selected_ativado ?> value="1"> Ativado </option>
-          <option <?= @$selected_desativado ?> value="0"> Desativado </option>
+          <option <?= (@$status == "1" ? "SELECTED" : NULL) ?> value="1"> Ativado </option>
+          <option <?= (@$status == "0" ? "SELECTED" : NULL) ?> value="0"> Desativado </option>
         </select>
 
         <label for="select_status_home">Status Home: </label> <br>
         <select class="select_status" name="select_status_home">
-          <option  value="1" <?= (@$status_home == 1 ? "SELECTED" : "") ?>> Ativado </option>
-          <option  value="0" <?= (@$status_home == 0 ? "SELECTED" : "") ?>> Desativado </option>
+          <option <?= (@$status_home == "1" ? "SELECTED" : NULL) ?> value="1"> Ativado </option>
+          <option <?= (@$status_home == "0" ? "SELECTED" : NULL) ?> value="0"> Desativado </option>
         </select>
 
         <label for="txt_gordura_totais">Gordura Totais: </label> <br>

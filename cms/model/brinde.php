@@ -23,6 +23,7 @@ class Brinde
   private $valor_unitario;
   private $descricao;
   private $peso;
+  private $volume;
   private $imagem;
   private $status;
 
@@ -75,6 +76,16 @@ class Brinde
   public function setPeso($peso)
   {
     $this->peso = $peso;
+  }
+
+  public function getVolume()
+  {
+    return $this->volume;
+  }
+
+  public function setVolume($volume)
+  {
+    $this->volume = $volume;
   }
 
   public function getImagem()
