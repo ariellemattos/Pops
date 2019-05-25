@@ -29,7 +29,7 @@ $("#btnlogar").click(function(){
 
 
 function logout(){
-    document.cookie = "cnpj="+null;  
+    document.cookie = "cnpj="+null;
     var url = `http://${host}/pops/index.php`;
     $(location).attr('href',url);
 }
@@ -440,3 +440,52 @@ function callModalWithData(obj){
       }
     });
   }
+
+  function atualizarCarrinhoPJ(id, quant){
+  if (quant == 1){
+    // alert(host);
+    $.ajax({
+      type: 'POST',
+      url: `http://${host}/pops/backend/services/PJService.php/?acao=mais`,
+      data: {id:id},
+      success: function(dados){
+        console.log(dados);
+      }
+    });
+  } else if (quant == -1) {
+
+    $.ajax({
+      type: 'POST',
+      url: `http://${host}/pops/backend/services/PJService.php/?acao=menos`,
+      data: {id:id},
+      success: function(dados){
+        console.log(dados);
+      }
+    });
+  }
+}
+	
+	//Insert escola
+    $("#frmPopsEscola").submit(function(evt){
+        alert('Cadastro efetuado com sucesso!')
+        evt.preventDefault();
+        $.ajax({
+            type: "POST",
+            url: `http://${host}/pops/backend/services/PEService.php/?op=addEscola`,
+            data: new FormData($("#frmPopsEscola")[0]),
+            cache: false,
+            contentType: false,
+            processData: false,
+            async: true,
+            dataType:"json",
+            success: function(data){
+                var html = "<div>"+data.message+"</div>";
+                $("#msg_add").html(html);
+                $("#frmPopsEscola")[0].reset();
+            },
+            error: function(){
+                alert('deu erro');
+            }
+        });
+    });
+

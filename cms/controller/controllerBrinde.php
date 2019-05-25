@@ -60,6 +60,7 @@ class ControllerBrinde
       $brinde->setValorUnitario($_POST['txt_valor_unitario']);
       $brinde->setDescricao($_POST['txt_descricao']);
       $brinde->setPeso($_POST['txt_peso']);
+      $brinde->setVolume($_POST['txt_volume']);
       $brinde->setImagem(upload($_FILES['file_img']));
       $brinde->setStatus($_POST['select_status']);
 
@@ -105,6 +106,7 @@ class ControllerBrinde
       $brinde->setValorUnitario($_POST['txt_valor_unitario']);
       $brinde->setDescricao($_POST['txt_descricao']);
       $brinde->setPeso($_POST['txt_peso']);
+      $brinde->setVolume($_POST['txt_volume']);
       $brinde->setImagem($imagem);
       $brinde->setStatus($_POST['select_status']);
 

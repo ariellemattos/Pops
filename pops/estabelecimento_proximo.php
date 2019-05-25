@@ -130,7 +130,6 @@ $rsPessoaJuridica = $controllerPessoaJuridica->listarRegistros();
     <div id="caixa_mapa">
 
     </div>
-  </form>
 </div>
 
 <footer> <?php require_once('footer.html')?> </footer>

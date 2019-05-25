@@ -37,6 +37,24 @@ class FaleConoscoDAO
 
   }
 
+  public function insert(FaleConosco $faleConosco){
+    // Query de insert
+    $sql = "INSERT INTO tbl_fale_conosco(nome, email, telefone, tipo, descricao, celular)
+    VALUES('".$faleConosco->get()."', '".$historia_marca->getTexto()."', '".$historia_marca->getStatus()."')";
+
+
+
+    // Recebendo a função que faz a conexão com BD
+    $con = $this->conexao->connectDatabase();
+
+    // Executa o script no BD
+    if (!$con->query($sql))
+    echo 'Erro no script de insert';
+
+    // Fechando a conexão com BD
+    $this->conexao->closeDatabase();
+  }
+
   // Função deleta um registro no banco
   public function delete($id)
   {

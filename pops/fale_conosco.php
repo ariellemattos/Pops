@@ -1,3 +1,43 @@
+<?php
+  session_start();
+  // Iniciando as variáveis em null para não haver erro
+  $path_local = null;
+  $path_url = null;
+
+  // Variáveis que recebem as variáveis de sessão
+  $path_local = $_SESSION['path_local'];
+  $path_url = $_SESSION['path_url'];
+
+  // Importanto a classe de conexão com BD
+  require_once "$path_local/cms/model/DAO/conexao.php";
+
+  // Instânciando a classe de Conexão
+  $conexao = new Conexao();
+
+  if(isset($_POST["btnEnviar"])){
+
+    $nome = $_POST['txtNome'];
+    $email = $_POST['txtEmail'];
+    $telefone = $_POST['txtTelefone'];
+    $celular =  $_POST['txtCelular'];
+    $observacao =  $_POST['txtObservacao'];
+
+      $sql = "INSERT INTO tbl_fale_conosco(nome, email, telefone, descricao, celular)
+              VALUES ('".$nome."','".$email."', '".$telefone."', '".$celular."', '".$observacao."')
+  ";
+
+    // Abrindo a conexão com BD
+    $con = $conexao->connectDatabase();
+
+    // Executa o script no BD
+    if (!$con->query($sql))
+    echo 'Erro no script de insert';
+
+    header('location:fale_conosco.php');
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -9,22 +49,18 @@
         <link rel="stylesheet" type="text/css" href="css/titulo_pagina.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- CHAMANDO O JQUERY -->
-        <script src="js/jquery.js">
-        </script>
+        <script src="js/jquery.js"></script>
         <!-- CHAMANDO O ARQUIVO DE EVENTOS EM JQUERY -->
-        <script src="js/event.js">
-        </script>
+        <script src="js/event.js"></script>
+
+        <script src="js/mask.js"></script>
+
+		      <script src="js/validar.js"></script>
+
     </head>
 
     <body>
-        <?php
-            session_start();
-            require_once('../cms/model/DAO/Conexao.php');
-            $conex = new Conexao();
-            $con = $conex->connectDatabase();
-
-        ?>
-        <!-- header -->
+      <!-- header -->
         <header>
           <?php require_once('header.php') ?>
         </header>
@@ -39,43 +75,43 @@
                 <form action="fale_conosco.php" name="frmFaleConosco" id="frmFaleConosco" method="POST">
                     <!-- Nome: -->
                     <div class="campos-form bordas-form">
-                        <input class="bordas-form bordas-sombra" type="text" id="txtNome" name="txtNome" placeholder="Nome completo">
+                        <input class="bordas-form bordas-sombra" type="text" id="txtNome" name="txtNome" placeholder="Nome completo" required>
                     </div>
 
                     <!-- E-mail: -->
                     <div class="campos-form bordas-form">
-                        <input class="bordas-form" type="email" id="txtEmail" name="txtEmail" placeholder="Email">
+                        <input class="bordas-form" type="email" id="txtEmail" name="txtEmail" placeholder="Email" required>
                     </div>
 
                     <!-- Telefone e Celular -->
                     <div class="campos-form bordas-form">
                         <div class="caixa_contato">
-                            <input class="bordas-form bordas-sombra" type="text" id="txtTelefone" name="txtTelefone" placeholder="Telefone">
+                          <input class="bordas-form bordas-sombra" type="text" maxlength="12" id="txtTelefone" name="txtTelefone" placeholder="Telefone"  onkeyup="celData(this)" required>
                         </div>
                         <div class="caixa_contato margin-direita-contato">
-                            <input class="bordas-form bordas-sombra" type="text" id="txtCelular" name="txtCelular" placeholder="Celular">
+                            <input class="bordas-form bordas-sombra" type="text" id="txtCelular" type="text" maxlength="13" name="txtCelular" placeholder="Celular" onkeyup="celData(this)" required>
                         </div>
                     </div>
 
                     <!-- Tipo de Contato-->
                     <div class="campos-form bordas-form">
-                        <select class="slt-form bordas-form bordas-sombra" id="sltContato" name="sltContato">
+                        <select class="slt-form bordas-form bordas-sombra" name="select_tipo">
                             <option disabled selected>Selecione:</option>
-                            <option>Crítica</option>
-                            <option>Informação</option>
-                            <option>Dúvida</option>
+                            <option value="Crítica">Crítica</option>
+                            <option value="Informação">Informação</option>
+                            <option value="Dúvida">Dúvida</option>
                         </select>
                     </div>
 
                     <!-- TextArea -->
                     <div class="campos-form bordas-form">
                         <label for="txtObservacao" class="font-texto label">Observação:</label><br>
-                        <textarea class="observacao bordas-form bordas-sombra" id="txtObservacao" name="txtObservacao"></textarea>
+                        <textarea class="observacao bordas-form bordas-sombra" id="txtObservacao" name="txtObservacao" required></textarea>
                     </div>
 
                     <!-- Botão Enviar -->
                     <div class="caixa_botao">
-                        <input type="button" id="btnEnviar" name="btnEnviar" value="Enviar">
+                        <input type="submit" id="btnEnviar" name="btnEnviar" value="Enviar" >
                     </div>
                 </form>
             </div>

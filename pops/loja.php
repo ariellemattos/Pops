@@ -50,6 +50,6 @@
 
          </div>
        </div>
-       <footer> <?php require_once 'footer.html' ?></footer>
+       <footer> <?php require_once 'footer.html'; ?></footer>
    </body>
  </html>

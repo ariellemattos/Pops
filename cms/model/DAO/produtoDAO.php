@@ -341,6 +341,7 @@ class ProdutoDAO
       $produto->setSodio($rsProduto['sodio']);
       $produto->setIdComponente($rsProduto['id_componente']);
       $produto->setIdProdutoComponente($rsProduto['id_p_componente']);
+      $produto->setStatusHome($rsProduto['status_home']);
 
     }
 

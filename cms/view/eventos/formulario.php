@@ -46,12 +46,10 @@ if (isset($eventos)) {
       <label class="lblEventos" for="txtDescricaoEvento">Descrição:</label>
       <textarea class="inputEventos font-input" type="text" id="txtDescricaoEvento" name="txtDescricaoEvento"><?= @$txtDescricaoEvento?></textarea>
     </div>
-    <div class="caixa_inputs_evento descricao_data_e_status">
+    <div class="caixa_inputs_evento">
       <label class="lblEventos" for="txtDataEvento">Data:</label><br>
       <input class="inputEventos font-input largura_data" maxlength="10" type="text" id="txtDataEvento" name="txtDataEvento" value="<?= @$txtDataEvento?>"><br>
 
-    </div>
-    <div class="caixa_inputs_evento titulo_e_localidade">
       <label>Status</label><br>
       <div class="cadastro_necessario">
         <select name="select_status">
@@ -62,7 +60,6 @@ if (isset($eventos)) {
         </select>
       </div>
     </div>
-
 
     <div class="area_botao_form">
       <input type="button" id="btn_submit" value="<?= $botao ?>" onclick="<?= $router ?>">

@@ -18,6 +18,7 @@ if (isset($brinde)) {
   $valor_unitario = $brinde->getValorUnitario();
   $descricao = $brinde->getDescricao();
   $peso = $brinde->getPeso();
+  $volume = $brinde->getVolume();
   $imagem = $brinde->getImagem();
   $status = $brinde->getStatus();
 
@@ -70,6 +71,9 @@ if (isset($brinde)) {
 
     <label for="txt_peso">Peso</label>
     <input type="number" id="txt_peso" name="txt_peso" value="<?= @$peso ?>">
+
+    <label for="txt_volume">Volume</label>
+    <input type="number" id="txt_volume" name="txt_volume" value="<?= @$volume ?>">
 
     <label for="select_status">Status</label>
     <select name="select_status">

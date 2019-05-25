@@ -371,12 +371,11 @@ a.modal-fechar{
 
 .area-brindes{
   width: 1150px;
-  min-height: 500px;
+  min-height: 570px;
   height: auto;
-  background-color: white;
-  float: right;
   margin-left: auto;
   margin-right: auto;
+  background-color: white;
 
 }
 
@@ -649,17 +648,17 @@ a.modal-fechar{
 
 .modal-tabela-nutrional{
   width: 500px;
-  height: 400px;
+  min-height: 400px;
+  height: auto;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
-  box-shadow: 10px h 50px gray;
 
 }
 
 .modal-header-tabela-nutrional{
   width: 95%;
-  height: 85px;
+  height: 50px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
@@ -668,7 +667,7 @@ a.modal-fechar{
 
 .modal-header-tabela-nutrional h4{
   width: 85%;
-  height: 20px;
+  height: 10px;
   font-family: arial;
   font-weight: bold;
   text-align: center;
@@ -689,12 +688,6 @@ a.modal-fechar{
 
 }
 
-.modal-header-tabela-nutrional img{
-  width: 20px;
-  height: 20px;
-  float: right;
-
-}
 
 
 .modal-body-tabela-nutrional{
@@ -707,10 +700,11 @@ a.modal-fechar{
 }
 
 .quantidade-porcao{
-  width: 70%;
-  height: 255px;
+  width: 80%;
+  height: 50px;
   background-color: white;
   float: left;
+  padding-top: 20px;
 
 }
 
@@ -724,10 +718,11 @@ a.modal-fechar{
 }
 
 .porcentagem-porcao{
-  width: 30%;
-  height: 255px;
+  width: 20%;
+  height: 50px;
   background-color: white;
   margin-left: auto;
+  padding-top: 20px;
 
 }
 
@@ -738,6 +733,7 @@ a.modal-fechar{
   margin-top: 5px;
 
 }
+
 
 .modal-footer-tabela-nutrional{
   width: 95%;
