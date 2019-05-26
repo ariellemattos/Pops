@@ -31,6 +31,33 @@
         $conex = new Conexao();
         $con = $conex->connectDatabase();
 
+        if (isset($_POST['btn_enviar'])) {
+   
+          if (isset($_COOKIE['id_p_fisica'])) {
+            $resposta = $_POST['txt_resposta'];
+            $id = $_GET['id'];
+            $id_pessoa = $_COOKIE['id_p_fisica'];
+      
+            $sqlInsert = "INSERT INTO tbl_resposta (descricao, id_comentario, id_p_fisica) VALUES ('$resposta', '$id', '$id_pessoa')";
+
+            if(!$con->query($sqlInsert)){
+              echo "Erro no script de insert";
+            }
+
+            header("location:index.php");
+
+          }else{
+
+            echo "<script>alert('Para realizar essa ação, você deve estar logado!'); 
+                  window.location.href = 'login_compra.php?pf';</script>";
+
+          }
+
+
+          
+      
+        }
+
         //call controllers
         $controllerEnquete = new ControllerEnquete();
         $rsEnquete = $controllerEnquete->listarRegistros();
@@ -233,15 +260,21 @@
       <section class="section-eight">
         <h1 class="titulo_sections">Comentários POP'S</h1>
         <div id="comments" class="section-eight-conteudo centralizar_elemento">
-          <div class="caixa_comentario centralizar_elemento">
-          <?php
+
+        <?php
             $sql = "SELECT comentario.*, pessoa_fisica.nome AS pessoa_nome
             FROM tbl_comentario AS comentario
             INNER JOIN tbl_pessoa_fisica AS pessoa_fisica ON pessoa_fisica.id_p_fisica = comentario.id_p_fisica";
             $stm = $con->prepare($sql);
             $success = $stm->execute();
             foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
+
+            $id_comentario = $result['id_comentario'];
+
           ?>
+
+          <div class="caixa_comentario centralizar_elemento">
+          
             <div class="section-eight-usuario">
               <div class="section-eight-usuario-imagem centralizarY">
                 <img class="centralizar_elemento" src="img/icon_user.png" alt="Usuário">
@@ -254,18 +287,45 @@
               </div>
             </div>
 
+            <?php
+            $sql1 = "SELECT tbl_resposta.*, tbl_pessoa_fisica.nome FROM tbl_resposta 
+                    INNER JOIN tbl_pessoa_fisica ON tbl_resposta.id_p_fisica = tbl_pessoa_fisica.id_p_fisica
+                    WHERE id_comentario = $id_comentario";
+            $stm = $con->prepare($sql1);
+            $success = $stm->execute();
+            foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result1){
+          ?>
+
+            <div class="section-eight-usuario">
+              <div class="section-eight-usuario-imagem centralizarY">
+                <img class="centralizar_elemento" src="img/icon_user.png" alt="Usuário">
+              </div>
+              <div class="section-eight-usuario-nome">
+                <?php echo $result1['nome']?>
+              </div>
+              <div class="section-eight-usuario-comentario">
+                <?php echo ($result1['descricao']) ?>
+              </div>
+            </div>
+
+            <?php } ?>
+
             <div class="section-eight-resposta">
+              <form action="index.php?id=<?= $id_comentario ?>" method="POST">
               <div class="caixa_input">
                 <label for="txt_resposta">Resposta</label>
                 <input type="text" id="txt_resposta" name="txt_resposta">
               </div>
               <div class="caixa_botao_email">
-                <button type="button" name="button">Enviar</button>
+                <button type="submit" name="btn_enviar">Enviar</button>
               </div>
+              </form>
             </div>
 
+            </div>
+            
 			<?php } ?>
-          </div>
+          
         </div>
     </section>
     <footer>
