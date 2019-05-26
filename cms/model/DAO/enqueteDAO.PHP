@@ -199,6 +199,39 @@ class EnqueteDAO
     return $enquete;
 
   }
+
+  public function selectOptionsByEnqId($id){
+       // Query de select + id
+      $sql = "SELECT ops.text_opcao AS opts FROM tbl_enquete enq INNER JOIN tbl_opcoes ops 
+      WHERE enq.id_enquete = ops.id_enquete AND enq.id_enquete=".$id;
+
+      // Recebendo a função que faz a conexão com BD
+      $con = $this->conexao->connectDatabase();
+
+      // Executando o select
+      $select = $con->query($sql);
+
+      // Contador
+      $cont = 0;
+      // Verifica se o result set recebeu o registro
+      while($rsEnquetes = $select->fetch(PDO::FETCH_ASSOC)) {
+        // Instância da classe Setor
+        $enquete[] = new Enquete();
+
+        // Setando os valores do objeto
+        $enquete[$cont]->setResposta($rsEnquetes['opts']);
+
+        $cont+=1;
+      }
+      // Fechando a conexão com BD
+      $this->conexao->closeDatabase();
+
+      // Retornando o objeto
+      return $enquete;
+
+  }
+
+ 
 }
 
 
