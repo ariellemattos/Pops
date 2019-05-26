@@ -29,6 +29,7 @@
         require_once('../cms/model/DAO/promocaoDAO.php');
         $conex = new Conexao();
         $con = $conex->connectDatabase();
+
       ?>
       <header>
         <?php require_once 'header.php'; ?>

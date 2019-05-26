@@ -18,8 +18,8 @@ class PessoaJuridicaBusiness{
         // Instânciando a classe de Conexão
         $this->conexao = new Conexao();
     }
-    public function login($username, $password){
-        $sql = "SELECT * FROM tbl_pessoa_juridica WHERE usuario = '$username' AND senha = '$password'";
+    public function login($cnpj, $password){
+        $sql = "SELECT * FROM tbl_pessoa_juridica WHERE cnpj = '$cnpj' AND senha = '$password'";
         //Recebendo a função que faz a conexão com BD
         $con = $this->conexao->connectDatabase();
         // Executa o script no BD

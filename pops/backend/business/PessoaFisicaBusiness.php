@@ -22,8 +22,8 @@ class PessoaFisicaBusiness{
         $this->conexao = new Conexao();
     }
 
-    public function loginPessoaFisica($username, $password){
-        $sql = "SELECT * FROM tbl_pessoa_fisica WHERE usuario = '$username' AND senha = '$password'";
+    public function loginPessoaFisica($cpf, $password){
+        $sql = "SELECT * FROM tbl_pessoa_fisica WHERE cpf = '$cpf' AND senha = '$password'";
 
         //Recebendo a função que faz a conexão com BD
         $con = $this->conexao->connectDatabase();
