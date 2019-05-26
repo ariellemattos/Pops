@@ -286,3 +286,9 @@ footer{
   text-align: center;
   color: #fff;
 }
+
+.msg_confirm{
+  background-color: #0f0;
+  font-size: 17px;
+  
+}

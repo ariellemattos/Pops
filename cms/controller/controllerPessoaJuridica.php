@@ -41,6 +41,34 @@ class ControllerPessoaJurica{
 
   }
 
+  public function inserirRegistro(){
+    // Verifica qual método está sendo requisitado do formulário (POST ou GET)
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+      $pessoaJuridica = new PessoaJuridica();
+
+      $pessoaJuridica -> setCnpj($_POST["txtCnpj"]);
+      $pessoaJuridica -> setFoto(upload($_FILES['fotoPj']));
+      $pessoaJuridica -> setResponsavel($_POST["txtRespContato"]);
+      $pessoaJuridica -> setEmail($_POST["txtEmail"]);
+      $pessoaJuridica -> setTelefone($_POST["txtTelefone"]);
+      $pessoaJuridica -> setCelular($_POST["txtCelular"]);
+      $pessoaJuridica -> setUsuario($_POST["txtUser"]);
+      $pessoaJuridica -> setSenha($_POST["txtSenha"]);
+      $pessoaJuridica -> setRazaoSocial($_POST["txtRazaoSocial"]);
+      $pessoaJuridica -> setNomeFantasia($_POST["txtNomeFantasia"]);
+      $pessoaJuridica -> setStatus("1");
+      $pessoaJuridica -> setLogradouro($_POST["txtLogradouro"]);
+      $pessoaJuridica -> setBairro($_POST["txtBairro"]);
+      $pessoaJuridica -> setCidade($_POST["txtCidade"]);
+      $pessoaJuridica -> setUf($_POST["sltEstado"]);
+      $pessoaJuridica -> setNumero($_POST["txtNum"]);
+      $pessoaJuridica -> setCep($_POST["txtCep"]);
+
+      // Insere o registro no BD
+      $this->pessoaJuridicaDAO->insert($pessoaJuridica);
+    }
+  }
+
   public function listarRegistros(){
 
     return $this->pessoaJuridicaDAO->selectAll();

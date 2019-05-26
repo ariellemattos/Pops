@@ -34,7 +34,7 @@
         <div class="modal-content-login">
           <div class="icone-login"> </div>
           <div class="modal-form-login">
-            <form class="form-login"  action="index.html" method="post">
+            <form class="form-login" action="index.html" method="post">
               <p class="modal-title-campos-login"> Usuario:
                 <input type="text" name="txtuser" id="txtuser"> 
               </p>

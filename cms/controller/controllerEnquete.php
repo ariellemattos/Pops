@@ -123,5 +123,12 @@ class ControllerEnquete{
 
   }
 
+  public function listarOpcoes($id)
+  {
+    return $this->enqueteDAO->selectById($id);
+  }
+
+  
+
 }
   ?>

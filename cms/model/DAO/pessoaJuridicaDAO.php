@@ -35,6 +35,63 @@ class PessoaJuridicaDAO{
 
   }
 
+  public function insert(PessoaJuridica $pessoaJuridica){
+    $cnpj = $pessoaJuridica->getCnpj();
+    $foto = $pessoaJuridica->getFoto();
+    $responsavel = $pessoaJuridica->getResponsavel();
+    $email = $pessoaJuridica->getEmail();
+    $telefone = $pessoaJuridica->getTelefone();
+    $celular = $pessoaJuridica->getCelular();
+    $usuario = $pessoaJuridica->getUsuario();
+    $senha = $pessoaJuridica->getSenha();
+    $razaoSocial = $pessoaJuridica->getRazaoSocial();
+    $nomeFantasia = $pessoaJuridica->getNomeFantasia();
+    $status =  $pessoaJuridica->getStatus();;
+    $logradouro = $pessoaJuridica->getLogradouro();
+    $bairro= $pessoaJuridica->getBairro();
+    $cidade = $pessoaJuridica->getCidade();
+    $uf = $pessoaJuridica->getUf();
+    $numero = $pessoaJuridica->getNumero();
+    $cep = $pessoaJuridica->getCep();
+
+    // Insert da Query
+    $sql = "CALL sp_pj
+    (
+      '$cnpj',
+      '$foto',
+      '$responsavel',
+      '$email',
+      '$telefone',
+      '$celular',
+      '$usuario',
+      '$senha',
+      '$razaoSocial',
+      '$nomeFantasia',
+      '$status',
+      '$logradouro',
+      '$bairro',
+      '$cidade',
+      '$uf',
+      '$numero',
+      '$cep'
+
+    )";
+
+    // Recebendo a função que faz a conexão com BD
+    $con = $this->conexao->connectDatabase();
+
+    // Executa o script no BD
+    if (!$con->query($sql))
+    echo 'Erro no script de insert';
+    else
+    echo "<script> alert('Cadastro efetuado com sucesso');</script>";
+
+    // Fechando a conexão com BD
+    $this->conexao->closeDatabase();
+
+
+  }
+
   public function selectAll(){
     $sql = "SELECT pj.*, e.logradouro, e.bairro, e.cidade, e.cep
             FROM tbl_pessoa_juridica AS pj

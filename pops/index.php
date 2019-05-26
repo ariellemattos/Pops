@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="css/effects.css" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="js/jquery.js"></script>
-   <script src="js/effects.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
 </head>
 <body>
       <?php
@@ -25,10 +26,14 @@
         $_SESSION['path_local'] = $path_local;
 
         require_once('../cms/model/DAO/conexao.php');
-
+        require_once('../cms/controller/controllerEnquete.php');
         require_once('../cms/model/DAO/promocaoDAO.php');
         $conex = new Conexao();
         $con = $conex->connectDatabase();
+
+        //call controllers
+        $controllerEnquete = new ControllerEnquete();
+        $rsEnquete = $controllerEnquete->listarRegistros();
 
       ?>
       <header>
@@ -86,26 +91,38 @@
         <h1 class="titulo_sections">Participe das enquetes da POP'S</h1>
         <div id="enquetes" class="div-geral-section-imagens centralizar_elemento fadeInTop">
           <?php
-          $sql = "SELECT * FROM tbl_enquete WHERE status = 1 ORDER BY RAND() LIMIT 2";
-            // $sql = "SELECT enquetes.*, opcoes.text_opcao AS opcoes FROM tbl_enquete AS enquetes
-            //         INNER JOIN tbl_opcoes AS opcoes ON opcoes.id_enquete = enquetes.id_enquete WHERE enquetes.status = 1 ORDER BY RAND() LIMIT 2";
-            $stm = $con->prepare($sql);
-            $success = $stm->execute();
-            foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
-        	?>
+          
+               foreach ($rsEnquete as $enquete) {
+                
+                $rsOption = $controllerEnquete->listarOpcoes($enquete->getId());
+                $respostas = explode(",", $rsOption->getResposta());
+                $idRespostas = explode(",", $rsOption->getId_opcao());
+               
+          ?>
 
           <div class="imagens-section-two centralizarY">
             <div  class="caixa_enquete centralizar_elemento">
-              <div class="titulo_enquete"><?php echo ($result['enunciado_enquete']) ?></div>
+              <div class="titulo_enquete"><?php echo ($enquete->getTitulo()) ?></div>
               <div class="itens_enquete centralizar_elemento">
-                <input type="checkbox" id="1">
-                <label for="1"></label>
+                
+                <input type="radio"  name="rdo_option<?=$enquete->getId()?>" 
+                id="rdo_option<?=$respostas[0]?>" value="<?=$idRespostas[0]?>" required><?=$respostas[0]?><br><br>
+                
+                <input type="radio"  name="rdo_option<?=$enquete->getId()?>" 
+                id="rdo_option<?=$respostas[1]?>" value="<?=$idRespostas[1]?>" required><?=$respostas[1]?><br><br>
+                
+                <input type="radio"  name="rdo_option<?=$enquete->getId()?>" 
+                id="rdo_option<?=$respostas[2]?>" value="<?=$idRespostas[2]?>" required><?=$respostas[2]?><br><br>
+                
+                <input type="radio"  name="rdo_option<?=$enquete->getId()?>" 
+                id="rdo_option<?=$respostas[3]?>" value="<?=$idRespostas[3]?>" required><?=$respostas[3]?><br><br>
+               
                 <br><br>
               </div>
-              <input type="submit" class="btn_votar" value="Votar">
+              <input type="button" id="btn_votar" onclick="answer(<?=$enquete->getId()?>)" class="btn_votar" value="Votar">
             </div>
           </div>
-
+        
           <?php } ?>
         </div>
       </section>
@@ -250,14 +267,11 @@
 			<?php } ?>
           </div>
         </div>
-
-
-
-
     </section>
     <footer>
       <?php require_once 'footer.html'; ?>
     </footer>
       </div>
+      <script src="js/ws_requests.js"></script>
 </body>
 </html>
