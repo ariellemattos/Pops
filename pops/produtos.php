@@ -15,17 +15,24 @@
 
     <script type="text/javascript">
 
-      function consulta(id){
-        $.ajax({
-          type: "GET",
-          url: "tabela_nutricional.php",
-          success: function(dados){
-             $(".modal").html(dados)
-          }
-        });
+    // $(document).ready(function(id){
+    //   // //CHAMAR MODAL
+    //   // $('.consulta').click(function(){
+    //   //   consulta();
+    //   //   $('#container').fadeIn(600);
+    //   //
+    //   // });
+    // });
 
-        $('#container').fadeIn(600);
-      }
+    function consulta(id){
+      $.ajax({
+        type: "GET",
+        url: "tabela_nutricional.php?id="+id,
+        success: function(dados){
+          $("#modal").html(dados)
+        }
+      });
+    }
     </script>
   </head>
   <body>
@@ -39,7 +46,7 @@
     <header><?php require_once 'header.php'; ?></header>
 
     <div id="container">
-      <div class="modal">
+      <div id="modal">
 
       </div>
     </div>
@@ -62,7 +69,7 @@
             </div>
 
             <div class="section-six-button">
-              <input type="button" name="btn_tabelanutricional" value="Tabela nutrional" onclick="consulta(<?= $result["id_produto"]?>)">
+              <input type="button" name="btn_tabelanutricional" value="Tabela nutricional" onclick="consulta(<?php echo ($result['id_produto'])?>)">
             </div>
           </div>
           <?php } ?>

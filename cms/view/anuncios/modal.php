@@ -70,10 +70,10 @@ $(document).ready(function(){
 
           <form class="" action="index.html" method="post">
               <label for="txt_estabelecimento">Estabelecimento:</label>
-              <input type="text" id="txt_user" name="txt_user" value="<?= @$estabelecimento ?>">
+              <input readonly type="text" id="txt_user" name="txt_user" value="<?= @$estabelecimento ?>">
 
               <label for="txt_cnpj">Anuncio:</label>
-              <textarea name="txt_comentario" rows="8" cols="80"><?= @$anuncio_descricao ?></textarea>
+              <textarea readonly name="txt_comentario" rows="8" cols="80"><?= @$anuncio_descricao ?></textarea>
           </form>
       </div>
 

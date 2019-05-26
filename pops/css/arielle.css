@@ -14,6 +14,16 @@ body{
 
 }
 
+.Abrirmodal{
+  padding: 20px;
+  width: 600px;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 530px;
+  border-radius: 5px;
+
+  }
+
 #msg_login{
   width: 280px;
   height: 20px;
@@ -360,7 +370,7 @@ a.modal-fechar{
 }
 
 .area-produtos{
-  width: 955px;
+  width: 1200px;
   min-height: 500px;
   height: auto;
   background-color: white;
