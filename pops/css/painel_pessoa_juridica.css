@@ -292,13 +292,14 @@ h1{
 .caixa_meus_pedidos{
     width: 85%;
     min-height: 120px;
-
+    
     margin-top: 20px;
 
 }
 
 .caixa_meus_pedidos h1{
     padding-bottom: 20px;
+    font-family: Gadugi;
 }
 
 .caixa_titulo_mp{
@@ -316,10 +317,14 @@ h1{
     margin-left: 8px;
     border: 1px solid #ccc;
     font-size: 19px;
+    font-family: Gadugi;
 }
 
 /* resultados */
 .font-titulos_res{
     font-size: 18px;
     font-family: Helvetica;
+}
+.titulo_pedido{
+    font-family: Gadugi;
 }
