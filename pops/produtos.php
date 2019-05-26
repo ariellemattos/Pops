@@ -15,19 +15,22 @@
 
     <script type="text/javascript">
 
-    // $(document).ready(function(id){
-    //   // //CHAMAR MODAL
-    //   // $('.consulta').click(function(){
-    //   //   consulta();
-    //   //   $('#container').fadeIn(600);
-    //   //
-    //   // });
-    // });
+    $(document).ready(function(id){
+      // //CHAMAR MODAL
+      $('.consulta').click(function(){
+
+        var id = $(this).data("id");
+
+        consulta(id);
+        $('#container').fadeIn(600);
+
+      });
+    });
 
     function consulta(id){
       $.ajax({
         type: "GET",
-        url: "tabela_nutricional.php?id="+id,
+        url: "tabela_nutricional.php?id=" + id,
         success: function(dados){
           $("#modal").html(dados)
         }
@@ -45,13 +48,15 @@
     ?>
     <header><?php require_once 'header.php'; ?></header>
 
-    <div id="container">
-      <div id="modal">
-
-      </div>
-    </div>
 
       <div class="principal">
+
+        <div id="container">
+          <div id="modal">
+
+          </div>
+        </div>
+
 
         <div class="area-produtos">
           <?php
@@ -69,7 +74,7 @@
             </div>
 
             <div class="section-six-button">
-              <input type="button" name="btn_tabelanutricional" value="Tabela nutricional" onclick="consulta(<?php echo ($result['id_produto'])?>)">
+              <input type="button" data-id="<?= $result['id_produto'] ?>" class="consulta" name="btn_tabelanutricional" value="Tabela nutricional">
             </div>
           </div>
           <?php } ?>

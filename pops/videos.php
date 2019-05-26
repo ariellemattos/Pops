@@ -46,13 +46,7 @@
             <div class="caixa_principal_video">
                 <!-- caixa do video que contém titulo e o vídeo box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);-->
                 <div class="caixa_video div_esquerda caixa_aumentar">
-                  <video autoplay poster="posterimage.jpg">
-                      <source src="http://www.youtube.com/v/tIBxavsiHzM" type="video/mp4">
-                  </video>
-
-                  <!-- <object width="425" height="350">
-                    <param name="movie" value="http://www.youtube.com/v/tIBxavsiHzM" />
-                    <embed src="http://www.youtube.com/v/tIBxavsiHzM" type="application/x-shockwave-flash" width="425" height="350" /> -->
+                  <iframe class="caixa_video div_esquerda caixa_aumentar" src="<?php echo ($result['caminho']) ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
 
