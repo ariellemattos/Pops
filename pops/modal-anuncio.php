@@ -5,6 +5,7 @@
     <title>Anuncio</title>
     <link rel="stylesheet" href="css/arielle.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/cadastro_edicao_pessoa_fisica.css">
     <script src="js/ws_requests.js"></script>
   </head>
   <body>
@@ -32,7 +33,7 @@
           <div class="modal-form-anuncio">
             <form class="form-anuncio" id="form-anuncio" action="index.html" method="post">
               <p class="modal-title-campos-anuncio"> Nome do estabelecimento:
-                <input type="text" name="txtendereco" id="txt_nome" disabled>
+                <input  type="text" name="txtendereco" id="txt_nome" disabled>
               </p>
 
               <p class="modal-title-campos-anuncio"> Imagem:
