@@ -52,9 +52,6 @@
                   window.location.href = 'login_compra.php?pf';</script>";
 
           }
-
-
-          
       
         }
 
