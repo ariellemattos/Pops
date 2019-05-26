@@ -10,7 +10,7 @@ Objetivo da Classe: CRUD da classe da  pessoa fisica
 
 */
 
-class pessoaFisicaDAO
+class PessoaFisicaDAO
 {
 
   // Iniciando a variável em null para não haver erro
@@ -23,7 +23,7 @@ class pessoaFisicaDAO
   {
 
     // Variável que recebe a variáveil de sessão
-    $path_local = $_SESSION['path_local'];
+    $path_local = $_SESSION['path_local' ];
 
     // Importanto a classe de conexão com BD
     require_once "$path_local/cms/model/DAO/conexao.php";
@@ -32,6 +32,60 @@ class pessoaFisicaDAO
     $this->conexao = new Conexao();
 
   }
+
+  public function insert(PessoaFisica $pessoaFisica){
+    $nome = $pessoaFisica->getNome();
+    $cpf = $pessoaFisica->getCpf();
+    $imagem= $pessoaFisica->getImagem();
+    $email= $pessoaFisica->getEmail();
+    $telefone = $pessoaFisica->getTelefone();
+    $celular= $pessoaFisica->getCelular();
+    $usuario= $pessoaFisica->getUsuario();
+    $senha= $pessoaFisica->getSenha();
+    $dtNasc = $pessoaFisica ->getDtNasc();
+    $status = $pessoaFisica->getStatus();
+    $logradouro= $pessoaFisica->getLogradouro();
+    $bairro= $pessoaFisica->getBairro();
+    $cidade= $pessoaFisica->getCidade();
+    $uf= $pessoaFisica->getUf();
+    $numero= $pessoaFisica->getNumero();
+    $cep = $pessoaFisica->getCep();
+
+
+    // Query de insert
+    $sql = "CALL sp_pf
+    (
+      '$nome',
+      '$cpf',
+      '$imagem',
+      '$email',
+      '$telefone',
+      '$celular',
+      '$usuario',
+      '$senha',
+      '$dtNasc',
+      '$status',
+      '$logradouro',
+      '$bairro',
+      '$cidade',
+      '$uf',
+      '$numero',
+      '$cep'
+
+      )";
+
+      // Recebendo a função que faz a conexão com BD
+      $con = $this->conexao->connectDatabase();
+
+      // Executa o script no BD
+      if (!$con->query($sql))
+      echo 'Erro no script de insert';
+
+      // Fechando a conexão com BD
+      $this->conexao->closeDatabase();
+
+    }
+
 
 
   // Função lista todos os registros do banco
