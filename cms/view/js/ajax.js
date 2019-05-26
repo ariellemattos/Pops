@@ -296,6 +296,7 @@ function router(controller, modo, id){
 
 }
 
+
 function router_status(controller, modo, id, status){
 
   let form = $('#form');
@@ -318,6 +319,31 @@ function router_status(controller, modo, id, status){
   });
 
 }
+
+
+function router_filtrar(controller, modo, filtrar){
+
+  let form = $('#frmFiltrar');
+
+  $.ajax({
+
+      type: "GET",
+      url: `http://${host}/cms/router.php?controller=${controller}&modo=${modo}&filtrar=${filtrar}`,
+      // data: form.serialize(),
+      data: new FormData($('#form')[0]),
+      cache: false,
+      contentType: false,
+      processData: false,
+      async: true,
+      success: function (callback) {
+
+        $("#caixa_informacoes").html(callback);
+
+      }
+  });
+
+}
+
 
 function teste(controller, modo, id){
 

@@ -868,6 +868,17 @@ if (isset($_GET['controller'])) {
         require_once "$path_local/cms/view/promocao/formulario.php";
 
       break;
+      
+      case 'FILTRAR':
+
+        // Chamando o método de buscar uma promocao
+        $promocoes = $controllerPromocao->filtrarPromocao();
+
+        // Importando o formulário
+        require_once "$path_local/cms/view/promocao/dados.php";
+
+      break;
+      
 
     }
 

@@ -11,6 +11,23 @@ $path_url = null;
 $path_local = $_SESSION['path_local'];
 $path_url = $_SESSION['path_url'];
 
+if (isset($promocoes)){
+  // Pegando os dados do objeto e setando em variavéis locais
+  $idPromocao = $promocoes->getIdPromocao();
+  $txtTituloPromocao = $promocoes->getTitulo();
+  $txtDescricaoPromocao = $promocoes->getDescricao();
+  $selectCadastroNecessario = $promocoes->getPrecisaCadastro();
+  $selectStatus = $promocoes->getStatus();
+  $selectStatusHome = $promocoes->getStatusHome();
+  $imagem = $promocoes->getImagem();
+  
+  //Função do onclick para saber qual ação chama o router
+  $router = "router_filtro('promocao', 'filtrar', '".$txtTituloPromocao."')";
+  // Muda o texto do botão e título
+  $botao = "Filtrar";
+  $titulo = "FILTRAR PROMOÇÃO";
+}
+
 ?>
 
 <div class="title_paginas centralizarX">
@@ -18,10 +35,10 @@ $path_url = $_SESSION['path_url'];
 </div>
 <div class="caixa_filtro centralizarX">
   <div class="caixa_input centralizarX">
-    <form action="#">
-      <label for="fname">Buscar</label>
-      <input type="text" id="fname" name="firstname" placeholder="">
-      <input type="submit" value="Filtrar">
+    <form id="frmFiltrar" action="#" method="GET">
+      <label for="txtFiltrar">Buscar</label>
+      <input type="text" id="txtFiltrar" name="txtFiltrar">
+      <input type="submit" name="btnFiltrar" value="Filtrar" onclick="<?php $router ?>">
     </form>
   </div>
 </div>
@@ -54,7 +71,6 @@ $path_url = $_SESSION['path_url'];
 
       // Loop para colocar todos os registros no result set
       while ($cont < count($rsPromocoes)) {
-
         ?>
         <tr>
           <td><?= $rsPromocoes[$cont]->getTitulo()?></td>

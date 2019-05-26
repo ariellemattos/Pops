@@ -114,14 +114,31 @@
 
         }
 
-        //buscar uma promocao do banco
+        //buscar uma promocao no banco por ID
         public function buscarPromocao(){
 
             $idPromocoes = $_GET['id'];
 
             return $this->promocaoDAO->selectByIdPromocao($idPromocoes);
-
         }
+
+        //Filtrar
+        public function filtrarPromocao(){
+    
+
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
+                $txtFiltrar = $_POST['txtFiltrar'];
+
+                $promocoes = new Promocao();
+
+                $promocoes->setTitulo($txtFiltrar);
+ 
+                $this->promocaoDAO->filter($filtro, $promocoes);
+
+            }   
+        }
+
     }
 
 ?>
