@@ -55,6 +55,20 @@
       
         }
 
+        else if(isset($_POST['btnEnviarEmail'])){
+
+          $respostaEmail = $_POST['txt_email'];
+
+          $sqlInsertEmail = "INSERT INTO tbl_email (email) VALUES ('".$respostaEmail."')";
+
+          if(!$con->query($sqlInsertEmail)){
+            echo "Erro no script de insert";
+          }
+            header("location:index.php");
+
+          }
+        
+
         //call controllers
         $controllerEnquete = new ControllerEnquete();
         $rsEnquete = $controllerEnquete->listarRegistros();
@@ -215,15 +229,19 @@
               <a href="noticias.php">Mais notícias</a>
             </button>
           </div>
-          <div class="caixa_email centralizar_elemento">
-            <div class="caixa_input">
-              <label for="txt_email" style="font-family:Helvetica;">Deseja receber emails da POP'S?</label>
-              <input type="text" id="txt_email" name="txt_email">
+
+          <form action="index.php" name="frmEmail" id="frmEmail" method="POST">
+            <div class="caixa_email centralizar_elemento">
+              <div class="caixa_input">
+                <label for="txt_email" style="font-family:Helvetica;">Deseja receber emails da POP'S?</label>
+                <input type="text" id="txt_email" name="txt_email">
+              </div>
+              <div class="caixa_botao_email">
+                <button type="submit" name="btnEnviarEmail">Enviar</button>
+              </div>
             </div>
-            <div class="caixa_botao_email">
-              <button type="button" name="button">Enviar</button>
-            </div>
-          </div>
+          </form>
+
         </div>
       </section>
 
