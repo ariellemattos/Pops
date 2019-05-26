@@ -127,9 +127,7 @@ h4.modal-title-login{
   width: 100%;
   height: 28px;
   font-family: Helvetica;
-  font-size: 17px;
-  float: left;
-  margin-top: 10px;
+  padding-top: 25px;
   font-size: 19px;
 
 }
@@ -994,4 +992,25 @@ p.modal-title-campos-anuncio{
   margin-top: -20px;
   margin-left: 600px;
   cursor: pointer;
+}
+
+.head-tabela{
+  width: 88%;
+  height: 32px;
+  padding: 12px 30px;
+  overflow: hidden;
+  background: #e2525c;
+}
+
+.head-tabela span{
+  font-size: 25px;
+  color: white;
+  font-family: sans-serif;
+}
+
+.btn-close {
+  font-size: 28px;
+  display: block;
+  float: right;
+  color: #fff;
 }
