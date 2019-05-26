@@ -27,7 +27,7 @@
                             '".$promocoes->getPrecisaCadastro()."', '".$promocoes->getStatusHome()."')";
 
             $conn = $this->conexao->connectDatabase();
-
+            
 
             //enviando pro banco
             if(!$conn->query($insertSql)){

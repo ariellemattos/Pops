@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,6 +12,11 @@
   <script src="js/jquery.js"></script>
   <script src="js/event.js"></script>
   <script src="js/effects.js"></script>
+  <script>
+      function msgPromocao() {
+        alert('Agora você está participando da promoção!');
+      }
+  </script>
 </head>
 <body>
     <?php
@@ -35,6 +38,7 @@
 					$success = $stm->execute();
 					foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
       ?>
+ 
       <div class="section-three-conteudo centralizar_elemento">
         <div class="section-three-conteudo-imagem centralizarY">
           <img class="centralizar_elemento" src="img/7upPromocao.jpg" alt="Promoção">
@@ -42,9 +46,16 @@
         <div class="section-three-conteudo-infomarcao">
           <div class="section-three-conteudo-titulo"><?php echo (utf8_decode($result['titulo'])) ?></div>
           <div class="section-three-conteudo-texto">
-            <?php echo (utf8_decode($result['descricao'])) ?>
+            <?php echo (utf8_decode($result['descricao'])) ?><br>
+            <?php 
+              
+              if(@$_COOKIE['id_p_fisica'] && $result['precisa_cadastro'] == 1){
+                echo "<input type='button' class='btn_votar btnParticipar' onclick='msgPromocao()' value='Participar'><br>";
+              }
+            ?>
           </div>
         </div>
+      
       </div>
 
       <?php } ?>

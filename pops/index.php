@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="pt-br">
 <head>
   <meta charset="utf-8">
   <title>Index</title>
