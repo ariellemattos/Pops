@@ -38,16 +38,15 @@
         <label>Logradouro:</label><label style="color:red;">*</label> <br>
         <input type="text" name="" value=""><br>
 
-        <label>Logradouro:</label><label style="color:red;">*</label> <br>
+        <label>Cidade:</label><label style="color:red;">*</label> <br>
         <input type="text" name="" value=""><br>
-
       </div>
 
       <div class="formulario_endereco">
         <label>CEP:</label><label style="color:red;">*</label> <br>
         <input type="text" name="" value=""><br>
 
-        <label>Cidade:</label><label style="color:red;">*</label> <br>
+        <label>N:</label><label style="color:red;">*</label> <br>
         <input type="text" name="" value=""><br>
 
         <label>Estado:</label><label style="color:red;">*</label> <br>
@@ -82,7 +81,12 @@
         	<option value="TO">TO</option>
          </select>
       </div>
+      
+      <a href="pagamento.php">
+        <input type="button" name="btnConcluir" value="Concluir">
+      </a>
     </div>
+
     <footer><?php require_once 'footer.html'; ?></footer>
   </body>
 </html>
