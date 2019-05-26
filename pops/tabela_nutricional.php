@@ -12,18 +12,15 @@ $path_url = $_SESSION['path_url'];
 
   if(isset($_GET["id"])){
     // Importando a controller de enquetes
-    require_once "$path_local/cms/controller/controllerProduto.php";
+    // require_once "$path_local/cms/controller/controllerProduto.php";
 
-    // Instânciando a classe do controler
-    $controllerProduto = new ControllerProduto();
+    // // Instânciando a classe do controler
+    // $controllerProduto = new ControllerProduto();
+    //
+    // // Result set que recebe os dados
+    // $rsProduto = $controllerProduto->buscarRegistro();
 
-    // Result set que recebe os dados
-    $rsProduto = $controllerProduto->buscarRegistro();
 
-    $id = $_GET["id"];
-
-    $nome = $rsProduto ->getNome();
-    $comentario_user= $rsProduto ->getComentario();
 
   }
  ?>
