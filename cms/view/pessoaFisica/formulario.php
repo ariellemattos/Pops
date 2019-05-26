@@ -62,22 +62,22 @@ if (isset($_GET["id"])) {
     <div class="clearfix" style="height:420px;">
       <div class="coluna_form_fisica">
         <label for="file_img">Nome</label>
-        <input type="text" id="file_img" name="txt_nome" value="<?= @$nome ?>">
+        <input readonly type="text" id="file_img" name="txt_nome" value="<?= @$nome ?>">
         <label for="file_img">Email</label>
-        <input type="text" id="file_img" name="txt_email" value="<?= @$email ?>">
+        <input  readonly type="text" id="file_img" name="txt_email" value="<?= @$email ?>">
         <label for="file_img">Logradouro</label>
-        <input type="text" id="file_img" name="txt_logradouro" value="<?= @$logradouro ?>">
+        <input readonly type="text" id="file_img" name="txt_logradouro" value="<?= @$logradouro ?>">
         <label for="file_img">Cidade</label>
-        <input type="text" id="file_img" name="txt_cidade" value="<?= @$cidade ?>">
+        <input readonly type="text" id="file_img" name="txt_cidade" value="<?= @$cidade ?>">
       </div>
 
       <div class="coluna_form_fisica">
         <label for="file_img">CPF</label>
-        <input type="text" id="file_img" name="txt_cpf" value="<?= @$cpf ?>">
+        <input readonly type="text" id="file_img" name="txt_cpf" value="<?= @$cpf ?>">
         <label for="file_img">Celular</label>
-        <input type="text" id="file_img" name="txt_celular" value="<?= @$celular ?>">
+        <input readonly type="text" id="file_img" name="txt_celular" value="<?= @$celular ?>">
         <label for="file_img">Bairro</label>
-        <input type="text" id="file_img" name="txt_bairro" value="<?= @$bairro ?>">
+        <input readonly type="text" id="file_img" name="txt_bairro" value="<?= @$bairro ?>">
         <label for="file_img">Estado</label>
         <select name="select_estado">
           <option value="SP">SP</option>

@@ -12,6 +12,7 @@ Objetivo da Classe: Classe de pessoa jurica
   class PessoaJuridica{
     private $cnpj;
     private $foto;
+    private $responsavel;
     private $email;
     private $telefone;
     private $celular;
@@ -24,6 +25,8 @@ Objetivo da Classe: Classe de pessoa jurica
     private $logradouro;
     private $cep;
     private $bairro;
+    private $uf;
+    private $numero;
 
 
   function __construct()
@@ -37,6 +40,14 @@ Objetivo da Classe: Classe de pessoa jurica
 
   public function setCnpj($cnpj){
     $this->cnpj = $cnpj;
+  }
+
+  public function getResponsavel(){
+    return $this->responsavel;
+  }
+
+  public function setResponsavel($responsavel){
+    $this->responsavel = $responsavel;
   }
 
   public function getFoto(){
@@ -141,6 +152,22 @@ Objetivo da Classe: Classe de pessoa jurica
 
   public function setBairro($bairro){
     $this->bairro = $bairro;
+  }
+
+  public function getUf(){
+    return $this->uf;
+  }
+
+  public function setUf($uf){
+    $this->uf = $uf;
+  }
+
+  public function getNumero(){
+    return $this->numero;
+  }
+
+  public function setNumero($numero){
+    $this->numero = $numero;
   }
 }
 

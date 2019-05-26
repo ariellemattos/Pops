@@ -128,7 +128,7 @@
                 <!-- Caixa identidade -->
                 <div class="caixa_identidade_pj centralizar_caixa">
                     <div class="caixa_imagem_pj centralizar_caixa">
-                        <img id='foto' width="200" height="200" alt="ola" title="ola">
+                        <img id='foto' width="200" height="200" alt="Imagem nao encontrada" title="ola">
                     </div>
                     <!-- Razão Social -->
                     <p class="centralizar_texto font-titulo font-negrito identidade_pj_font" id='razao_social'></p>
@@ -187,7 +187,7 @@
 
                 <!-- Criar anúncios -->
                 <div class="caixa_criar_anuncios centralizar_caixa">
-                    <h1 class="font-titulo font-negrito identidade_pj_font"></h1>
+                    <h1 class="font-titulo font-negrito identidade_pj_font">Anúncio</h1>
                     <div class="font-texto botao_padrao_pj" id="Anuncio">
                       Criar anúncio
                     </div>

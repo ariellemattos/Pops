@@ -36,7 +36,7 @@ function consulta(id, status){
 </script>
 
 
-<div class="modal-teste">
+
 
   <div id="container">
     <div class="modal">
@@ -108,5 +108,4 @@ function consulta(id, status){
         <?php $cont++; } ?>
         <tbody>
   </table>
-</div>
 </div>

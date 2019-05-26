@@ -33,6 +33,7 @@ class PessoaFisica
   private $bairro;
   private $cidade;
   private $uf;
+  private $numero;
 
 
   function __construct()
@@ -248,6 +249,20 @@ class PessoaFisica
   {
 
     $this->uf = $uf;
+
+  }
+
+  public function getNumero()
+  {
+
+    return $this->numero;
+
+  }
+
+  public function setNumero($numero)
+  {
+
+    $this->numero = $numero;
 
   }
 

@@ -14,6 +14,16 @@ body{
 
 }
 
+.Abrirmodal{
+  padding: 20px;
+  width: 600px;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 530px;
+  border-radius: 5px;
+
+  }
+
 #msg_login{
   width: 280px;
   height: 20px;
@@ -110,6 +120,7 @@ body{
   background-color: white;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 20px;
 }
 
 h4.modal-title-login{
@@ -173,10 +184,8 @@ a.modal-fechar{
   width: 288px;
   height: 46px;
   padding: 0.2em;
-  border: 1px solid #CCC;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
   display: block;
-
+  border:none;
 }
 
 
@@ -361,7 +370,7 @@ a.modal-fechar{
 }
 
 .area-produtos{
-  width: 955px;
+  width: 1200px;
   min-height: 500px;
   height: auto;
   background-color: white;
@@ -437,6 +446,7 @@ a.modal-fechar{
 }
 
 .descricao-brinde input[type="submit"]{
+  width: 150px;
   background-color: #5fa83a;
   color: white;
   padding: 14px 20px;
@@ -447,8 +457,8 @@ a.modal-fechar{
   margin-top: 5px;
   font-family: Gadugi;
   font-size:17px;
-  margin-left: 15px;
-  float: left;
+  margin-left: 65px;
+  margin-bottom: 5px;
 }
 .descricao-brinde input[type="submit"]:hover{
   background-color: #226b17;
@@ -746,7 +756,7 @@ a.modal-fechar{
 
 .modal_anuncio{
   width: 390px;
-  height: 670px;
+  height: 800px;
   background-color: white;
   margin-right: auto;
   margin-left: auto;
@@ -767,8 +777,10 @@ a.modal-fechar{
   width: 288px;
   height: 20px;
   padding: 0.2em;
-  border: 1px solid #CCC;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+  border:none;
+  border-bottom: 2px solid #15233a;
+  margin-bottom: 30px;
+  background-color: #fff;
   display: block;
 
 }
@@ -809,10 +821,11 @@ a.modal-fechar{
   width: 288px;
   height: 20px;
   padding: 0.2em;
-  border: 1px solid #CCC;
-  box-shadow: 2px 2px 2px rgba(0,0,0,0.2);
-  display: block;
+  border:none;
   margin-bottom: 13px;
+  border-bottom: 2px solid #15233a;
+  margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
  .select-perfil{
@@ -839,12 +852,11 @@ a.modal-fechar{
    font-family: Helvetica;
    font-size: 17px;
 }
+
 .form-perfil input[type="button"]:hover{
     background-color: #15233a;
     color: #FFFFFF;
 }
-
-
 
 p.modal-title-campos-anuncio{
   font-weight: lighter;
@@ -863,4 +875,123 @@ p.modal-title-campos-anuncio{
 .textRegulamento{
   font-family: Gadugi;
   font-size: 18px;
+}
+
+/* Estilização das telas de estgios de compra */
+
+.loginMain{
+  width: 50%;
+  height: 500px;
+  float: left;
+  background-color: white;
+  margin-top: 120px;
+}
+
+.bannerLogin{
+  width: 50%;
+  height: 657px;
+  background-image: url("../img/banner_login.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 657px;
+  margin-left: auto;
+
+}
+
+.form_compra{
+  width: 850px;
+  min-height: 500px;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  margin-top: 35px;
+}
+
+.form_compra strong{
+  font-weight: bold;
+}
+
+.form_compra p{
+  font-style: Gadugi;
+  margin-top: 10px;
+  padding: 7px;
+  border-bottom: 1px solid #000;
+
+}
+
+.status_compra{
+  width: 470px;
+  height: 80px;
+  background-image: url("../img/compra.png");
+  background-size: 440px 80px;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.formulario_endereco{
+  width: 400px;
+  height: 300px;
+  background-color: white;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  margin-left: 25px;
+  float: left;
+  font-style: Helvetica;
+
+}
+
+.formulario_endereco label{
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.formulario_endereco input[type="text"]{
+  width: 350px;
+  padding: 10px 3%;
+  font-size: 1em;
+  border: 1px solid #d5dbdb;
+  border-radius: 4px;
+  color: #666;
+  outline: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.formulario_endereco select{
+  width: 350px;
+  padding: 10px 3%;
+  font-size: 1em;
+  border: 1px solid #d5dbdb;
+  border-radius: 4px;
+  color: #666;
+  outline: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.pagamento{
+  width: 480px;
+  height: 70px;
+  background-image: url("../img/pagamento.png");
+  background-size: 440px 80px;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
+}
+
+.form_compra input[type="button"]{
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  font-family: Gadugi;
+  font-size: 20px;
+  color: #fff;
+  background-color: #2c4b7c;
+  transition: 0.3s;
+  margin-top: -20px;
+  margin-left: 600px;
+  cursor: pointer;
 }

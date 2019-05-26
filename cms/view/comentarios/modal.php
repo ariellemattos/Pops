@@ -67,10 +67,10 @@ $(document).ready(function(){
     <div class="form_comentario centralizarX">
       <form class="" action="index.html" method="post">
           <label for="txt_escola">Nome do usuario:</label>
-          <input type="text" id="txt_user" name="txt_user" value="<?= @$user ?>">
+          <input type="text" id="txt_user" name="txt_user" value="<?= @$user ?>" readonly>
 
           <label for="txt_cnpj">Comentario:</label>
-          <textarea name="txt_comentario" rows="8" cols="80"><?= @$comentario_user ?></textarea>
+          <textarea name="txt_comentario" rows="8" cols="80" readonly><?= @$comentario_user ?></textarea>
 
           <div class="icones_status">
             <div class="aprovar_negar" onclick="router_status('comentario', 'status', <?= $id?>, <?= $status?>);">

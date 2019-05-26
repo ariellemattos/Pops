@@ -1,31 +1,5 @@
 <?php
-// Iniciando uma sessão
-session_start();
 
-// Iniciando as variáveis em null para não haver erro
-$path_local = null;
-$path_url = null;
-
-// Variáveis que recebem as variáveis de sessão
-$path_local = $_SESSION['path_local'];
-$path_url = $_SESSION['path_url'];
-
-  if(isset($_GET["id"])){
-    // Importando a controller de enquetes
-    require_once "$path_local/cms/controller/controllerProduto.php";
-
-    // Instânciando a classe do controler
-    $controllerProduto = new ControllerProduto();
-
-    // Result set que recebe os dados
-    $rsProduto = $controllerProduto->buscarRegistro();
-
-    $id = $_GET["id"];
-
-    $nome = $rsProduto ->getNome();
-    $comentario_user= $rsProduto ->getComentario();
-
-  }
  ?>
 <!DOCTYPE html>
 <html lang="pt">

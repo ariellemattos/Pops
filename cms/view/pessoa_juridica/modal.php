@@ -71,35 +71,35 @@ $(document).ready(function(){
     <div class="form_informacoes centralizarX">
       <div class="form_divisa_info">
         <label for="txt_escola">Nome Fantasia:</label>
-        <input type="text" id="txt_nome_fantasia" name="txt_nome_fantasia" value="<?= @$nome_fantasia?>">
+        <input readonly type="text" id="txt_nome_fantasia" name="txt_nome_fantasia" value="<?= @$nome_fantasia?>">
 
         <label for="txt_escola">CNPJ:</label>
-        <input type="text" id="txt_cnpj" name="txt_cnpj" value="<?= @$cnpj?>">
+        <input  readonly type="text" id="txt_cnpj" name="txt_cnpj" value="<?= @$cnpj?>">
 
         <label for="txt_escola">E-mail:</label>
-        <input type="text" id="txt_email" name="txt_email" value="<?= @$email?>">
+        <input readonly type="text" id="txt_email" name="txt_email" value="<?= @$email?>">
 
         <label for="txt_escola">Logradouro:</label>
-        <input type="text" id="txt_logradouro" name="txt_logradouro" value="<?= @$logradouro?>">
+        <input  readonly type="text" id="txt_logradouro" name="txt_logradouro" value="<?= @$logradouro?>">
 
         <label for="txt_escola">Cidade:</label>
-        <input type="text" id="txt_logradouro" name="txt_logradouro" value="<?= @$cidade?>">
+        <input  readonly type="text" id="txt_logradouro" name="txt_logradouro" value="<?= @$cidade?>">
       </div>
 
       <div class="form_divisa_info">
         <div class="divisa-modal">
           <label for="txt_escola">Razão Social:</label>
-          <input type="text" id="txt_razao_social" name="txt_razao_social" value="<?= @$razao_social?>">
+          <input readonly type="text" id="txt_razao_social" name="txt_razao_social" value="<?= @$razao_social?>">
 
           <div class="divisa-modal-contatos">
             <div class="metade">
               <label for="txt_escola">Celular:</label>
-              <input type="text" id="txt_razao_social" name="txt_razao_social" value="<?= @$celular?>">
+              <input readonly type="text" id="txt_razao_social" name="txt_razao_social" value="<?= @$celular?>">
             </div>
 
             <div class="metade">
               <label for="txt_escola">Telefone:</label>
-              <input type="text" id="txt_razao_social" name="txt_razao_social" value="<?= @$telefone?>">
+              <input  readonly type="text" id="txt_razao_social" name="txt_razao_social" value="<?= @$telefone?>">
             </div>
           </div>
 

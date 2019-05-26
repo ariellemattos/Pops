@@ -33,6 +33,7 @@ h1{
 
 .font-titulo{
     font-family: Helvetica;
+    text-align: center;
 }
 
 
@@ -54,7 +55,7 @@ h1{
     min-height: 1270px;
     height: auto;
     margin-top: 10px;
-
+    margin-bottom: 10px
 }
 
 /* ************** Header *************** */
@@ -62,7 +63,6 @@ h1{
 .caixa_painel_pj{
     width: 950px;
     min-height: 1260px;
-    border: 1px solid #ccc;
 
 }
 
@@ -82,8 +82,8 @@ h1{
     width: 90%;
     height: 290px;
     margin-top: 10px;
-    border-bottom: 2px solid #ccc;
-
+    
+    border-bottom: 1px solid #ccc;
 }
 
 .caixa_imagem_pj{
@@ -103,9 +103,9 @@ h1{
 .caixa_geral_dados{
     width: 85%;
     min-height: 230px;
-    border-bottom: 2px solid #ccc;
     margin-top: 10px;
-
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .grupo_form{
@@ -139,10 +139,11 @@ h1{
 .caixa_criar_anuncios{
     width: 85%;
     height: auto;
-    min-height:410px;
+    min-height:350px;
     overflow:hidden;
-    border-bottom: 2px solid #ccc;
     margin-top: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .caixa_criar_anuncios h1{
@@ -197,7 +198,6 @@ h1{
 .options{
     width: inherit;
     height: 15px;
-    border-bottom: 0.5px solid #ccc;
     padding-top: 3px;
     color: #fff;
     text-align: center;
@@ -206,21 +206,18 @@ h1{
 
 .botao_padrao_pj{
     width: 250px;
-    padding-top: 5px;
-    border-radius: 20px;
+    border-radius: 5px;
     border: none;
-    border: 1px solid #15233a;
+    padding: 5px;
     color: #15233a;
-    background-color: transparent;
+    font-weight: bold;
+    background-color: #e57510;
     cursor: pointer;
     font-size: 20px;
     text-align: center;
 
 }
 
-.botao_padrao_pj:hover{
-    color: #e57510;
-}
 
 /* ********* CAIXA ACESSO ********** */
 .caixa_acesso{
@@ -228,8 +225,9 @@ h1{
     height: auto;
     min-height:410px;
     overflow:hidden;
-    border-bottom: 2px solid #ccc;
     margin-top: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .caixa_acesso_grupo{
@@ -292,13 +290,16 @@ h1{
 .caixa_meus_pedidos{
     width: 85%;
     min-height: 120px;
-
+    
     margin-top: 20px;
+    padding: 15px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
 }
 
 .caixa_meus_pedidos h1{
     padding-bottom: 20px;
+    font-family: Gadugi;
 }
 
 .caixa_titulo_mp{
@@ -316,10 +317,14 @@ h1{
     margin-left: 8px;
     border: 1px solid #ccc;
     font-size: 19px;
+    font-family: Gadugi;
 }
 
 /* resultados */
 .font-titulos_res{
     font-size: 18px;
     font-family: Helvetica;
+}
+.titulo_pedido{
+    font-family: Gadugi;
 }

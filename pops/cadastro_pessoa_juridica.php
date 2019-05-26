@@ -1,3 +1,28 @@
+<?php
+  session_start();
+  // Iniciando as variáveis em null para não haver erro
+  $path_local = null;
+  $path_url = null;
+
+  // Variáveis que recebem as variáveis de sessão
+  $path_local = $_SESSION['path_local'];
+  $path_url = $_SESSION['path_url'];
+
+  // Verificando se o objeto existe
+  if (isset($_POST["btnCad"])) {
+    // Importando a classe Controller de pessoa fisica
+    require_once "$path_local/cms/controller/controllerPessoaJuridica.php";
+
+    // Instância da Controller de pessoa fisica
+    $controllerPessoaJuridica = new ControllerPessoaJurica();
+
+    // Chamando o método de inserir um novo registro
+    $controllerPessoaJuridica->inserirRegistro();
+  }
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -30,23 +55,23 @@
 
         <!-- Caixa central do formulário que ocupa 1200 da tela -->
         <div class="caixa_central_formulario">
-            <form name="frmCadPjs" method="POST" enctype="multipart/form-data" action="cadastro_perfil_secundario_juridica.php">
+            <form name="frmCadPjs" method="POST" enctype="multipart/form-data">
                 <!-- caixa que guarda todo o formulário -->
                 <div class="caixa_form_juridica">
                     <!-- LINHA 1-->
                     <div class="caixa_input">
                         <!-- CNPJ -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpjPj" id="txtCnpjPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj">
                         </div>
                         <!-- Razão Social -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Razão Social"name="txtRazaoSocialPj" id="txtRazaoSocialPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Razão Social" name="txtRazaoSocial" id="txtRazaoSocial">
                         </div>
 
                         <!-- Nome Fantasia-->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Nome fantasia" name="txtNomeFantasiaPj" id="txtNomeFantasiaPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Nome fantasia" name="txtNomeFantasia" id="txtNomeFantasia">
                         </div>
                     </div>
 
@@ -54,23 +79,23 @@
                     <div class="caixa_input">
                         <!-- Logradouro-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouroPj" id="txtLogradouroPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouro" id="txtLogradouro">
                         </div>
                         <!-- num -->
                         <div class="caixa_inputs_form caixa_inputs_form_minima">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Nº" name="txtNumPj" id="txtNumPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Nº" name="txtNum" id="txtNum">
                         </div>
                         <!-- Bairro-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairroPj" id="txtBairroPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairro" id="txtBairro">
                         </div>
                         <!-- CEP-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="CEP" name="txtCepPj" id="txtCepPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CEP" name="txtCep" id="txtCep">
                         </div>
                         <!-- Cidade -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Cidade" name="txtCidadePj" id="txtCidadePj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Cidade" name="txtCidade" id="txtCidade">
                         </div>
                         <!-- Estado -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
@@ -113,17 +138,22 @@
                     <div class="caixa_input">
                         <!-- Responsavel pelo Contato -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Responsável pelo contato" name="txtRespContatoPj" id="txtRespContatoPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Responsável pelo contato" name="txtRespContato" id="txtRespContato">
                         </div>
 
                         <!-- Email-->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Email" name="txtEmailPj" id="txtEmailPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Email" name="txtEmail" id="txtEmail">
                         </div>
 
                         <!-- Telefone -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Telefone" name="txtTelefonePj" id="txtTelefonePj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Telefone" name="txtTelefone" id="txtTelefone">
+                        </div>
+
+                        <!-- Celular  -->
+                        <div class="caixa_inputs_form caixa_inputs_form_pequena">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Celular" name="txtCelular" id="txtCelular">
                         </div>
                     </div>
 
@@ -132,23 +162,22 @@
                     <div class="caixa_imagem">
                         <div class="imagem_pj">
                             <label class="label_estilo">Foto:</label><br>
-                            <img src="imagens/a.jpg" width="150" height="150" alt="ola" title="ola"><br>
-                            <input type="file" name="txtFotoPj" id="txtFotoPj">
+                            <input type="file" name="fotoPj" id="fotoPj">
                         </div>
                         <!-- Usuário -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="User" name="txtUserPj" id="txtUserPj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="User" name="txtUser" id="txtUser">
                         </div>
 
                         <!-- Senha -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="password" placeholder="Senha" name="txtSenhaPj" id="txtSenhaPj">
+                            <input class="input_estilo inputs_form" type="password" placeholder="Senha" name="txtSenha" id="txtSenha">
                         </div>
                     </div>
 
                     <!-- LINHA 4 BOTÃO -->
                     <div class="caixa_botao_pj">
-                        <input class="botao_pj" type="button" value="Cadastrar" name="btnCadPj" id="btnCadPj">
+                        <input class="botao_pj" type="submit" value="Cadastrar" name="btnCad" id="btnCad">
                     </div>
 
                 </div>

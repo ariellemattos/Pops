@@ -102,9 +102,10 @@ if (isset($funcionarios)) {
         </div>
         <div class="caixa_inputs_evento titulo_e_localidade select_funcionario">
             <label class="lblEventos slt_direita">Perfil:</label><br>
-            <select name="select_perfil" class="slt_direita">
+            <select name="select_cargo">
                 <option selected disabled>Selecione um perfil:</option>
               <?php
+
               // Importando a controller de perfil
               require_once "$path_local/cms/controller/controllerNivelPerfil.php";
               // Instânciando a classe do controler
