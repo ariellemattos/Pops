@@ -165,6 +165,7 @@ class HistoriaMarcaDAO
       $historia_marca->setId($rsHistoria['id_historia']);
       $historia_marca->setTexto($rsHistoria['descricao']);
       $historia_marca->setDtVersao($rsHistoria['dt_versao']);
+      $historia_marca->setStatus($rsHistoria['status']);
 
     }
 
