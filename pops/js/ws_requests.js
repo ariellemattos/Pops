@@ -489,3 +489,23 @@ function callModalWithData(obj){
         });
     });
 
+    //resposta da enquete
+    function answer(_id_enq) {
+        var radioValue = $(`input[name='rdo_option${_id_enq}']:checked`).val();
+       
+        $.ajax({
+          type: "POST",
+          url: `http://${host}/pops/backend/services/EnqueteService.php/?op=answer`,
+          dataType:"json",
+          data:{"id_resposta":radioValue, "id_enq":_id_enq},
+          success: function(data){
+              var html = "<div>"+data+"</div>";
+              swal({icon:"success", text:data});
+              console.log(data);
+          },
+          error: function(){
+              alert('deu erro');
+          }
+      });
+    };
+
