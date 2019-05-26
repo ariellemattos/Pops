@@ -7,6 +7,7 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/pagamento.css">
         <link rel="stylesheet" type="text/css" href="css/titulo_pagina.css">
+        <link rel="stylesheet" href="css/arielle.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- CHAMANDO O JQUERY -->
         <script src="js/jquery.js">
@@ -22,70 +23,78 @@
            <?php require_once('header.php')?>
        </header>
 
-        <!-- Título da página -->
-        <div class="titulo_pagina font-titulo">
-            <h1>Pagamento</h1>
-        </div>
+       <div class="principal">
+         <!-- Título da página -->
+         <div class="titulo_pagina font-titulo">
+             <div class="pagamento"></div>
+         </div>
 
-        <div class="caixa_central_pagamento">
-            <form name="frmPagamento" method="POST" action="pagamento.php">
+         <div class="caixa_central_pagamento">
+             <form name="frmPagamento" method="POST" action="pagamento.php">
+                 <!-- Grupos form 1  -->
+                 <div class="caixa_form_pagamento">
+                     <!-- NOME -->
+                     <div class="caixa_grupo_form div_esquerda">
+                         <div class="caixa_campos_form">
+                             <label for="txtNome" class="label_estilo font-titulo">Número do cartão de crédito: </label><br>
+                             <input class="input_estilo" type="text" name="txtNome" id="txtNome">
+                         </div>
 
-                <!-- Grupos form 1  -->
-                <div class="caixa_form_pagamento">
-                    <!-- NOME -->
-                    <div class="caixa_grupo_form div_esquerda">
-                        <div class="caixa_campos_form">
-                            <label for="txtNome" class="label_estilo font-titulo">Nome do titular do cartão: </label><br>
-                            <input class="input_estilo input_titular_e_cartao" type="text" name="txtNome" id="txtNome">
-                        </div>
+                         <!-- Número do Cartão -->
+                         <div class="caixa_campos_form">
+                             <label for="txtNumCartao" class="label_estilo font-titulo">Nome do titular do Cartão de Crédito</label><br>
+                             <input class="input_estilo input_titular_e_cartao" type="text" name="txtNumCartao" id="txtNumCartao">
+                         </div>
+                     </div>
 
-                        <!-- Número do Cartão -->
-                        <div class="caixa_campos_form">
-                            <label for="txtNumCartao" class="label_estilo font-titulo">Número do cartão: </label><br>
-                            <input class="input_estilo input_titular_e_cartao" type="text" name="txtNumCartao" id="txtNumCartao">
-                        </div>
+                     <!-- caixa form 2 -->
+                     <div class="caixa_grupo_form div_direita">
+                       <div class="caixa_campos_form">
+                           <label class="label_estilo font-titulo">Validade: </label><br>
+                           <select id="sltMes" class="input_mes">
+                               <option selected></option>
+                               <option>01</option>
+                               <option>02</option>
+                               <option>03</option>
+                               <option>04</option>
+                               <option>05</option>
+                               <option>06</option>
+                               <option>07</option>
+                               <option>08</option>
+                               <option>09</option>
+                               <option>10</option>
+                               <option>11</option>
+                               <option>12</option>
+                           </select>
 
-                        <!-- Número do Cartão -->
-                        <div class="caixa_campos_form">
-                            <label class="label_estilo font-titulo">Validade: </label><br>
-                            <select id="sltValidadeNum1" class="input_estilo input_validade">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>2</option>
-                            </select>
-                        </div>
-                    </div>
+                           <select id="sltAno" class="input_ano">
+                               <option selected></option>
+                               <option>2019</option>
+                               <option>2020</option>
+                               <option>2021</option>
+                               <option>2022</option>
+                               <option>2023</option>
+                               <option>2024</option>
+                               <option>2025</option>
+                               <option>2026</option>
+                               <option>2027</option>
+                               <option>2028</option>
+                               <option>2029</option>
+                           </select>
+                       </div>
 
-                    <!-- caixa form 2 -->
-                    <div class="caixa_grupo_form div_direita">
-                        <!-- Número do Cartão -->
-                        <div class="caixa_campos_form margin_top_form_2">
-                            <label for="txtCodSeguranca" class="label_estilo font-titulo">Código de Segurança: </label><br>
-                            <input class="input_estilo input_seguranca" type="text" name="txtCodSeguranca" id="txtCodSeguranca">
-                            <div class="imagem_cartao div_direita">
-                                <img src="img/cartao.png" width="40" height="40" title="Código de Segurança" alt="Imagem não encontrada2">
-                            </div>
-                        </div>
+                         <!-- Número do Cartão -->
+                         <div class="caixa_campos_form">
+                             <label for="txtCodSeguranca" class="label_estilo font-titulo">Código de Segurança: </label><br>
+                             <input class="input_estilo input_seguranca" type="text" name="txtCodSeguranca" id="txtCodSeguranca">
+                         </div>
 
-                        <!-- Número do Cartão -->
-                        <div class="caixa_campos_form">
-                            <label class="label_estilo font-titulo">a</label><br>
-                            <select id="sltValidadeNum2" class="input_estilo input_validade">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>2</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <!-- Botão finalizar -->
-                    <div class="caixa_botao_pagamento">
-                        <input class="botao_pagamento font-titulo" type="button" value="Finalizar Compra" id="btnFinalizarCompra" name="btnFinalizarCompra">
-                    </div>
-                </div>
-
-            </form>
-        </div>
-        <footer>   <?php require_once('footer.html')?> </footer>
+                         <input class="botao_pagamento font-titulo" type="button" value="Finalizar Compra" id="btnFinalizarCompra" name="btnFinalizarCompra">
+                     </div>
+                 </div>
+             </form>
+         </div>
+       </div>
+      <footer>   <?php require_once('footer.html')?> </footer>
     </body>
 </html>
