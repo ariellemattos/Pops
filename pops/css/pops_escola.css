@@ -119,7 +119,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
 
 /* caixa central do cadastro */
 .caixa_central_cadastro{
-    width: 985px;
+    width: 765px;
     height: 680px;
     overflow: hidden;
     margin-top: 40px;
@@ -135,7 +135,7 @@ a:focus, button:focus, input:focus, textarea:focus, select:focus, option:focus {
 
 /* caixa principal do form */
 .caixa_principal_formulario{
-    width: 450px;
+    width: 350px;
     margin-top: 20px;
     margin-bottom: 10px;
     height: 400px;
