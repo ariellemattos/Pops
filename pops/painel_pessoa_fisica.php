@@ -102,7 +102,7 @@
             </div>
         </div>
         <footer>  <?php require_once('footer.html')?> </footer>
-      
+
       <!-- CHAMANDO O ARQUIVO DE REQUESTS EM JQUERY -->
         <script src="js/ws_requests.js">
         </script>

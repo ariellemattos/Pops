@@ -141,7 +141,22 @@
                         <input style="min-width:150px; width:auto;" class="quantidade" id="total" name="quant" class="text" size="5" type="text" value="R$ <?php  echo($_SESSION['totalCarrinho'])?>" readonly >
                       </span>
                     </p>
-                    <input type="button" value="Continuar" id="btnContinuar" name="btnContinuar">
+
+                    <?php
+                        if(@$_COOKIE['id_p_fisica'] == null){
+                      ?>
+                      <a href="login_compra.php">
+                        <input type="button" value="Concluir compra" id="btnContinuar" name="btnContinuar">
+                      </a>
+                      <?php
+                        }else{
+                      ?>
+                      <a href="checkout_endereco.php">
+                        <input type="button" value="Concluir compra" id="btnContinuar" name="btnContinuar">
+                      </a>
+                      <?php
+                        }
+                       ?>
               </div>
         </div>
         <footer><?php require_once 'footer.html'; ?></footer>
