@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,13 +12,23 @@
   <script src="js/jquery.js"></script>
   <script src="js/event.js"></script>
   <script src="js/effects.js"></script>
+  <script>
+	
+  </script>
 </head>
 <body>
     <?php
-      session_start();
-      require_once('../cms/model/DAO/Conexao.php');
-      $conex = new Conexao();
-      $con = $conex->connectDatabase();
+		session_start();
+		//Iniciando as variáveis em null para não haver erro
+		$path_local = null;
+		$path_url = null;
+
+		// Variáveis que recebem as variáveis de sessão
+		$path_local = $_SESSION['path_local'];
+		$path_url = $_SESSION['path_url'];
+		require_once('../cms/model/DAO/Conexao.php');
+		$conex = new Conexao();
+		$con = $conex->connectDatabase();
 
     ?>
   <header><?php require_once 'header.php'; ?></header>
@@ -35,6 +43,7 @@
 					$success = $stm->execute();
 					foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
       ?>
+ 
       <div class="section-three-conteudo centralizar_elemento">
         <div class="section-three-conteudo-imagem centralizarY">
           <img class="centralizar_elemento" src="img/7upPromocao.jpg" alt="Promoção">
@@ -42,9 +51,18 @@
         <div class="section-three-conteudo-infomarcao">
           <div class="section-three-conteudo-titulo"><?php echo (utf8_decode($result['titulo'])) ?></div>
           <div class="section-three-conteudo-texto">
-            <?php echo (utf8_decode($result['descricao'])) ?>
+            <?php echo (utf8_decode($result['descricao'])) ?><br>
+            <?php 
+              
+              if(@$_COOKIE['id_p_fisica'] == null && $result['precisa_cadastro'] == 1){
+                echo "<a href='login_compra.php?pf'>
+						<input type='button' class='btn_votar btnParticipar' value='Participe'>
+					  </a><br>";
+              }
+            ?>
           </div>
         </div>
+      
       </div>
 
       <?php } ?>
