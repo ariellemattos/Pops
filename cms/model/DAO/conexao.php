@@ -27,12 +27,12 @@ class Conexao
   function __construct(){
 
     // $this->server = 'db_popsoda.mysql.dbaas.com.br';
-	// $this->user = 'db_popsoda';
+    // $this->user = 'db_popsoda';
     // $this->password = 'techevo';
     // $this->database = 'db_popsoda';
 
      $this->server = 'localhost';
-     $this->user = 'root';
+	   $this->user = 'root';
      $this->password = 'bcd127';
      $this->database = 'db_popsoda';
 
