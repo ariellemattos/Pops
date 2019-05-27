@@ -39,12 +39,9 @@
          <script src="js/effects.js"></script>
         </script>
         <!-- CHAMANDO O ARQUIVO DE EVENTOS EM JQUERY -->
-        <script src="js/event.js">
-        </script>
+        <script src="js/event.js"></script>
         <script src="js/validarCampos.js"></script>
-        <script scr="js/ws_requests.js">
-
-        </script>
+        <script scr="js/ws_requests.js"></script>
     </head>
 
     <body>
