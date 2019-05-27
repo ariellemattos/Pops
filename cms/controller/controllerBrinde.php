@@ -169,6 +169,8 @@ class ControllerBrinde
 
     //se não, adiciona o item ao carrinho com as informações do produto
 		$_SESSION['carrinho'][$id] = array('id'=>$listaProduto->getId(), 'nome'=>$listaProduto->getNome(), 'valorUnitario'=>$listaProduto->getValorUnitario(), 'quantidade'=>$quantidade, 'subtotal'=>$subtotal,'imagem'=>$listaProduto->getImagem());
+    
+    
 
     if($acao == 'mais'){
       $_SESSION['totalCarrinho'] += $listaProduto->getValorUnitario();

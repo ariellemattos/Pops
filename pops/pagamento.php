@@ -5,8 +5,11 @@
 
     var_dump($_SESSION['carrinho']);
    // echo(json_encode($_SESSION['carrinho']));
-    echo("<script> var carrinho =".json_encode($_SESSION['carrinho'])."</script>");
-    echo("<script>console.log(carrinho)</script>");
+    echo("<script> var carrinho = JSON.parse(sessionStorage.getItem('itemList'))</script>");
+    echo("<script>
+      
+        console.log(carrinho.length); //preciso agr colocar o array dentro de um for e enviar ambos para a api da pagarme 
+        </script>");
 
     
 ?>
@@ -112,12 +115,7 @@
        </div>
       <footer>   <?php require_once('footer.html')?> </footer>
      
-      <script>
-          for(var i = 0; i < carrinho.length; i++){
-            console.log(carrinho[i].id);
-          }
-          
-      </script>
+     
       <script src="js/pagamento.js">
         </script>
     </body>

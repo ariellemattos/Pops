@@ -7,6 +7,9 @@ $(document).ready(function() {
     var cidade = sessionStorage.getItem("cidade");
     var cep = sessionStorage.getItem("cep");
     var num = sessionStorage.getItem("num");
+    var itens = sessionStorage.getItem("itens");
+
+    console.log(itens);
 
     //get form values
     var holder = $("#txtNome").val();
@@ -14,6 +17,8 @@ $(document).ready(function() {
     var ano = $("#sltAno").val();
     var numCartao = $("#txtNumCartao").val();
     var codSeg = $("#txtCodSeguranca").val();
+
+    var ano = 
 
     form.submit(function(event) {
         event.preventDefault();
@@ -90,11 +95,7 @@ $(document).ready(function() {
     },
     "items": [
       {
-        "id": "r123",
-        "title": "7up",
-        "unit_price": 550,
-        "quantity": 4,
-        "tangible": true
+       itens
       },
     ]
   }))

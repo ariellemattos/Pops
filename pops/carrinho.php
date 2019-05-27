@@ -51,6 +51,9 @@
   </head>
 
   <script>
+  var itemList = new Array(); //armazena os itens para ser inserido na API 
+  var itens;
+  
   function process(id, num, quant){
     var value = parseInt(document.getElementById("quant"+num).value);
     value+=quant;
@@ -91,7 +94,21 @@
 
                 //percorrendo os produtos do carrinho
                 foreach($_SESSION['carrinho'] as $produtos) {
-                
+                  echo(json_encode($_SESSION['carrinho'][$produtos['id']]));
+                  
+                  //manipulando js
+                  echo("
+                  <script>
+                       itens = {
+                         id: ".$produtos['id'].",
+                         title: '".$produtos['nome']."',
+                         unit_price: ".$produtos['valorUnitario'].",
+                         quantity: ".$produtos['quantidade'].",
+                         tangible: true
+                      }
+                      itemList.push(itens);
+                      
+                  </script>");
             ?>
 
             <!-- Div do carrinho / fazer while aqui -->
@@ -133,7 +150,14 @@
             <?php
                 $cont++;
                 }
+                echo("<script>
+                      console.log(JSON.stringify(itemList));
+                      sessionStorage.setItem('itemList', JSON.stringify(itemList));
+                  </script>");
+                echo("<script>console.log(itemList.length)</script>");
             ?>
+
+            
 
             <!-- DIV SUB TOTAL -->
               <div class="div_subtotal">
