@@ -1,3 +1,15 @@
+<?php 
+    @session_start();
+    //echo($name);
+    $id = $_SESSION['carrinho'];
+
+    var_dump($_SESSION['carrinho']);
+   // echo(json_encode($_SESSION['carrinho']));
+    echo("<script> var carrinho =".json_encode($_SESSION['carrinho'])."</script>");
+    echo("<script>console.log(carrinho)</script>");
+
+    
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -11,10 +23,13 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- CHAMANDO O JQUERY -->
         <script src="js/jquery.js">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
         </script>
+        
         <!-- CHAMANDO O ARQUIVO DE EVENTOS EM JQUERY -->
         <script src="js/event.js">
         </script>
+        
     </head>
 
     <body>
@@ -30,20 +45,20 @@
          </div>
 
          <div class="caixa_central_pagamento">
-             <form name="frmPagamento" method="POST" action="pagamento.php">
+             <form name="frmPagamento" id="frmPagamento" method="POST" action="pagamento.php">
                  <!-- Grupos form 1  -->
                  <div class="caixa_form_pagamento">
                      <!-- NOME -->
                      <div class="caixa_grupo_form div_esquerda">
                          <div class="caixa_campos_form">
                              <label for="txtNome" class="label_estilo font-titulo">Número do cartão de crédito: </label><br>
-                             <input class="input_estilo" type="text" name="txtNome" id="txtNome">
+                             <input class="input_estilo" type="text" name="txtNumCartao" id="txtNumCartao">
                          </div>
 
                          <!-- Número do Cartão -->
                          <div class="caixa_campos_form">
                              <label for="txtNumCartao" class="label_estilo font-titulo">Nome do titular do Cartão de Crédito</label><br>
-                             <input class="input_estilo input_titular_e_cartao" type="text" name="txtNumCartao" id="txtNumCartao">
+                             <input class="input_estilo input_titular_e_cartao" type="text" name="txtNome" id="txtNome">
                          </div>
                      </div>
 
@@ -96,5 +111,14 @@
          </div>
        </div>
       <footer>   <?php require_once('footer.html')?> </footer>
+     
+      <script>
+          for(var i = 0; i < carrinho.length; i++){
+            console.log(carrinho[i].id);
+          }
+          
+      </script>
+      <script src="js/pagamento.js">
+        </script>
     </body>
 </html>

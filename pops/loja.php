@@ -16,7 +16,7 @@
    <body>
         <?php
           session_start();
-          require_once('../cms/model/DAO/Conexao.php');
+          require_once('../cms/model/DAO/conexao.php');
           $conex = new Conexao();
           $con = $conex->connectDatabase();
         ?>

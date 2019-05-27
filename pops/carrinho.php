@@ -91,6 +91,7 @@
 
                 //percorrendo os produtos do carrinho
                 foreach($_SESSION['carrinho'] as $produtos) {
+                
             ?>
 
             <!-- Div do carrinho / fazer while aqui -->
