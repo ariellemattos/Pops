@@ -44,10 +44,10 @@ if(isset($_COOKIE['id_p_fisica'])){
 
       <div class="login">
         <div class="dropdown">
-          <button class="dropbtn">
+          <div class="dropbtn">
             <div id="icone"></div>
             
-          </button>
+          </div>
           <div class="dropdown-content">
             <a href="login_compra.php?pf">Pessoa Física</a>
             <a href="login_compra.php?pj">Pessoa Jurídica</a>
