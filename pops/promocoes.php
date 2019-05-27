@@ -13,7 +13,10 @@
   <script src="js/event.js"></script>
   <script src="js/effects.js"></script>
   <script>
-	
+	function msg()
+	{
+		alert('OK');
+	}
   </script>
 </head>
 <body>
@@ -56,8 +59,11 @@
               
               if(@$_COOKIE['id_p_fisica'] == null && $result['precisa_cadastro'] == 1){
                 echo "<a href='login_compra.php?pf'>
-						<input type='button' class='btn_votar btnParticipar' value='Participe'>
-					  </a><br>";
+                <input type='button' onclick='msg()' class='btn_votar btnParticipar' value='Cadastre-se'>
+                </a><br>";
+              }else if(@$_COOKIE['id_p_fisica'] && $result['precisa_cadastro'] == 1){
+                echo "<input type='button' onclick='msg()' class='btn_votar btnParticipar' value='Participe'>
+                <br>";
               }
             ?>
           </div>
