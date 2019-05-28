@@ -180,7 +180,7 @@ function getAllDataPJ(){
         data: {"cnpj":cnpjCookie},
         success: function(data){
 
-
+            sessionStorage.setItem("company", JSON.stringify(data));
             $('#foto').attr('src', data.foto);
             $('#nom_fantasia').html(data.nome_fantasia);
             $('#razao_social').html(data.razao_social);
