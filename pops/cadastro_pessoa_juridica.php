@@ -102,6 +102,7 @@
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
                             <div class="caixa_input largura_fixa_div_3 selectForm">
                                 <select class="slt_estado formatacao_inputs borda_inputs largura_fixa_inputs_3 slt_estado" id="sltEstado" name="sltEstado">
+
                                     <option disabled selected >Estado:</option>
                                     <option value="Acre">AC</option>
                                     <option value="Alagoas">AL</option>
@@ -130,6 +131,7 @@
                                     <option value="Sao Paulo">SP</option>
                                     <option value="Sergipe">SE</option>
                                     <option value="Tocantins">TO</option>
+
                                 </select>
                             </div>
                         </div>

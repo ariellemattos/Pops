@@ -50,7 +50,7 @@
     <script src="js/ws_requests.js"></script>
   </head>
 
-  
+
   <body>
     <header><?php require_once 'header.php'; ?></header>
 
@@ -77,6 +77,7 @@
 
                 //percorrendo os produtos do carrinho
                 foreach($_SESSION['carrinho'] as $produtos) {
+                
             ?>
 
             <!-- Div do carrinho / fazer while aqui -->
@@ -109,10 +110,10 @@
                 </div>
 
                 <div class="caixa_valor borda_caixa_valor">
-                    <p>R$<?php echo $produtos['valorUnitario']; ?></p>
+                    <p>R$<?php echo number_format($produtos['valorUnitario'], 2, ',', ' '); ?></p>
                 </div>
                 <div class="caixa_valor ">
-                    <p> R$<?php echo $produtos['subtotal']; ?></p>
+                    <p> R$<?php echo number_format($produtos['subtotal'], 2, ',', ' '); ?></p>
                 </div>
             </div>
             <?php
@@ -124,7 +125,7 @@
               <div class="div_subtotal">
                     <p>Total:
                       <span class="font-negrito" id="pre">
-                        <input style="min-width:150px; width:auto;" class="quantidade text" id="total" name="quant"  size="5" type="text" value="R$ <?php  echo($_SESSION['totalCarrinho'])?>" readonly >
+                        <input style="min-width:150px; width:auto;" class="quantidade text" id="total" name="quant"  size="5" type="text" value="R$ <?php  echo number_format(($_SESSION['totalCarrinho']), 2, ',', ' ')?>" readonly >
                       </span>
                     </p>
 
@@ -164,5 +165,5 @@
           </script>
     </body>
 
-    
+
 </html>

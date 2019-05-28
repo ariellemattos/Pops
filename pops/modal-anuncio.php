@@ -44,15 +44,7 @@
                 <textarea name="txtadescricao" id="txtadescricao" rows="5" cols="38"></textarea>
               </p>
 
-              <p class="modal-title-campos-anuncio"> Status: <br>
-                <select name="slt_status" id="slt_status">
-                    <option>Selecione uma opção</option>
-                    <option value="1">Ativado</option>
-                    <option value="0">Desativado</option>
-                </select>
-              </p>
-             
-             <p class="modal-title-campos-anuncio" > Logradouro: <br>
+              <p class="modal-title-campos-anuncio" > Logradouro: <br>
                 <input type="text" id="txt_logradouro" name="txt_logradouro" disabled>
               </p>
 

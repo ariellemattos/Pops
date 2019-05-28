@@ -8,7 +8,7 @@ $("#btnlogar").click(function(){
 
   if (tipo == "txtcpf") {
       loginPF();
-  }else{
+  }else if(tipo == "txtcnpj"){
       loginPJ();
   }
 
@@ -116,7 +116,6 @@ function getAllData(){
             $('#bairro').html(data.bairro);
             $('#cidade').html(data.cidade);
             $('#uf').html(data.uf);
-
         }
     });
 }
@@ -200,8 +199,7 @@ function getAllDataPJ(){
         dataType: "json",
         data: {"cnpj":cnpjCookie},
         success: function(data){
-
-
+            sessionStorage.setItem("customer", JSON.stringify(data));
             $('#foto').attr('src', data.foto);
             $('#nom_fantasia').html(data.nome_fantasia);
             $('#razao_social').html(data.razao_social);
@@ -292,7 +290,7 @@ function getAdData(){
         },
         error: function(xhr){
             var errorMessage = xhr.status + ': ' + xhr.statusText
-            alert('Error - ' + errorMessage);
+            console.log('Error - ' + errorMessage);
 
         }
     });

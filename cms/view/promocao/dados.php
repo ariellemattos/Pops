@@ -12,15 +12,11 @@ $path_local = $_SESSION['path_local'];
 $path_url = $_SESSION['path_url'];
 
 // Verificando se o objeto existe
-if (isset($_POST["btnFiltrar"])) {
-  // Importando a classe Controller de pessoa fisica
+if (isset($_GET['btnFiltrar'])) { 
   require_once "$path_local/cms/controller/controllerPromocao.php";
-  // Instância da Controller de pessoa fisica
   $controllerPromocao = new ControllerPromocoes();
-  // Chamando o método de inserir um novo registro
-  $controllerPromocao->filtrarPromocao();
+  $controllerPromocao->filtrar();
 }
-
 
 ?>
 

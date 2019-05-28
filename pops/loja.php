@@ -16,7 +16,7 @@
    <body>
         <?php
           session_start();
-          require_once('../cms/model/DAO/Conexao.php');
+          require_once('../cms/model/DAO/conexao.php');
           $conex = new Conexao();
           $con = $conex->connectDatabase();
         ?>
@@ -41,7 +41,7 @@
 
              <div class="descricao-brinde">
                <p> <?php echo (utf8_decode($result['nome'])) ?> </p>
-               <span> R$ <?php echo ($result['valor_unitario'])?></span> <p></p>
+               <span> R$ <?php echo number_format(($result['valor_unitario']), 2, ',', ' '); ?></span> <p></p>
                <input type="submit" name="btnCompra" Value="Comprar" onclick="adicionarCarrinho(<?= ($result['id_brinde'])?>, event)">
              </div>
            </div>

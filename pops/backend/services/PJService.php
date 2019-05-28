@@ -72,7 +72,7 @@
             //resgatando valores
             $foto = upload($_FILES['flt_anuncio']);
             $desc = $_POST['txtadescricao'];
-            $status = $_POST['slt_status'];
+            $status = 0;
             $cnpj = $_COOKIE['cnpj'];
 
             //callback
@@ -88,7 +88,7 @@
             //resgatando valores
             $foto = upload($_FILES['flt_anuncio']);
             $desc = $_POST['txtadescricao'];
-            $status = $_POST['slt_status'];
+            $status = 0;
             $idAnuncio = $_COOKIE['idAnuncio'];
 
 
