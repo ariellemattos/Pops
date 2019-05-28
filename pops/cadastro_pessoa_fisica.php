@@ -107,6 +107,7 @@
                           <div class="caixa_inputs_form caixa_inputs_form_2">
                               <input class="input_estilo inputs_form" placeholder="N°" maxlength="4" type="text" name="txtNumero" id="txtNumero" onkeypress="return validarCampos(event, 'caracter', this.id);" required>
                           </div>
+
                       </div>
 
 
@@ -189,7 +190,7 @@
        <script src="js/jquery.mask.js"></script>
         <script>
             $(document).ready(function(){
-                $('#txtCpf').mask('00000-000');
+                $('#txtCpf').mask('000.000.000-00');
                 $('#txtCelular').mask('(00) 00000-0000');
             });
         </script>

@@ -80,6 +80,8 @@ class PessoaFisicaDAO
       // Executa o script no BD
       if (!$con->query($sql))
       echo 'Erro no script de insert';
+      else
+      echo "<script> alert('Cadastro efetuado com sucesso');</script>";
 
       // Fechando a conexão com BD
       $this->conexao->closeDatabase();

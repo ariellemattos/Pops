@@ -169,6 +169,30 @@
           return $promocao;
         }
 
+        //método para listar todos as promocoes
+        public function filterPromocao($filter){
+            $selectFilterPromocao = "SELECT * FROM tbl_promocao WHERE titulo LIKE '%$filter%'";
+            $conn = $this->conexao->connectDatabase();
+            $select = $conn->query($selectFilterPromocao);
+
+            //retorna somente um contato
+            if($rsPromocao = $select->fetch(PDO::FETCH_ASSOC)) {
+
+                $promocao = new Promocao();
+                $promocao->setIdPromocao($rsPromocao['id_promocao']);
+                $promocao->setTitulo($rsPromocao['titulo']);
+                $promocao->setDescricao($rsPromocao['descricao']);
+                $promocao->setImagem($rsPromocao['img_promo']);
+                $promocao->setPrecisaCadastro($rsPromocao['precisa_cadastro']);
+                $promocao->setStatus($rsPromocao['status']);
+                $promocao->setStatusHome($rsPromocao['status_home']);
+            }
+
+            //Fechar a conexão com o BD
+            $this->conexao->closeDatabase();
+            return $promocao;
+        }
+
     }
 
 ?>

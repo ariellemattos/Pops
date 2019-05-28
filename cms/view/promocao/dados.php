@@ -11,6 +11,13 @@ $path_url = null;
 $path_local = $_SESSION['path_local'];
 $path_url = $_SESSION['path_url'];
 
+// Verificando se o objeto existe
+if (isset($_GET['btnFiltrar'])) { 
+  require_once "$path_local/cms/controller/controllerPromocao.php";
+  $controllerPromocao = new ControllerPromocoes();
+  $controllerPromocao->filtrar();
+}
+
 ?>
 
 <div class="title_paginas centralizarX">
@@ -18,10 +25,10 @@ $path_url = $_SESSION['path_url'];
 </div>
 <div class="caixa_filtro centralizarX">
   <div class="caixa_input centralizarX">
-    <form action="#">
-      <label for="fname">Buscar</label>
-      <input type="text" id="fname" name="firstname" placeholder="">
-      <input type="submit" value="Filtrar">
+    <form action="#" method="POST">
+      <label for="txtFiltrar">Buscar</label>
+      <input type="text" id="txtFiltrar" name="txtFiltrar" placeholder="">
+      <input type="submit" name="btnFiltrar" value="Filtrar">
     </form>
   </div>
 </div>

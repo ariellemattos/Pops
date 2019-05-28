@@ -13,6 +13,12 @@
   <script src="js/jquery.js"></script>
   <script src="js/effects.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+  <script>
+    function teste()
+    {
+      alert('Participando...');
+    }
+  </script>
 </head>
 <body>
       <?php
@@ -179,11 +185,18 @@
               <div class="section-three-conteudo-titulo"><?php echo (utf8_decode($result['titulo'])) ?></div>
               <div class="section-three-conteudo-texto">
                 <?php echo (utf8_decode($result['descricao'])) ?>
+                <?php 
+                  if(@$_COOKIE['id_p_fisica'] && $result['precisa_cadastro'] == 1){
+                    echo "<input type='button' onclick='teste()' class='btn_votar btnParticipar' value='Participe'></a><br>"; 
+                  }else if(@$_COOKIE['id_p_fisica'] == null && $result['precisa_cadastro'] == 1 ){
+                    echo "<a href='login_compra.php?pf'><input type='button' class='btn_votar btnParticipar' value='Participe'>
+                    <br><a/>";
+                  }  
+                ?>
               </div>
-              <!--<button type="button">
-                Regulamento
-              </button>
-              -->
+              
+              
+              
           </div>
           <div class="section-three-conteudo-imagem centralizarY">
             <img src="../cms/view/img/temp/<?php echo ($result['img_promo']) ?>" width="330" height="250" title="volei Hinode" alt="Imagem não encontrada" class="imgPatrocinio">

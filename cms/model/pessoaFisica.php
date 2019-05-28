@@ -34,6 +34,7 @@ class PessoaFisica
   private $cidade;
   private $uf;
   private $numero;
+  private $cep;
 
 
   function __construct()
@@ -178,9 +179,14 @@ class PessoaFisica
   public function setDtNasc($dtNasc)
   {
 
-    $this->dtNasc = $dtNasc;
-
+    if(strpos($dtNasc, "/")){
+      //Tratamento da data para enviar para o banco
+      $this->dtNasc = date("Y-m-d", strtotime($dtNasc));
+    }else if(strpos($dtNasc, "-")){
+        $this->dtNasc = date("d/m/Y", strtotime($dtNasc));
+    }
   }
+
 
   public function getStatus()
   {
@@ -263,6 +269,20 @@ class PessoaFisica
   {
 
     $this->numero = $numero;
+
+  }
+
+  public function getCep()
+  {
+
+    return $this->cep;
+
+  }
+
+  public function setCep($cep)
+  {
+
+    $this->cep = $cep;
 
   }
 
