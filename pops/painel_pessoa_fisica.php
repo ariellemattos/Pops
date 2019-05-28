@@ -32,6 +32,10 @@
                     <div class="caixa_identidade">
                         <img src="img/a.jpg" id="foto" width="245" height="250" title="">
                     </div>
+
+                    <div>
+                        <img src="../cms/view/img/editar.png" title="icon" class="iconEditarFis">
+                    </div>
                 </div>
 
                 <!-- INFORMAÇÕES USER -->
