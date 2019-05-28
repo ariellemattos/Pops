@@ -74,6 +74,19 @@
 
                 //percorrendo os produtos do carrinho
                 foreach($_SESSION['carrinhoPJ'] as $bebidas) {
+                   //manipulando js
+                   echo("
+                   <script>
+                        itens = {
+                          id: '".$produtos['id']."',
+                          title: '".$produtos['nome']."',
+                          unit_price: ".($produtos['valorUnitario'] * 100).",
+                          quantity: ".$produtos['quantidade'].",
+                          tangible: true
+                       }
+                       itemList.push(itens);
+                       
+                   </script>");
             ?>
 
             <!-- Div do carrinho / fazer while aqui -->
@@ -120,6 +133,10 @@
             <?php
                 $cont++;
                 }
+                echo("<script>
+                      console.log(JSON.stringify(itemList));
+                      sessionStorage.setItem('itemList', JSON.stringify(itemList));
+                  </script>");
             ?>
           </div>
             <!-- DIV SUB TOTAL -->
