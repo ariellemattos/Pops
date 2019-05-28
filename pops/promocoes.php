@@ -15,7 +15,7 @@
   <script>
 	function msg()
 	{
-		alert('OK');
+		alert('Agora você está participando');
 	}
   </script>
 </head>
@@ -46,7 +46,7 @@
 					$success = $stm->execute();
 					foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
       ?>
- 
+
       <div class="section-three-conteudo centralizar_elemento">
         <div class="section-three-conteudo-imagem centralizarY">
           <img class="centralizar_elemento" src="img/7upPromocao.jpg" alt="Promoção">
@@ -55,11 +55,11 @@
           <div class="section-three-conteudo-titulo"><?php echo (utf8_decode($result['titulo'])) ?></div>
           <div class="section-three-conteudo-texto">
             <?php echo (utf8_decode($result['descricao'])) ?><br>
-            <?php 
-              
+            <?php
+
               if(@$_COOKIE['id_p_fisica'] == null && $result['precisa_cadastro'] == 1){
                 echo "<a href='login_compra.php?pf'>
-                <input type='button' onclick='msg()' class='btn_votar btnParticipar' value='Cadastre-se'>
+                <input type='button' class='btn_votar btnParticipar' value='Cadastre-se'>
                 </a><br>";
               }else if(@$_COOKIE['id_p_fisica'] && $result['precisa_cadastro'] == 1){
                 echo "<input type='button' onclick='msg()' class='btn_votar btnParticipar' value='Participe'>
@@ -68,7 +68,7 @@
             ?>
           </div>
         </div>
-      
+
       </div>
 
       <?php } ?>

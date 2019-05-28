@@ -84,7 +84,7 @@ class ControllerPessoaJurica{
   public function buscarRegistro()
   {
 
-    $cnpj = $_GET['id'];
+    $cnpj = $_GET['cnpj'];
 
     return $this->pessoaJuridicaDAO->selectById($cnpj);
 

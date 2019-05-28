@@ -33,9 +33,9 @@
                             '".$funcionarios->getStatus()."',
                             '".$funcionarios->getDataNascimento()."',
                             '".$funcionarios->getPerfil()."')";
-                            
-                            
-            
+
+
+
             $conn = $this->conexao->connectDatabase();
             //echo $insertSql;
             //enviando pro banco
@@ -80,14 +80,16 @@
                     senha = '".$funcionarios->getSenha()."',
                     status = '".$funcionarios->getStatus()."',
                     data_nascimento = '".$funcionarios->getDataNascimento()."',
-                    id_perfil = '".$funcionarios->getPerfil()."' WHERE matricula = ".$idFuncionarios;
+                    id_perfil = '".$funcionarios->getIdPerfil()."' WHERE matricula = ".$idFuncionarios;
 
             // Recebendo a função que faz a conexão com BD
             $conn = $this->conexao->connectDatabase();
 
             // Executa o script no BD
             if (!$conn->query($sqlUpdate))
-            echo 'Erro no script de update';
+            //echo 'Erro no script de update'
+            echo $sqlUpdate;
+            ;
 
             // Fechando a conexão com BD
             $this->conexao->closeDatabase();

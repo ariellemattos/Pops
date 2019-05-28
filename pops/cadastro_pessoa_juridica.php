@@ -21,6 +21,36 @@
   }
 
 
+  if(isset($_GET["cnpj"])){
+    // Importando a classe Controller de pessoa fisica
+    require_once "$path_local/cms/controller/controllerPessoaJuridica.php";
+
+    // Instância da Controller de pessoa fisica
+    $controllerPessoaJuridica = new ControllerPessoaJurica();
+
+    // Chamando o método de inserir um novo registro
+    $rsPessoaJuridica = $controllerPessoaJuridica->buscarRegistro();
+
+    $cnpj = $_GET["cnpj"];
+    $razao_social = $rsPessoaJuridica->getRazaoSocial();
+    $nome_fantasia= $rsPessoaJuridica->getNomeFantasia();
+    $logradouro= $rsPessoaJuridica->getLogradouro();
+    $numero= $rsPessoaJuridica->getNumero();
+    $bairro= $rsPessoaJuridica->getBairro();
+    $cep= $rsPessoaJuridica->getCep();
+    $cidade= $rsPessoaJuridica->getCidade();
+    $estado= $rsPessoaJuridica->getUf();
+    $responsavel= $rsPessoaJuridica->getResponsavel();
+    $email= $rsPessoaJuridica->getEmail();
+    $telefone= $rsPessoaJuridica->getTelefone();
+    $celular= $rsPessoaJuridica->getCelular();
+    $usuario= $rsPessoaJuridica->getUsuario();
+    $senha= $rsPessoaJuridica->getSenha();
+
+
+  }
+
+
  ?>
 
 <!DOCTYPE html>
@@ -62,16 +92,16 @@
                     <div class="caixa_input">
                         <!-- CNPJ -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj" value="<?= $cnpj?> ">
                         </div>
                         <!-- Razão Social -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Razão Social" name="txtRazaoSocial" id="txtRazaoSocial">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Razão Social" name="txtRazaoSocial" id="txtRazaoSocial" value="<?= $razao_social?> ">
                         </div>
 
                         <!-- Nome Fantasia-->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Nome fantasia" name="txtNomeFantasia" id="txtNomeFantasia">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Nome fantasia" name="txtNomeFantasia" id="txtNomeFantasia" value="<?= $nome_fantasia?> ">
                         </div>
                     </div>
 
@@ -79,23 +109,23 @@
                     <div class="caixa_input">
                         <!-- Logradouro-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouro" id="txtLogradouro">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouro" id="txtLogradouro" value="<?= $logradouro?> ">
                         </div>
                         <!-- num -->
                         <div class="caixa_inputs_form caixa_inputs_form_minima">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Nº" name="txtNum" id="txtNum">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Nº" name="txtNum" id="txtNum" value="<?= $numero?> ">
                         </div>
                         <!-- Bairro-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairro" id="txtBairro">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairro" id="txtBairro" value="<?= $bairro?> ">
                         </div>
                         <!-- CEP-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="CEP" name="txtCep" id="txtCep">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CEP" name="txtCep" id="txtCep" value="<?= $cep?> ">
                         </div>
                         <!-- Cidade -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Cidade" name="txtCidade" id="txtCidade">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Cidade" name="txtCidade" id="txtCidade" value="<?= $cidade?> ">
                         </div>
                         <!-- Estado -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
@@ -138,22 +168,22 @@
                     <div class="caixa_input">
                         <!-- Responsavel pelo Contato -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Responsável pelo contato" name="txtRespContato" id="txtRespContato">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Responsável pelo contato" name="txtRespContato" id="txtRespContato" value="<?= $responsavel?> ">
                         </div>
 
                         <!-- Email-->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Email" name="txtEmail" id="txtEmail">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Email" name="txtEmail" id="txtEmail" value="<?= $email?> ">
                         </div>
 
                         <!-- Telefone -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Telefone" name="txtTelefone" id="txtTelefone">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Telefone" name="txtTelefone" id="txtTelefone" value="<?= $telefone?> ">
                         </div>
 
                         <!-- Celular  -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Celular" name="txtCelular" id="txtCelular">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Celular" name="txtCelular" id="txtCelular" value="<?= $celular?> ">
                         </div>
                     </div>
 
@@ -166,12 +196,12 @@
                         </div>
                         <!-- Usuário -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="User" name="txtUser" id="txtUser">
+                            <input class="input_estilo inputs_form" type="text" placeholder="User" name="txtUser" id="txtUser" value="<?= $usuario?> ">
                         </div>
 
                         <!-- Senha -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="password" placeholder="Senha" name="txtSenha" id="txtSenha">
+                            <input class="input_estilo inputs_form" type="password" placeholder="Senha" name="txtSenha" id="txtSenha" value="<?= $senha?> ">
                         </div>
                     </div>
 

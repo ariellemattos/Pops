@@ -129,7 +129,9 @@
                         <input style="min-width:150px; width:auto;" class="quantidade" id="total" name="quant" class="text" size="5" type="text" value="R$ <?php  echo number_format(($_SESSION['totalCarrinhoPJ']), 2 , ",", "");?>" readonly >
                       </span>
                     </p>
-                    <input type="button" value="Continuar" id="btnContinuar" name="btnContinuar">
+                    <a href="checkout_endereco.php">
+                        <input type="button" value="Continuar" id="btnContinuar" name="btnContinuar">
+                    </a>
               </div>
         </div>
         <footer><?php require_once 'footer.html'; ?></footer>

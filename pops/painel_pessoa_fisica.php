@@ -26,7 +26,7 @@
         <!-- caixa que ocupa 100% de altura e largura -->
         <div class="caixa_geral_pessoa_fisica centralizar_caixa">
             <div class="caixa_central_pessoa_fisica centralizar_caixa">
-                
+
                 <div id="guardaFtoPerfil">
                     <!-- FOTO E NOME-->
                     <div class="caixa_identidade">

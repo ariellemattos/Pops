@@ -32,12 +32,12 @@
         $con = $conex->connectDatabase();
 
         if (isset($_POST['btn_enviar'])) {
-   
+
           if (isset($_COOKIE['id_p_fisica'])) {
             $resposta = $_POST['txt_resposta'];
             $id = $_GET['id'];
             $id_pessoa = $_COOKIE['id_p_fisica'];
-      
+
             $sqlInsert = "INSERT INTO tbl_resposta (descricao, id_comentario, id_p_fisica) VALUES ('$resposta', '$id', '$id_pessoa')";
 
             if(!$con->query($sqlInsert)){
@@ -48,11 +48,11 @@
 
           }else{
 
-            echo "<script>alert('Para realizar essa ação, você deve estar logado!'); 
+            echo "<script>alert('Para realizar essa ação, você deve estar logado!');
                   window.location.href = 'login_compra.php?pf';</script>";
 
           }
-      
+
         }
 
         else if(isset($_POST['btnEnviarEmail'])){
@@ -67,7 +67,7 @@
             header("location:index.php");
 
           }
-        
+
 
         //call controllers
         $controllerEnquete = new ControllerEnquete();
@@ -129,38 +129,38 @@
         <h1 class="titulo_sections">Participe das enquetes da POP'S</h1>
         <div id="enquetes" class="div-geral-section-imagens centralizar_elemento fadeInTop">
           <?php
-          
+
                foreach ($rsEnquete as $enquete) {
-                
+
                 $rsOption = $controllerEnquete->listarOpcoes($enquete->getId());
                 $respostas = explode(",", $rsOption->getResposta());
                 $idRespostas = explode(",", $rsOption->getId_opcao());
-               
+
           ?>
 
           <div class="imagens-section-two centralizarY">
             <div  class="caixa_enquete centralizar_elemento">
               <div class="titulo_enquete"><?php echo ($enquete->getTitulo()) ?></div>
               <div class="itens_enquete centralizar_elemento">
-                
-                <input type="radio"  name="rdo_option<?=$enquete->getId()?>" 
+
+                <input type="radio"  name="rdo_option<?=$enquete->getId()?>"
                 id="rdo_option<?=$respostas[0]?>" value="<?=$idRespostas[0]?>" required><?=$respostas[0]?><br><br>
-                
-                <input type="radio"  name="rdo_option<?=$enquete->getId()?>" 
+
+                <input type="radio"  name="rdo_option<?=$enquete->getId()?>"
                 id="rdo_option<?=$respostas[1]?>" value="<?=$idRespostas[1]?>" required><?=$respostas[1]?><br><br>
-                
-                <input type="radio"  name="rdo_option<?=$enquete->getId()?>" 
+
+                <input type="radio"  name="rdo_option<?=$enquete->getId()?>"
                 id="rdo_option<?=$respostas[2]?>" value="<?=$idRespostas[2]?>" required><?=$respostas[2]?><br><br>
-                
-                <input type="radio"  name="rdo_option<?=$enquete->getId()?>" 
+
+                <input type="radio"  name="rdo_option<?=$enquete->getId()?>"
                 id="rdo_option<?=$respostas[3]?>" value="<?=$idRespostas[3]?>" required><?=$respostas[3]?><br><br>
-               
+
                 <br><br>
               </div>
               <input type="button"  onclick="answer(<?=$enquete->getId()?>)" class="btn_votar" value="Votar">
             </div>
           </div>
-        
+
           <?php } ?>
         </div>
       </section>
@@ -171,7 +171,7 @@
         <div id="promo" class="section-three-conteudo centralizar_elemento fadeInTop">
           <div class="section-three-conteudo-infomarcao">
             <?php
-              $sql = "SELECT * FROM tbl_promocao WHERE status_home = 1 ORDER BY rand() LIMIT 1";
+              $sql = "SELECT * FROM tbl_promocao WHERE status_home = 1 and precisa_cadastro = 0 ORDER BY rand() LIMIT 1";
               $stm = $con->prepare($sql);
               $success = $stm->execute();
               foreach ($stm->fetchAll(PDO::FETCH_ASSOC) as $result){
@@ -287,7 +287,7 @@
           ?>
 
           <div class="caixa_comentario centralizar_elemento">
-          
+
             <div class="section-eight-usuario">
               <div class="section-eight-usuario-imagem centralizarY">
                 <img class="centralizar_elemento" src="img/icon_user.png" alt="Usuário">
@@ -301,7 +301,7 @@
             </div>
 
             <?php
-            $sql1 = "SELECT tbl_resposta.*, tbl_pessoa_fisica.nome FROM tbl_resposta 
+            $sql1 = "SELECT tbl_resposta.*, tbl_pessoa_fisica.nome FROM tbl_resposta
                     INNER JOIN tbl_pessoa_fisica ON tbl_resposta.id_p_fisica = tbl_pessoa_fisica.id_p_fisica
                     WHERE id_comentario = $id_comentario";
             $stm = $con->prepare($sql1);
@@ -336,9 +336,9 @@
             </div>
 
             </div>
-            
+
 			<?php } ?>
-          
+
         </div>
     </section>
     <footer>

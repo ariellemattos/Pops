@@ -85,7 +85,7 @@
 
 
         //método para atualizar um funcionario
-        public function atualizarFuncionario(){ 
+        public function atualizarFuncionario(){
 
             //Resgata o ID via GET de funcionarios para atualizar
             $idFuncionario = $_GET['id'];
