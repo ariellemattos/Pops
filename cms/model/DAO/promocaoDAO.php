@@ -174,7 +174,7 @@
             $selectFilterPromocao = "SELECT * FROM tbl_promocao WHERE titulo LIKE '%$filter%'";
             $conn = $this->conexao->connectDatabase();
             $select = $conn->query($selectFilterPromocao);
-            echo $selectFilterPromocao;
+
             //retorna somente um contato
             if($rsPromocao = $select->fetch(PDO::FETCH_ASSOC)) {
 
@@ -192,11 +192,6 @@
             $this->conexao->closeDatabase();
             return $promocao;
         }
-
-
-
-
-
 
     }
 

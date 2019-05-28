@@ -12,15 +12,11 @@ $path_local = $_SESSION['path_local'];
 $path_url = $_SESSION['path_url'];
 
 // Verificando se o objeto existe
-if (isset($_POST["btnFiltrar"])) {
-  // Importando a classe Controller de pessoa fisica
+if (isset($_GET['btnFiltrar'])) { 
   require_once "$path_local/cms/controller/controllerPromocao.php";
-  // Instância da Controller de pessoa fisica
   $controllerPromocao = new ControllerPromocoes();
-  // Chamando o método de inserir um novo registro
-  $controllerPromocao->filtrarPromocao();
+  $controllerPromocao->filtrar();
 }
-
 
 ?>
 
@@ -30,7 +26,7 @@ if (isset($_POST["btnFiltrar"])) {
 <div class="caixa_filtro centralizarX">
   <div class="caixa_input centralizarX">
     <form action="#" method="POST">
-      <label for="fname">Buscar</label>
+      <label for="txtFiltrar">Buscar</label>
       <input type="text" id="txtFiltrar" name="txtFiltrar" placeholder="">
       <input type="submit" name="btnFiltrar" value="Filtrar">
     </form>
