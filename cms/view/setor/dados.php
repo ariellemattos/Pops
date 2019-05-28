@@ -16,15 +16,7 @@ $path_url = $_SESSION['path_url'];
 <div class="title_paginas centralizarX">
    ADM. SETOR
 </div>
-<div class="caixa_filtro centralizarX">
-  <div class="caixa_input centralizarX">
-    <form action="#">
-      <label for="fname">Buscar</label>
-      <input type="text" id="fname" name="firstname" placeholder="">
-      <input type="submit" value="Filtrar">
-    </form>
-  </div>
-</div>
+
   <div id="registros_adm_setor" class="centralizarX">
   <table id="tabela">
     <thead>

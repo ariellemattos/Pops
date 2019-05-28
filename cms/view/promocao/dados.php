@@ -23,15 +23,7 @@ if (isset($_GET['btnFiltrar'])) {
 <div class="title_paginas centralizarX">
    GERENCIAMENTO DE PROMOÇÕES
 </div>
-<div class="caixa_filtro centralizarX">
-  <div class="caixa_input centralizarX">
-    <form action="#" method="POST">
-      <label for="txtFiltrar">Buscar</label>
-      <input type="text" id="txtFiltrar" name="txtFiltrar" placeholder="">
-      <input type="submit" name="btnFiltrar" value="Filtrar">
-    </form>
-  </div>
-</div>
+
   <div id="registros_eventos" class="centralizarX">
   <table id="tabela">
     <thead>
