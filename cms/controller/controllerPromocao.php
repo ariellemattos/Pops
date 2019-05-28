@@ -123,7 +123,7 @@
 
         }
 
-        public function filtrarPromocao(){
+        public function filtrar(){
             if($_SERVER['REQUEST_METHOD'] == 'POST'){
                 //resgata os values dos inputs para fazer o insert
                 $txtFiltrar = $_POST['txtFiltrar'];

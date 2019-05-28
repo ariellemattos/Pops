@@ -9,16 +9,16 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/painel_pessoa_juridica.css">
         <link rel="stylesheet" type="text/css" href="css/titulo_pagina.css">
-      
+       <!-- CHAMANDO O ARQUIVO DE REQUESTS EM JQUERY -->
+       <script src="js/ws_requests.js">
+        </script>
         <!-- CHAMANDO O JQUERY -->
         <script src="js/jquery.js">
         </script>
         <!-- CHAMANDO O ARQUIVO DE EVENTOS EM JQUERY -->
         <script src="js/event.js">
         </script>
-        <!-- CHAMANDO O ARQUIVO DE REQUESTS EM JQUERY -->
-        <script src="js/ws_requests.js">
-        </script>
+        
         <script>
         $(document).ready(function(){
           //SELECIONAR DADOS VIA COOKIE
@@ -247,5 +247,6 @@
                 
                   
                 </script>
+       
     </body>
 </html>

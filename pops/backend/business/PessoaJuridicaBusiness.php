@@ -121,10 +121,9 @@ class PessoaJuridicaBusiness{
     }
     public function selectByCnpj($cnpj){
         
-        $sql = "SELECT pj.*, en.* FROM tbl_p_juridica_endereco pj_end
-        INNER JOIN tbl_pessoa_juridica pj, tbl_endereco en 
-        WHERE pj_end.cnpj = pj.cnpj AND pj_end.id_endereco = en.id_endereco
-        AND pj.cnpj = '$cnpj'";
+        $sql = "SELECT pj.*, en.* FROM tbl_pessoa_juridica pj
+        INNER JOIN tbl_endereco en 
+        WHERE pj.cnpj = '$cnpj' AND en.id_endereco = pj.id_endereco";
         //Recebendo a função que faz a conexão com BD
         $con = $this->conexao->connectDatabase();
         // Executa o script no BD

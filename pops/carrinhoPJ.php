@@ -74,6 +74,19 @@
 
                 //percorrendo os produtos do carrinho
                 foreach($_SESSION['carrinhoPJ'] as $bebidas) {
+                   //manipulando js
+                   echo("
+                   <script>
+                        itens = {
+                          id: '".$produtos['id']."',
+                          title: '".$produtos['nome']."',
+                          unit_price: ".($produtos['valorUnitario'] * 100).",
+                          quantity: ".$produtos['quantidade'].",
+                          tangible: true
+                       }
+                       itemList.push(itens);
+                       
+                   </script>");
             ?>
 
             <!-- Div do carrinho / fazer while aqui -->
@@ -91,7 +104,7 @@
                           <p>
 
                           <p class="font-texto font-negrito">
-                             R$<?php echo $bebidas['valorUnitario'] *  $bebidas['qtd_fado'] ?>,00
+                             R$<?php echo number_format($bebidas['valorUnitario'] *  $bebidas['qtd_fado'], 2, ",", "") ?>
                           </p>
                   </div>
 
@@ -110,23 +123,27 @@
 
 
                 <div class="caixa_valor borda_caixa_valor">
-                    <p>R$<?php echo $bebidas['valorUnitario'] *  $bebidas['qtd_fado'] ?>,00</p>
+                    <p>R$<?php echo number_format($bebidas['valorUnitario'] *  $bebidas['qtd_fado'], 2, ",", "") ?></p>
                 </div>
                 <div class="caixa_valor ">
-                    <p> R$<?php echo $bebidas['subtotal']; ?>,00</p>
+                    <p> R$<?php echo number_format($bebidas['subtotal'], 2, ",", ""); ?></p>
                 </div>
             </div>
 
             <?php
                 $cont++;
                 }
+                echo("<script>
+                      console.log(JSON.stringify(itemList));
+                      sessionStorage.setItem('itemList', JSON.stringify(itemList));
+                  </script>");
             ?>
           </div>
             <!-- DIV SUB TOTAL -->
               <div class="div_subtotal">
                     <p>Total:
                       <span class="font-negrito" id="pre">
-                        <input style="min-width:150px; width:auto;" class="quantidade" id="total" name="quant" class="text" size="5" type="text" value="R$ <?php  echo($_SESSION['totalCarrinhoPJ'])?>" readonly >
+                        <input style="min-width:150px; width:auto;" class="quantidade" id="total" name="quant" class="text" size="5" type="text" value="R$ <?php  echo number_format(($_SESSION['totalCarrinhoPJ']), 2 , ",", "");?>" readonly >
                       </span>
                     </p>
                     <input type="button" value="Continuar" id="btnContinuar" name="btnContinuar">
