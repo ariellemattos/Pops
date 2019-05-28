@@ -41,6 +41,7 @@
         <!-- CHAMANDO O ARQUIVO DE EVENTOS EM JQUERY -->
         <script src="js/event.js">
         </script>
+        <script src="js/validarCampos.js"></script>
     </head>
 
     <body>
@@ -62,16 +63,16 @@
                     <div class="caixa_input">
                         <!-- CNPJ -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj" maxlenght="18">
                         </div>
                         <!-- Razão Social -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Razão Social" name="txtRazaoSocial" id="txtRazaoSocial">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Razão Social" name="txtRazaoSocial" id="txtRazaoSocial" onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
 
                         <!-- Nome Fantasia-->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Nome fantasia" name="txtNomeFantasia" id="txtNomeFantasia">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Nome fantasia" name="txtNomeFantasia" id="txtNomeFantasia" onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
                     </div>
 
@@ -79,15 +80,15 @@
                     <div class="caixa_input">
                         <!-- Logradouro-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouro" id="txtLogradouro">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouro" id="txtLogradouro" onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
                         <!-- num -->
                         <div class="caixa_inputs_form caixa_inputs_form_minima">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Nº" name="txtNum" id="txtNum">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Nº" name="txtNum" id="txtNum" maxlength="4" onkeypress="return validarCampos(event, 'caracter', this.id);">
                         </div>
                         <!-- Bairro-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairro" id="txtBairro">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairro" id="txtBairro" onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
                         <!-- CEP-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
@@ -95,7 +96,7 @@
                         </div>
                         <!-- Cidade -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Cidade" name="txtCidade" id="txtCidade">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Cidade" name="txtCidade" id="txtCidade" onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
                         <!-- Estado -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
@@ -138,12 +139,12 @@
                     <div class="caixa_input">
                         <!-- Responsavel pelo Contato -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Responsável pelo contato" name="txtRespContato" id="txtRespContato">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Responsável pelo contato" name="txtRespContato" id="txtRespContato" onkeypress="return validarCampos(event, 'number', this.id);" >
                         </div>
 
                         <!-- Email-->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Email" name="txtEmail" id="txtEmail">
+                            <input class="input_estilo inputs_form" type="email" placeholder="Email" name="txtEmail" id="txtEmail">
                         </div>
 
                         <!-- Telefone -->
@@ -166,7 +167,7 @@
                         </div>
                         <!-- Usuário -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="User" name="txtUser" id="txtUser">
+                            <input class="input_estilo inputs_form" type="text" placeholder="User" name="txtUser" id="txtUser"  onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
 
                         <!-- Senha -->
@@ -184,5 +185,14 @@
             </form>
         </div>
         <footer>  <?php require_once('footer.html')?> </footer>
+        <script src="js/jquery.mask.js"></script>
+        <script>
+           $(document).ready(function(){
+                $('#txtCnpj').mask('00.000.000/0000-00');
+                $('#txtCep').mask('00000-000');
+                $('#txtTelefone').mask('(00) 0000-0000');
+                $('#txtCelular').mask('(00) 00000-0000');
+           });
+        </script>
     </body>
 </html>

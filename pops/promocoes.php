@@ -12,8 +12,11 @@
   <script src="js/jquery.js"></script>
   <script src="js/event.js"></script>
   <script src="js/effects.js"></script>
+
   <script>
-	
+    function teste(){
+      alert('OK');
+    }
   </script>
 </head>
 <body>
@@ -23,9 +26,6 @@
 		$path_local = null;
 		$path_url = null;
 
-		// Variáveis que recebem as variáveis de sessão
-		$path_local = $_SESSION['path_local'];
-		$path_url = $_SESSION['path_url'];
 		require_once('../cms/model/DAO/Conexao.php');
 		$conex = new Conexao();
 		$con = $conex->connectDatabase();
@@ -53,12 +53,12 @@
           <div class="section-three-conteudo-texto">
             <?php echo (utf8_decode($result['descricao'])) ?><br>
             <?php 
-              
-              if(@$_COOKIE['id_p_fisica'] == null && $result['precisa_cadastro'] == 1){
-                echo "<a href='login_compra.php?pf'>
-						<input type='button' class='btn_votar btnParticipar' value='Participe'>
-					  </a><br>";
-              }
+                if(@$_COOKIE['id_p_fisica'] && $result['precisa_cadastro'] == 1){
+                  echo "<input type='button' onclick='teste()' class='btn_votar btnParticipar' value='Participe'></a><br>"; 
+                }else if(@$_COOKIE['id_p_fisica'] == null && $result['precisa_cadastro'] == 1){
+                  echo "<a href='login_compra.php?pf'><input type='button' class='btn_votar btnParticipar' value='Participe'>
+                  <br><a/>";
+                }  
             ?>
           </div>
         </div>

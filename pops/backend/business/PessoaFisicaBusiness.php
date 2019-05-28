@@ -96,7 +96,7 @@ class PessoaFisicaBusiness{
                 'bairro' => utf8_encode($rsPF['bairro']),
                 'cidade' => utf8_encode($rsPF['cidade']),
                 'uf' => utf8_encode($rsPF['uf']),
-                'numero' => $rsPF['numero'],
+                'num' => $rsPF['numero'],
                 'cep' => $rsPF['cep'],
             );
         }

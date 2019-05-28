@@ -80,7 +80,7 @@
                     senha = '".$funcionarios->getSenha()."',
                     status = '".$funcionarios->getStatus()."',
                     data_nascimento = '".$funcionarios->getDataNascimento()."',
-                    id_perfil = '".$funcionarios->getPerfil()."' WHERE matricula = ".$idFuncionarios;
+                    id_perfil = '".$funcionarios->getIdPerfil()."' WHERE matricula = ".$idFuncionarios;
 
             // Recebendo a função que faz a conexão com BD
             $conn = $this->conexao->connectDatabase();
