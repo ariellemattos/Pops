@@ -64,11 +64,12 @@
 
       public function setDataAdmissao($dataAdmissao){
         if(strpos($dataAdmissao, "/")){
-          //Tratamento da data para enviar para o banco
-          $this->dataAdmissao = date("Y-m-d", strtotime($dataAdmissao));
-        }else if(strpos($dataAdmissao, "-")){
-            $this->dataAdmissao = date("d/m/Y", strtotime($dataAdmissao));
+          $dataAdmissao = date("Y-m-d", strtotime(str_replace("/", "-", $dataAdmissao)));
+        }elseif (strpos($dataAdmissao, "-")) {
+          $dataAdmissao = date("d/m/Y", strtotime(str_replace("-", "/", $dataAdmissao)));
         }
+
+        $this ->dataAdmissao = $dataAdmissao;
       }
 
       public function getUsuario(){
@@ -101,12 +102,14 @@
 
       public function setDataNascimento($dataNascimento){
         if(strpos($dataNascimento, "/")){
-          //Tratamento da data para enviar para o banco
-          $this->dataNascimento = date("Y-m-d", strtotime($dataNascimento));
-        }else if(strpos($dataNascimento, "-")){
-            $this->dataNascimento = date("d/m/Y", strtotime($dataNascimento));
+          $dataNascimento = date("Y-m-d", strtotime(str_replace("/", "-", $dataNascimento)));
+        }elseif (strpos($dataNascimento, "-")) {
+          $dataNascimento = date("d/m/Y", strtotime(str_replace("-", "/", $dataNascimento)));
         }
+
+        $this ->dataNascimento = $dataNascimento;
       }
+
 
       public function getIdCargo(){
         return $this->idCargo;
