@@ -33,19 +33,21 @@
   </head>
 
   <script>
-  function process(id, num, quant){
-    var value = parseInt(document.getElementById("quant"+num).value);
-    value+=quant;
+    var itemList = new Array(); //armazena os itens para ser inserido na API 
+    var itens;
+    function process(id, num, quant){
+      var value = parseInt(document.getElementById("quant"+num).value);
+      value+=quant;
 
-    const retorno = atualizarCarrinhoPJ(id, quant);
+      const retorno = atualizarCarrinhoPJ(id, quant);
 
-    if(value < 1){
-      document.getElementById("quant"+num).value = 1;
-    }else{
-      document.getElementById("quant"+num).value = value;
+      if(value < 1){
+        document.getElementById("quant"+num).value = 1;
+      }else{
+        document.getElementById("quant"+num).value = value;
+      }
+      window.location.reload();
     }
-    window.location.reload();
-  }
   </script>
 
   <body>
@@ -78,10 +80,10 @@
                    echo("
                    <script>
                         itens = {
-                          id: '".$produtos['id']."',
-                          title: '".$produtos['nome']."',
-                          unit_price: ".($produtos['valorUnitario'] * 100).",
-                          quantity: ".$produtos['quantidade'].",
+                          id: '".$bebidas['id']."',
+                          title: '".$bebidas['nome']."',
+                          unit_price: ".($bebidas['valorUnitario'] * 100).",
+                          quantity: ".$bebidas['quantidade'].",
                           tangible: true
                        }
                        itemList.push(itens);
@@ -146,7 +148,9 @@
                         <input style="min-width:150px; width:auto;" class="quantidade" id="total" name="quant" class="text" size="5" type="text" value="R$ <?php  echo number_format(($_SESSION['totalCarrinhoPJ']), 2 , ",", "");?>" readonly >
                       </span>
                     </p>
+                    <a href="checkout_endereco.php">
                     <input type="button" value="Continuar" id="btnContinuar" name="btnContinuar">
+                </a>
               </div>
         </div>
         <footer><?php require_once 'footer.html'; ?></footer>

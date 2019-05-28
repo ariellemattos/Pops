@@ -1,15 +1,3 @@
-<?php 
-    @session_start();
-    //echo($name);
-    $id = $_SESSION['carrinho'];
-
-    var_dump($_SESSION['carrinho']);
-   // echo(json_encode($_SESSION['carrinho']));
-    echo("<script> var carrinho =".json_encode($_SESSION['carrinho'])."</script>");
-    echo("<script>console.log(carrinho)</script>");
-
-    
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -22,7 +10,8 @@
         <link rel="stylesheet" href="css/arielle.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- CHAMANDO O JQUERY -->
-        <script src="js/jquery.js">
+        <script src="js/jquery.js"></script>
+       
         <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
         </script>
         
@@ -104,7 +93,7 @@
                              <input class="input_estilo input_seguranca" type="text" name="txtCodSeguranca" id="txtCodSeguranca">
                          </div>
 
-                         <input class="botao_pagamento font-titulo" type="button" value="Finalizar Compra" id="btnFinalizarCompra" name="btnFinalizarCompra">
+                         <input class="botao_pagamento font-titulo" type="submit" value="Finalizar Compra" id="btnFinalizarCompra" name="btnFinalizarCompra">
                      </div>
                  </div>
              </form>
@@ -112,12 +101,7 @@
        </div>
       <footer>   <?php require_once('footer.html')?> </footer>
      
-      <script>
-          for(var i = 0; i < carrinho.length; i++){
-            console.log(carrinho[i].id);
-          }
-          
-      </script>
+      <script src="js/pagarme.min.js"> </script>
       <script src="js/pagamento.js">
         </script>
     </body>

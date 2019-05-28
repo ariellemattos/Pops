@@ -34,7 +34,7 @@
                     </div>
 
                     <div>
-                        <img src="../cms/view/img/editar.png" title="icon" class="iconEditarFis">
+                        <img src="../cms/view/img/editar.png"  title="icon" class="iconEditarFis">
                     </div>
                 </div>
 
