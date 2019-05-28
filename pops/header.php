@@ -58,7 +58,8 @@ if(isset($_COOKIE['id_p_fisica'])){
 <nav>
   <div class="navbar centralizarX centralizarY">
   <a href="index.php">Home</a>
-  <?php if (isset($_COOKIE['cnpj'])){ ?>
+  <?php if (isset($_COOKIE['cnpj'])){ 
+   ?>
   <a href="produtos-compra.php">Produtos</a>
 <?php } else{?>
   <a href="produtos.php">Produtos</a>
