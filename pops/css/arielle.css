@@ -219,7 +219,7 @@ a.modal-fechar{
 
 .principal-cadastro{
   width:700px;
-  height: 400px;
+  height: 200px;
   background-color: white;
   margin-left: auto;
   margin-right: auto;
@@ -255,27 +255,25 @@ a.modal-fechar{
 }
 
 .escolha-cadastro-body{
-  width: 470px;
-  height: 250px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 700px;
+  height: 200px;
+  margin-left: -170px;
 }
 
 .icone-escolha-cadastro{
-  width: 130px;
-  height: 130px;
-  background-color: lightgray;
-  margin-right:  100px;
-  float: left;
+  width: 50px;
+  height: 50px;
   background-color: white;
 
 }
 
 .icone-escolha-cadastro img{
-  width: 130px;
-  height: 130px;
+  width: 50px;
+  height: 50px;
   cursor: pointer;
-
+  margin-left: auto;
+  margin-right: auto;
+  background-color: yellow;
 }
 
 .icone-escolha-cadastro span{
@@ -903,6 +901,7 @@ p.modal-title-campos-anuncio{
   margin-right: auto;
   background-color: white;
   margin-top: 35px;
+  font-family: Gadugi;
 }
 
 #titulo_login{
@@ -1049,4 +1048,41 @@ p.modal-title-campos-anuncio{
   display: block;
   float: right;
   color: #fff;
+}
+.cadastro-item1{
+  width:248px;
+  height: 110px;
+  float: left;
+  padding: 20px;
+  margin-right: 120px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  float: left;
+}
+.cadastro-item1:hover{
+  border: 1px solid #EA720F;
+}
+.cadastro-item2:hover{
+  border: 1px solid #EA720F;
+}
+.cadastro-item2{
+  width:250px;
+  height: 110px;
+  float: left;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  float: left;
+}
+.iconCadastro{
+  width: 50px;
+  height: 50px;
+  margin-left: 100px;
+}
+.txtCadastroItem{
+  width:250px;
+  height: 30px;
+  margin-top: 20px;
+  color: #000;
+  font-family: Gadugi;
+  text-align: center;
+  font-size:25px;
 }

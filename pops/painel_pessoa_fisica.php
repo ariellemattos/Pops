@@ -30,7 +30,7 @@
                 <div id="guardaFtoPerfil">
                     <!-- FOTO E NOME-->
                     <div class="caixa_identidade">
-                        <img src="img/a.jpg" id="foto" width="245" height="250" title="">
+                        <img src="img/a.jpg" id="foto" width="245" height="250" title="foto" alt="Imagem não encontrada">
                     </div>
 
                     <div>
@@ -110,8 +110,8 @@
                 <!-- COMENTÁRIO -->
                 <section id="comentario">
                     <form class="form-comentario" id="form-comentario" action="painel_pessoa_fisica.php" method="POST">
-                        <h1 class="font-titulo font-negrito color-blue">Comentário</h1>
-						    <textarea class="font-texto" type="text" name="txtComentario" id="txtComentario"></textarea><br>
+                        <div class="font-titulo font-negrito color-blue">Comentário</div>
+						    <textarea class="font-texto"  name="txtComentario" id="txtComentario"></textarea><br>
                         <input class="botao_comentario" type="submit" value="Enviar">
                     </form>
                 </section>

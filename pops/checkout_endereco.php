@@ -33,21 +33,21 @@
 
       <div class="formulario_endereco">
         <label>Nome do Destinatário:</label><label style="color:red;">*</label> <br>
-        <input type="text" name="" value=""><br>
+        <input type="text" name="txtDestinario" ><br>
 
         <label>Logradouro:</label><label style="color:red;">*</label> <br>
-        <input type="text" name="" value=""><br>
+        <input type="text" name="txtLogradouro" ><br>
 
         <label>Cidade:</label><label style="color:red;">*</label> <br>
-        <input type="text" name="" value=""><br>
+        <input type="text" name="txtCidade" ><br>
       </div>
 
       <div class="formulario_endereco">
         <label>CEP:</label><label style="color:red;">*</label> <br>
-        <input type="text" name="" value=""><br>
+        <input type="text" name="txtCep" ><br>
 
         <label>N:</label><label style="color:red;">*</label> <br>
-        <input type="text" name="" value=""><br>
+        <input type="text" name="txtNumero" ><br>
 
         <label>Estado:</label><label style="color:red;">*</label> <br>
         <select name="uf" id="uf">
