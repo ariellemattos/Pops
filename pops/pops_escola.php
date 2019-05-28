@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="js/jquery.js"></script>
   <script src="js/event.js"></script>
-  <<script src="js/jquery.mask.js"></script>
+  <script src="js/jquery.mask.js"></script>
   <script src="js/validarCampos.js"></script>
 </head>
 <body>
@@ -46,7 +46,7 @@
     <!-- CAIXA DO CADASTRO DA ESCOLA -->
     <div id="caixa_geral_cadastro">
         <section class="caixa_central_cadastro div_centro">
-                <h1 class="titulo_pops" >Cadastro da escola</h1>
+                <div class="titulo_pops" >Cadastro da escola</div>
             <form name="frmEscola" id="frmPopsEscola" action="pops_escola.php" method="POST" autocomplete="off">
                 <!-- FORM DIREITO -->
                 <div class="caixa_principal_formulario">

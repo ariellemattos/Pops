@@ -41,7 +41,7 @@
         <!-- CHAMANDO O ARQUIVO DE EVENTOS EM JQUERY -->
         <script src="js/event.js"></script>
         <script src="js/validarCampos.js"></script>
-        <script scr="js/ws_requests.js"></script>
+        <script src="js/ws_requests.js"></script>
     </head>
 
     <body>
@@ -82,7 +82,7 @@
                           </div>
                           <!-- Celular -->
                           <div class="caixa_inputs_form caixa_inputs_form_2">
-                              <input class="input_estilo inputs_form" placeholder="Celular" type="text" name="txtCelular" id="txtCelular" required onkeypress="return validarCampos(event, 'caracter', this.id);" required>
+                              <input class="input_estilo inputs_form" placeholder="Celular" type="text" name="txtCelular" id="txtCelular" onkeypress="return validarCampos(event, 'caracter', this.id);" required>
                           </div>
                       </div>
 
@@ -126,7 +126,7 @@
                           <!-- Estado -->
                           <div class="caixa_input largura_fixa_div_3 selectForm">
                               <select class="slt_estado formatacao_inputs borda_inputs largura_fixa_inputs_3 slt_estado" id="sltEstado" name="sltEstado" required>
-                                  <option disabled selected>Estado:</option>
+                                  <option disabled selected>Selecione</option>
                                   <option value="Acre">AC</option>
                                   <option value="Alagoas">AL</option>
                                   <option value="Amapá">AP</option>

@@ -93,7 +93,7 @@
                           <input class="bordas-form bordas-sombra" type="text" maxlength="12" id="txtTelefone" name="txtTelefone" placeholder="Telefone"  onkeyup="celData(this)" required>
                         </div>
                         <div class="caixa_contato margin-direita-contato">
-                            <input class="bordas-form bordas-sombra" type="text" id="txtCelular" type="text" maxlength="13" name="txtCelular" placeholder="Celular" onkeyup="celData(this)" required>
+                            <input class="bordas-form bordas-sombra" type="text" id="txtCelular"  maxlength="13" name="txtCelular" placeholder="Celular" onkeyup="celData(this)" required>
                         </div>
                     </div>
 
