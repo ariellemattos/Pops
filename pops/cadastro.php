@@ -25,15 +25,16 @@
         <div class="escolha-cadastro">
           <div class="escolha-cadastro-body">
             <a href="cadastro_pessoa_fisica.php">
-              <div class="icone-escolha-cadastro">
-                <img src="img/pessoa_fisica.png" alt=""> <span> Pessoa Fisica</span>
+              <div class="cadastro-item1">
+                  <img src="img/pessoa_fisica.png" alt="" class="iconCadastro">
+                  <div class="txtCadastroItem">Pessoa Fisica</div>
               </div>
             </a>
 
             <a href="cadastro_pessoa_juridica.php">
-              <div class="icone-escolha-cadastro">
-                  <img src="img/pessoa_juridica.png" alt="">
-                <span> Pessoa Juridica</span>
+              <div class="cadastro-item2">
+                  <img src="img/pessoa_juridica.png" alt="" class="iconCadastro">
+                  <div class="txtCadastroItem">Pessoa Juridica</div>
               </div>
             </a>
           </div>

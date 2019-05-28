@@ -31,9 +31,9 @@ $rsPessoaJuridica = $controllerPessoaJuridica->listarRegistros();
   </script>
   <script src="js/effects.js"></script>
 
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLyCfZiJMTKw8SdqUKqCgYay1rTwnUtF8"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDLyCfZiJMTKw8SdqUKqCgYay1rTwnUtF8"></script>
 
-  <script type="text/javascript">
+  <script>
 
   $(document).ready(function() {
 

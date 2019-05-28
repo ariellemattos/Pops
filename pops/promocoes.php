@@ -17,6 +17,7 @@
     function teste(){
       alert('OK');
     }
+
   </script>
 </head>
 <body>

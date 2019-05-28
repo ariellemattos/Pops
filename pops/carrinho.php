@@ -50,21 +50,7 @@
     <script src="js/ws_requests.js"></script>
   </head>
 
-  <script>
-  function process(id, num, quant){
-    var value = parseInt(document.getElementById("quant"+num).value);
-    value+=quant;
-
-    const retorno = atualizarCarrinho(id, quant);
-
-    if(value < 1){
-      document.getElementById("quant"+num).value = 1;
-    }else{
-      document.getElementById("quant"+num).value = value;
-    }
-    window.location.reload();
-  }
-  </script>
+  
   <body>
     <header><?php require_once 'header.php'; ?></header>
 
@@ -115,7 +101,7 @@
                         <input class="botao_qtd" type="button" id="plus" value='-' onclick="process(<?php echo($produtos['id']) ?>, <?php echo $cont?>, -1)">
                     </div>
                     <div class="caixa_quantidade">
-                        <input class="quantidade" id="quant<?php echo $cont?>" name="quant<?php echo $cont?>" class="text" min="0" size="1" type="text" value="<?php echo $produtos['quantidade']; ?>" maxlength="5" >
+                        <input class="quantidade text" id="quant<?php echo $cont?>" name="quant<?php echo $cont?>"  min="0" size="1" type="text" value="<?php echo $produtos['quantidade']; ?>" maxlength="5" >
                     </div>
                     <div class="caixa_botao_qtd">
                         <input class="botao_qtd" type="button" id="minus" value='+' onclick="process(<?php echo($produtos['id']) ?>, <?php echo $cont?>, 1)">
@@ -138,7 +124,7 @@
               <div class="div_subtotal">
                     <p>Total:
                       <span class="font-negrito" id="pre">
-                        <input style="min-width:150px; width:auto;" class="quantidade" id="total" name="quant" class="text" size="5" type="text" value="R$ <?php  echo($_SESSION['totalCarrinho'])?>" readonly >
+                        <input style="min-width:150px; width:auto;" class="quantidade text" id="total" name="quant"  size="5" type="text" value="R$ <?php  echo($_SESSION['totalCarrinho'])?>" readonly >
                       </span>
                     </p>
 
@@ -160,5 +146,23 @@
               </div>
         </div>
         <footer><?php require_once 'footer.html'; ?></footer>
+
+        <script>
+          function process(id, num, quant){
+            var value = parseInt(document.getElementById("quant"+num).value);
+            value+=quant;
+
+            const retorno = atualizarCarrinho(id, quant);
+
+            if(value < 1){
+              document.getElementById("quant"+num).value = 1;
+            }else{
+              document.getElementById("quant"+num).value = value;
+            }
+            window.location.reload();
+          }
+          </script>
     </body>
+
+    
 </html>

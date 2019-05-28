@@ -45,7 +45,7 @@
     <!-- CAIXA DO CADASTRO DA ESCOLA -->
     <div id="caixa_geral_cadastro">
         <section class="caixa_central_cadastro div_centro">
-                <h1 class="titulo_pops" >Cadastro da escola</h1>
+                <div class="titulo_pops" >Cadastro da escola</div>
             <form name="frmEscola" id="frmPopsEscola" action="pops_escola.php" method="POST" autocomplete="off">
                 <!-- FORM DIREITO -->
                 <div class="caixa_principal_formulario">

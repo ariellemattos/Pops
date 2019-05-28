@@ -163,7 +163,7 @@
                
                 <br><br>
               </div>
-              <input type="button" id="btn_votar" onclick="answer(<?=$enquete->getId()?>)" class="btn_votar" value="Votar">
+              <input type="button"  onclick="answer(<?=$enquete->getId()?>)" class="btn_votar" value="Votar">
             </div>
           </div>
         
@@ -238,9 +238,7 @@
 
             <?php } ?>
           <div class="caixa_noticia-botao">
-            <button type="button" name="button">
               <a href="noticias.php">Mais notícias</a>
-            </button>
           </div>
 
           <form action="index.php" name="frmEmail" id="frmEmail" method="POST">
@@ -342,7 +340,7 @@
               <form action="index.php?id=<?= $id_comentario ?>" method="POST">
               <div class="caixa_input">
                 <label for="txt_resposta">Resposta</label>
-                <input type="text" id="txt_resposta" name="txt_resposta">
+                <input type="text"  name="txt_resposta">
               </div>
               <div class="caixa_botao_email">
                 <button type="submit" name="btn_enviar">Enviar</button>

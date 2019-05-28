@@ -18,12 +18,14 @@
 
     $nome = $_POST['txtNome'];
     $email = $_POST['txtEmail'];
+    $tipo = $_POST['select_tipo'];
     $telefone = $_POST['txtTelefone'];
     $celular =  $_POST['txtCelular'];
     $observacao =  $_POST['txtObservacao'];
 
-      $sql = "INSERT INTO tbl_fale_conosco(nome, email, telefone, descricao, celular)
-              VALUES ('".$nome."','".$email."', '".$telefone."', '".$celular."', '".$observacao."')
+
+      $sql = "INSERT INTO tbl_fale_conosco(nome, email , telefone, tipo, descricao, celular)
+              VALUES ('".$nome."','".$email."', '".$telefone."','".$tipo."', '".$celular."', '".$observacao."')
   ";
 
     // Abrindo a conexão com BD
@@ -31,7 +33,9 @@
 
     // Executa o script no BD
     if (!$con->query($sql))
-    echo 'Erro no script de insert';
+      echo 'Erro no script de insert';
+    else
+      echo "<script> alert('Resposta enviada com sucesso'); </script>";
 
     header('location:fale_conosco.php');
   }
@@ -89,7 +93,7 @@
                           <input class="bordas-form bordas-sombra" type="text" maxlength="12" id="txtTelefone" name="txtTelefone" placeholder="Telefone"  onkeyup="celData(this)" required>
                         </div>
                         <div class="caixa_contato margin-direita-contato">
-                            <input class="bordas-form bordas-sombra" type="text" id="txtCelular" type="text" maxlength="13" name="txtCelular" placeholder="Celular" onkeyup="celData(this)" required>
+                            <input class="bordas-form bordas-sombra" type="text" id="txtCelular"  maxlength="13" name="txtCelular" placeholder="Celular" onkeyup="celData(this)" required>
                         </div>
                     </div>
 

@@ -198,3 +198,10 @@ h6{
    color: #fff;
    background-color: #cc6508;
 }
+.iconEditarFis{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    margin-left: 340px;
+    cursor:pointer;
+}
