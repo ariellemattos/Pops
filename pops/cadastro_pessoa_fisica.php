@@ -87,6 +87,18 @@
                       </div>
 
                       <div class="caixa_input">
+                        <!-- Telefone -->
+                        <div class="caixa_inputs_form caixa_inputs_form_4">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Telefone" name="txtTelefone" required>
+                        </div>
+                        <!-- Data nascimento -->
+                        <div class="caixa_inputs_form caixa_inputs_form_4">
+                            <input class="input_estilo inputs_form" placeholder="Data de nascimento" type="text" name="dtNasc" required>
+                        </div>
+
+                    </div>
+
+                      <div class="caixa_input">
                           <!-- Logradouro -->
                           <div class="caixa_inputs_form caixa_inputs_form_medio">
                               <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouro" id="txtLogradouro" onkeypress="return validarCampos(event, 'number', this.id);" required >
