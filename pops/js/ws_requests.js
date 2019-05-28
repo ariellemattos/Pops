@@ -199,8 +199,6 @@ function getAllDataPJ(){
         dataType: "json",
         data: {"cnpj":cnpjCookie},
         success: function(data){
-
-
             $('#foto').attr('src', data.foto);
             $('#nom_fantasia').html(data.nome_fantasia);
             $('#razao_social').html(data.razao_social);
