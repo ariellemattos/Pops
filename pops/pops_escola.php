@@ -11,7 +11,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="js/jquery.js"></script>
   <script src="js/event.js"></script>
-  <script src="js/jquery.mask.js"></script>
   <script src="js/validarCampos.js"></script>
 </head>
 <body>
@@ -120,6 +119,7 @@
     <!-- FOOTER -->
     <footer>  <?php require_once('footer.html')?> </footer>
     <script src="js/ws_requests.js"></script>
+    <script src="js/jquery.mask.js"></script>
     <script>
         $(document).ready(function(){
             $('#txtTelefone').mask('(00) 0000-0000');

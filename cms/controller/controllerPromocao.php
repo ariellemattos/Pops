@@ -122,6 +122,20 @@
             return $this->promocaoDAO->selectByIdPromocao($idPromocoes);
 
         }
+
+        public function filtrarPromocao(){
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                //resgata os values dos inputs para fazer o insert
+                $txtFiltrar = $_POST['txtFiltrar'];
+                //Instânciando a classe Promocao
+                $promocoes = new Promocao();
+
+                //Guardando os dados fornecidos pelo usuário no obj Promocao
+                $promocoes->setTitulo($txtFiltrar);
+                
+                $this->promocaoDAO->filterPromocao($promocoes);
+            }
+        }
     }
 
 ?>

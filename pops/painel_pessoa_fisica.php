@@ -30,7 +30,7 @@
                 <div id="guardaFtoPerfil">
                     <!-- FOTO E NOME-->
                     <div class="caixa_identidade">
-                        <img src="img/a.jpg" id="foto" width="245" height="250" title="foto" alt="Imagem não encontrada">
+                        <img id="foto" width="245" height="250" title="">       
                     </div>
 
                     <div>
