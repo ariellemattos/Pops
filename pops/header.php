@@ -1,5 +1,5 @@
 
-<?php 
+<?php
 
 if(isset($_GET['logout'])){
   @setcookie("id_p_fisica", $_COOKIE['id_p_fisica'], 1);
@@ -8,15 +8,15 @@ if(isset($_GET['logout'])){
   unset($_COOKIE['cnpj']);
 }
 
-if(isset($_COOKIE['id_p_fisica'])){ 
-  
+if(isset($_COOKIE['id_p_fisica'])){
+
 ?>
 
   <div class="mini_painel">
     <div class="dropdown">
       <div class="dropbtn">
         <div id="nome_header"></div>
-        
+
       </div>
       <div class="dropdown-content">
         <a href="painel_pessoa_fisica.php">Perfil</a>
@@ -31,7 +31,7 @@ if(isset($_COOKIE['id_p_fisica'])){
     <div class="dropdown">
       <button class="dropbtn">
         <div id="responsavel_header"></div>
-        
+
       </button>
       <div class="dropdown-content">
         <a href="painel_pessoa_juridica.php">Perfil</a>
@@ -46,7 +46,7 @@ if(isset($_COOKIE['id_p_fisica'])){
         <div class="dropdown">
           <div class="dropbtn">
             <div id="icone"></div>
-            
+
           </div>
           <div class="dropdown-content">
             <a href="login_compra.php?pf">Pessoa Física</a>
@@ -62,7 +62,11 @@ if(isset($_COOKIE['id_p_fisica'])){
 <nav>
   <div class="navbar centralizarX centralizarY">
   <a href="index.php">Home</a>
+  <?php if (isset($_COOKIE['cnpj'])){ ?>
+  <a href="produtos-compra.php">Produtos</a>
+<?php } else{?>
   <a href="produtos.php">Produtos</a>
+  <?php }?>
   <a href="promocoes.php">Promoções</a>
   <a href="loja.php">Loja Pop'S</a>
   <div class="dropdown">

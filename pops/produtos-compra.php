@@ -41,7 +41,7 @@
             </div>
             <div class="section-six-text-products">
               <h2>Fardo com  <?php echo (utf8_decode($result['qtd_fardo'])) ?> <?php echo (utf8_decode($result['nome'])) ?> de <?php echo (utf8_decode($result['unidade_medida'])) ?>ml </h2>
-              <p>R$ <?php echo ($result['qtd_fardo']*$result['valor_unitario']) ?>,00</p>
+              <p>R$ <?php echo number_format(($result['qtd_fardo']*$result['valor_unitario']), 2, ",", "") ?></p>
             </div>
             <div class="section-six-button">
               <input type="button" name="" value="Adicionar o fardo" onclick="adicionarFardo(<?= ($result['id_produto'])?>, event)">
