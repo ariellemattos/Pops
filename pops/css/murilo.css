@@ -85,7 +85,7 @@
 }
 
 .btn_votar{
-  width: 100px;
+  width: 150px;
   background-color: #5fa83a;
   color: white;
   padding: 14px 20px;
@@ -549,8 +549,9 @@
 
 .section-eight{
   width: 100%;
-  height: 800px;
+  height: auto;
   background-color: #fff;
+  padding-bottom: 100px;
 }
 
 .section-eight h1{

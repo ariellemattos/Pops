@@ -94,9 +94,8 @@ class PessoaJuridicaDAO{
 
   public function selectAll(){
     $sql = "SELECT pj.*, e.logradouro, e.bairro, e.cidade, e.cep
-	  FROM tbl_pessoa_juridica AS pj
-	  INNER JOIN tbl_p_juridica_endereco AS pje ON pj.cnpj = pje.cnpj
-	  INNER JOIN tbl_endereco AS e ON pje.id_endereco = e.id_endereco";
+            FROM tbl_pessoa_juridica AS pj
+            INNER JOIN tbl_endereco AS e ON pj.id_endereco = e.id_endereco";
 
     // Recebendo a função que faz a conexão com BD
     $con = $this->conexao->connectDatabase();
@@ -151,10 +150,10 @@ class PessoaJuridicaDAO{
     }
 
     public function selectById($cnpj){
-      $sql = "SELECT pj.*, e.logradouro, e.bairro, e.cidade
-	  FROM tbl_pessoa_juridica AS pj
-	  INNER JOIN tbl_p_juridica_endereco AS pje ON pj.cnpj = pje.cnpj
-	  INNER JOIN tbl_endereco AS e ON pje.id_endereco = e.id_endereco WHERE pj.cnpj = $cnpj;";
+      $sql = "SELECT pj.*, e.logradouro, e.bairro, e.cidade, e.cep
+              FROM tbl_pessoa_juridica AS pj
+              INNER JOIN tbl_endereco AS e ON pj.id_endereco = e.id_endereco
+              WHERE pj.cnpj =  $cnpj;";
 
       // Recebendo a função que faz a conexão com BD
       $con = $this->conexao->connectDatabase();

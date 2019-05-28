@@ -2,31 +2,17 @@
 //-------FAZ O LOGIN NO DASHBOARD DA PESSOA JURIDICA ------------
 var host = window.location.host + "/Tcc";
 $("#btnlogar").click(function(){
-    $.ajax({
-        type: "POST",
-        url: `http://${host}/pops/backend/services/PFService.php/?op=login`,
-        dataType: "json",
-        data: {"user": $("#txtuser").val(), "senha": $("#txtpassword").val()},
-        success: function(data){
 
-            //console.log(data);
-            var html = '';
-            if(data.success == true){
-                //redireciona a url p/ dashboard da pj
-                var url = `http://${host}/pops/painel_pessoa_fisica.php`;
 
-                //criando um cookie no js
-                document.cookie = "id_p_fisica="+data.id_p_fisica;
-                $(location).attr('href',url);
+  var tipo = $(this).data("tipo");
 
-            } else {
-                    loginPJ()
-            }
+  if (tipo == "txtcpf") {
+      loginPF();
+  }else{
+      loginPJ();
+  }
 
-        }
-    });
 });
-
 
 function logout(){
     document.cookie = "cnpj="+null;
@@ -34,6 +20,29 @@ function logout(){
     $(location).attr('href',url);
 }
 
+function loginPF(){
+  $.ajax({
+    type: "POST",
+    url: `http://${host}/pops/backend/services/PFService.php/?op=login`,
+    dataType: "json",
+    data: {"cpf": $("#txtcpf").val(), "senha": $("#txtpassword").val()},
+    success: function(data){
+
+        //console.log(data);
+        var html = '';
+        if(data.success == true){
+            //redireciona a url p/ dashboard da pj
+            var url = `http://${host}/pops/index.php`;
+
+            //criando um cookie no js
+            document.cookie = "id_p_fisica="+data.id_p_fisica;
+            $(location).attr('href',url);
+
+        } 
+
+    }
+  });
+}
 
 //function que faz o login p/ Pessoa Juridica
 function loginPJ(){
@@ -41,13 +50,14 @@ function loginPJ(){
         type: "POST",
         url: `http://${host}/pops/backend/services/PJService.php/?op=login`,
         dataType: "json",
-        data: {"user": $("#txtuser").val(), "senha": $("#txtpassword").val()},
+        data: {"cnpj": $("#txtcnpj").val(), "senha": $("#txtpassword").val()},
         success: function(data){
             //console.log(data);
+
             var html = '';
             if(data.success == true){
                 //redireciona a url p/ dashboard da pj
-                var url = `http://${host}/pops/painel_pessoa_juridica.php`;
+                var url = `http://${host}/pops/index.php`;
 
                 //criando um cookie no js
                 document.cookie = "cnpj="+data.cnpj;
@@ -111,6 +121,18 @@ function getAllData(){
     });
 }
 
+function getNome(){
+  var idPessoaFisicaCookie = document.cookie;
+  $.ajax({
+      type: "POST",
+      url: `http://${host}/pops/backend/services/PFService.php/?op=dashboard`,
+      dataType: "json",
+      data: {"id_p_fisica":idPessoaFisicaCookie},
+      success: function(data){
+          $('#nome_header').html("Olá, " + data.nome);
+      }
+  });
+}
 
 //-------ADICIONAR PERFIL------------
 $("#form-perfil").submit(function(evt){
@@ -203,6 +225,21 @@ function getAllDataPJ(){
 
         }
     });
+}
+
+function getResponsavel(){
+  var cnpjCookie = document.cookie;
+  $.ajax({
+      type: "POST",
+      url: `http://${host}/pops/backend/services/PJService.php/?op=dashboard`,
+      dataType: "json",
+      data: {"cnpj":cnpjCookie},
+      success: function(data){
+
+          $('#responsavel_header').html("Olá, " + data.responsavel);
+
+      }
+  });
 }
 
 function getPerfilData(){
@@ -488,4 +525,24 @@ function callModalWithData(obj){
             }
         });
     });
+
+    //resposta da enquete
+    function answer(_id_enq) {
+        var radioValue = $(`input[name='rdo_option${_id_enq}']:checked`).val();
+       
+        $.ajax({
+          type: "POST",
+          url: `http://${host}/pops/backend/services/EnqueteService.php/?op=answer`,
+          dataType:"json",
+          data:{"id_resposta":radioValue, "id_enq":_id_enq},
+          success: function(data){
+              var html = "<div>"+data+"</div>";
+              swal({icon:"success", text:data});
+              console.log(data);
+          },
+          error: function(){
+              alert('deu erro');
+          }
+      });
+    };
 

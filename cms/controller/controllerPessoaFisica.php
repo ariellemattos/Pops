@@ -54,13 +54,12 @@ class ControllerPessoaFisica
       $pessoaFisica->setEmail($_POST["txtEmail"]);
       $pessoaFisica->setTelefone($_POST["txtTelefone"]);
       $pessoaFisica->setCelular($_POST["txtCelular"]);
-      $pessoaFisica->setDtNasc($_POST[""]);
+      $pessoaFisica->setDtNasc($_POST["dtNasc"]);
       $pessoaFisica->setStatus("1");
       $pessoaFisica->setLogradouro($_POST["txtLogradouro"]);
       $pessoaFisica->setNumero($_POST["txtNumero"]);
       $pessoaFisica->setBairro($_POST["txtBairro"]);
       $pessoaFisica->setCidade($_POST["txtCidade"]);
-      $pessoaFisica->setUf($_POST["sltEstado"]);
       $pessoaFisica->setUsuario( $_POST["txtUser"]);
       $pessoaFisica->setSenha( $_POST["txtSenha"]);
 

@@ -32,7 +32,13 @@ header{
 .login{
   float: right;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-right: 120px;
+  height: 30px;
+  width: 30px;
+  font-family: Gadugi;
+}
+
+#icone{
   height: 30px;
   width: 30px;
   background-image: url("../img/user.png");
@@ -41,7 +47,16 @@ header{
   transition: 0.5s;
 }
 
-.login:hover{
+.mini_painel{
+  float: right;
+  margin-top: 20px;
+  font-family: Gadugi;
+  margin-right: 70px;
+  font-size: 18px;
+  color: #fff;
+}
+
+#icone:hover{
   background-image: url("../img/user-hover.png");
   transition: 0.5s;
 }
@@ -134,6 +149,26 @@ nav{
   margin-bottom: 5px;
 }
 
+.mini_painel .dropdown-content a:hover{
+  background-color: #e57510;
+  transition: 0.5s;
+}
+
+.mini_painel .dropdown-content{
+  border-top: 2px solid #e57510;
+  border-radius: 5px;
+}
+
+.login .dropdown-content{
+  border-top: 2px solid #e57510;
+  border-radius: 5px;
+}
+
+.login .dropdown-content a:hover{
+  background-color: #e57510;
+  transition: 0.5s;
+}
+
 .navbar a:hover, .dropdown:hover .dropbtn {
   background-color: #15233a;
   transition: 0.5s;
@@ -146,7 +181,7 @@ nav{
   position: absolute;
   border-top: 2px solid #15233a;
   background-color: #f9f9f9;
-  min-width: 160px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5);
   z-index: 1;
 }
@@ -159,13 +194,13 @@ nav{
   text-decoration: none;
   display: block;
   text-align: left;
-  transition: 0.5;
+  transition: 0.5s;
 }
 
 .dropdown-content a:hover {
   background-color: #15233a;
   color: #fff;
-  transition: 0.5;
+  transition: 0.5s;
 }
 
 .dropdown:hover .dropdown-content {
@@ -250,4 +285,10 @@ footer{
   font-family: Gadugi;
   text-align: center;
   color: #fff;
+}
+
+.msg_confirm{
+  background-color: #0f0;
+  font-size: 17px;
+  
 }

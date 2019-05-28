@@ -102,7 +102,7 @@ if (isset($funcionarios)) {
         </div>
         <div class="caixa_inputs_evento titulo_e_localidade select_funcionario">
             <label class="lblEventos slt_direita">Perfil:</label><br>
-            <select name="select_cargo">
+            <select name="select_perfil">
                 <option selected disabled>Selecione um perfil:</option>
               <?php
 

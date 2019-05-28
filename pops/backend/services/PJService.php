@@ -14,10 +14,10 @@
     if(isset($_GET['op'])){
         $op = $_GET['op'];
         if($op=='login'){
-            $username = $_POST['user'];
+            $cnpj = $_POST['cnpj'];
             $password = $_POST['senha'];
             //callback
-            echo json_encode($pjBusiness->login($username, $password));
+            echo json_encode($pjBusiness->login($cnpj, $password));
         }
         if($op=='dashboard'){
             $cnpj = $_COOKIE['cnpj'];

@@ -67,7 +67,7 @@
                        <div class="caixa_campos_form">
                            <label class="label_estilo font-titulo">Validade: </label><br>
                            <select id="sltMes" class="input_mes">
-                               <option selected></option>
+                               <option selected>Selecione</option>
                                <option>01</option>
                                <option>02</option>
                                <option>03</option>
@@ -83,7 +83,7 @@
                            </select>
 
                            <select id="sltAno" class="input_ano">
-                               <option selected></option>
+                               <option selected>Selecione</option>
                                <option>2019</option>
                                <option>2020</option>
                                <option>2021</option>

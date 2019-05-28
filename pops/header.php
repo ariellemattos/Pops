@@ -1,32 +1,61 @@
-<script>
-$(document).ready(function(){
-  //CHAMAR MODAL
-  $('.login').click(function(){
-    login();
-    $('#container').fadeIn(600);
 
-  });
-});
+<?php 
 
-function login(){
-  $.ajax({
-    type: "GET",
-    url: "modal-login.php",
-    success: function(dados){
-      $("#modal").html(dados)
-    }
-  });
+if(isset($_GET['logout'])){
+  @setcookie("id_p_fisica", $_COOKIE['id_p_fisica'], 1);
+  @setcookie("cnpj", $_COOKIE['cnpj'], 1);
+  unset($_COOKIE['id_p_fisica']);
+  unset($_COOKIE['cnpj']);
 }
-</script>
 
-<div id="container">
-  <div id="modal">
+if(isset($_COOKIE['id_p_fisica'])){ 
+  
+?>
 
+  <div class="mini_painel">
+    <div class="dropdown">
+      <div class="dropbtn">
+        <div id="nome_header"></div>
+        
+      </div>
+      <div class="dropdown-content">
+        <a href="painel_pessoa_fisica.php">Perfil</a>
+        <a href="index.php?logout">Sair</a>
+      </div>
+    </div>
   </div>
-</div>
-<div class="login">
 
-</div>
+<?php } elseif (isset($_COOKIE['cnpj'])){ ?>
+
+    <div class="mini_painel">
+    <div class="dropdown">
+      <button class="dropbtn">
+        <div id="responsavel_header"></div>
+        
+      </button>
+      <div class="dropdown-content">
+        <a href="painel_pessoa_juridica.php">Perfil</a>
+        <a href="index.php?logout">Sair</a>
+      </div>
+    </div>
+  </div>
+
+  <?php } else{ ?>
+
+      <div class="login">
+        <div class="dropdown">
+          <div class="dropbtn">
+            <div id="icone"></div>
+            
+          </div>
+          <div class="dropdown-content">
+            <a href="login_compra.php?pf">Pessoa Física</a>
+            <a href="login_compra.php?pj">Pessoa Jurídica</a>
+          </div>
+        </div>
+      </div>
+
+  <?php } ?>
 <div id="caixa_cabecalho" class="centralizarX">
   <img src="img/logo.png" alt="Logo">
 </div>
@@ -70,3 +99,11 @@ function login(){
   <a href="fale_conosco.php">Entre em Contato</a>
 </div>
 </nav>
+<script src="js/jquery.js"></script>
+<script src="js/ws_requests.js"></script>
+<script>
+   $(document).ready(function(){
+    getNome();
+    getResponsavel();
+   });
+</script>

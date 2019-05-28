@@ -15,10 +15,10 @@
         $op = $_GET['op'];
 
         if($op=='login'){
-            $username = $_POST['user'];
+            $cpf = $_POST['cpf'];
             $password = $_POST['senha'];
             //callback
-            echo json_encode($pfBusiness->loginPessoaFisica($username, $password));
+            echo json_encode($pfBusiness->loginPessoaFisica($cpf, $password));
         }
 
         if($op=='dashboard'){
