@@ -190,7 +190,7 @@
        <script src="js/jquery.mask.js"></script>
         <script>
             $(document).ready(function(){
-                $('#txtCpf').mask('00000-000');
+                $('#txtCpf').mask('000.000.000-00');
                 $('#txtCelular').mask('(00) 00000-0000');
             });
         </script>
