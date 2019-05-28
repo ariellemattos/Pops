@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="css/arielle.css">
     <link rel="stylesheet" href="../cms/view/css/style.css">
     <script src="js/jquery.js"></script>
-   
+
   </head>
   <body>
 
@@ -47,7 +47,9 @@
 
           <input type="button" data-tipo="<?= @$id ?>" name="btnlogar" id="btnlogar" value="ENTRAR">
 
-          <input type="button" id="botao_cadastro" value="QUERO ME CADASTRAR">
+          <a href="cadastro.php">
+            <input type="button" id="botao_cadastro" value="QUERO ME CADASTRAR">
+          </a>
 
         </form>
       </div>

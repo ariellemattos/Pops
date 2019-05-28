@@ -107,6 +107,7 @@
                           <div class="caixa_inputs_form caixa_inputs_form_2">
                               <input class="input_estilo inputs_form" placeholder="N°" maxlength="4" type="text" name="txtNumero" id="txtNumero" onkeypress="return validarCampos(event, 'caracter', this.id);" required>
                           </div>
+
                       </div>
 
 

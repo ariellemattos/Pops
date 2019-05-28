@@ -80,6 +80,7 @@ class PessoaJuridicaDAO{
     // Recebendo a função que faz a conexão com BD
     $con = $this->conexao->connectDatabase();
 
+
     // Executa o script no BD
     if (!$con->query($sql))
     echo 'Erro no script de insert';

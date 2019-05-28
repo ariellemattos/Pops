@@ -74,6 +74,8 @@ class PessoaFisicaDAO
 
       )";
 
+      echo $sql;
+
       // Recebendo a função que faz a conexão com BD
       $con = $this->conexao->connectDatabase();
 
