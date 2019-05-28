@@ -30,7 +30,7 @@
                 <div id="guardaFtoPerfil">
                     <!-- FOTO E NOME-->
                     <div class="caixa_identidade">
-                        <img id="foto" width="245" height="250" title="">       
+                        <img src="" id="foto" width="245" height="250" title="Foto" alt="Imagem não encontrada">       
                     </div>
 
                     <div>
@@ -118,7 +118,7 @@
 
                 <!-- Meus Pedidos -->
                 <div class="caixa_meus_pedidos centralizar_caixa caixa_crescer">
-                    <h1 class="font-titulo font-negrito identidade_pj_font">Meus Pedidos</h1>
+                    <div class="font-titulo font-negrito identidade_pj_font">Meus Pedidos</div>
                     <!-- caixa do título -->
                     <div class="caixa_titulo_mp">
                         <!-- Número do pedido -->

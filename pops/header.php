@@ -29,10 +29,9 @@ if(isset($_COOKIE['id_p_fisica'])){
 
     <div class="mini_painel">
     <div class="dropdown">
-      <button class="dropbtn">
+      <div class="dropbtn">
         <div id="responsavel_header"></div>
 
-      </button>
       <div class="dropdown-content">
         <a href="painel_pessoa_juridica.php">Perfil</a>
         <a href="index.php?logout">Sair</a>

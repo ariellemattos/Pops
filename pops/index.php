@@ -190,7 +190,7 @@
                     echo "<input type='button' onclick='teste()' class='btn_votar btnParticipar' value='Participe'></a><br>"; 
                   }else if(@$_COOKIE['id_p_fisica'] == null && $result['precisa_cadastro'] == 1 ){
                     echo "<a href='login_compra.php?pf'><input type='button' class='btn_votar btnParticipar' value='Participe'>
-                    <br><a/>";
+                    <br></a>";
                   }  
                 ?>
               </div>

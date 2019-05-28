@@ -35,9 +35,9 @@
         <link rel="stylesheet" type="text/css" href="css/titulo_pagina.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- CHAMANDO O JQUERY -->
-        <script src="js/jquery.js">
+        <script src="js/jquery.js"></script>
         <script src="js/effects.js"></script>
-        </script>
+
         <!-- CHAMANDO O ARQUIVO DE EVENTOS EM JQUERY -->
         <script src="js/event.js">
         </script>
@@ -63,7 +63,7 @@
                     <div class="caixa_input">
                         <!-- CNPJ -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj" maxlenght="18">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj" maxlength="18">
                         </div>
                         <!-- Razão Social -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
@@ -102,34 +102,36 @@
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
                             <div class="caixa_input largura_fixa_div_3 selectForm">
                                 <select class="slt_estado formatacao_inputs borda_inputs largura_fixa_inputs_3 slt_estado" id="sltEstado" name="sltEstado">
-                                    <option disabled selected name="slcEstado">Estado:</option>
-                                    <option value="AC">AC</option>
-                                    <option value="AL">AL</option>
-                                    <option value="AP">AP</option>
-                                    <option value="AM">AM</option>
-                                    <option value="BA">BA</option>
-                                    <option value="CE">CE</option>
-                                    <option value="DF">DF</option>
-                                    <option value="ES">ES</option>
-                                    <option value="GO">GO</option>
-                                    <option value="MA">MA</option>
-                                    <option value="MT">MT</option>
-                                    <option value="MS">MS</option>
-                                    <option value="MG">MG</option>
-                                    <option value="PA">PA</option>
-                                    <option value="PB">PB</option>
-                                    <option value="PR">PR</option>
-                                    <option value="PE">PE</option>
-                                    <option value="PI">PI</option>
-                                    <option value="RJ">RJ</option>
-                                    <option value="RN">RN</option>
-                                    <option value="RS">RS</option>
-                                    <option value="RO">RO</option>
-                                    <option value="RR">RR</option>
-                                    <option value="SC">SC</option>
-                                    <option value="SP">SP</option>
-                                    <option value="SE">SE</option>
-                                    <option value="TO">TO</option>
+
+                                    <option disabled selected >Estado:</option>
+                                    <option value="Acre">AC</option>
+                                    <option value="Alagoas">AL</option>
+                                    <option value="Amapá">AP</option>
+                                    <option value="Amazonas">AM</option>
+                                    <option value="Bahia">BA</option>
+                                    <option value="Ceará">CE</option>
+                                    <option value="Distrito Federal">DF</option>
+                                    <option value="Espito Santo">ES</option>
+                                    <option value="Goias">GO</option>
+                                    <option value="Maranhao">MA</option>
+                                    <option value="Mato Grosso">MT</option>
+                                    <option value="Mato Grosso do Sul">MS</option>
+                                    <option value="Minas Gerais">MG</option>
+                                    <option value="Para">PA</option>
+                                    <option value="Paraiba">PB</option>
+                                    <option value="Parana">PR</option>
+                                    <option value="Pernambuco">PE</option>
+                                    <option value="Piaui">PI</option>
+                                    <option value="Rio de Janeiro">RJ</option>
+                                    <option value="Rio Grande do Norte">RN</option>
+                                    <option value="Rio Grande do Sul">RS</option>
+                                    <option value="Rondonia">RO</option>
+                                    <option value="Roraima">RR</option>
+                                    <option value="Santa Catarina">SC</option>
+                                    <option value="Sao Paulo">SP</option>
+                                    <option value="Sergipe">SE</option>
+                                    <option value="Tocantins">TO</option>
+
                                 </select>
                             </div>
                         </div>
