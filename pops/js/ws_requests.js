@@ -96,6 +96,7 @@ function getAllData(){
         dataType: "json",
         data: {"id_p_fisica":idPessoaFisicaCookie},
         success: function(data){
+            sessionStorage.setItem("customer", JSON.stringify(data));
 
             $('#foto').attr('src', data.foto);
             $('#nome').html(data.nome);

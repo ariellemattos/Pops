@@ -94,15 +94,15 @@
 
                 //percorrendo os produtos do carrinho
                 foreach($_SESSION['carrinho'] as $produtos) {
-                  echo(json_encode($_SESSION['carrinho'][$produtos['id']]));
+                 
                   
                   //manipulando js
                   echo("
                   <script>
                        itens = {
-                         id: ".$produtos['id'].",
+                         id: '".$produtos['id']."',
                          title: '".$produtos['nome']."',
-                         unit_price: ".$produtos['valorUnitario'].",
+                         unit_price: ".($produtos['valorUnitario'] * 100).",
                          quantity: ".$produtos['quantidade'].",
                          tangible: true
                       }
@@ -185,5 +185,7 @@
               </div>
         </div>
         <footer><?php require_once 'footer.html'; ?></footer>
+        <script src="js/pagamento.js">
+        </script>
     </body>
 </html>

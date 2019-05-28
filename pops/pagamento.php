@@ -1,18 +1,3 @@
-<?php 
-    @session_start();
-    //echo($name);
-    $id = $_SESSION['carrinho'];
-
-    var_dump($_SESSION['carrinho']);
-   // echo(json_encode($_SESSION['carrinho']));
-    echo("<script> var carrinho = JSON.parse(sessionStorage.getItem('itemList'))</script>");
-    echo("<script>
-      
-        console.log(carrinho.length); //preciso agr colocar o array dentro de um for e enviar ambos para a api da pagarme 
-        </script>");
-
-    
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -25,9 +10,8 @@
         <link rel="stylesheet" href="css/arielle.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- CHAMANDO O JQUERY -->
-        <script src="js/jquery.js">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
-        </script>
+        <script src="js/jquery.js"></script>
+       
         
         <!-- CHAMANDO O ARQUIVO DE EVENTOS EM JQUERY -->
         <script src="js/event.js">
@@ -107,16 +91,15 @@
                              <input class="input_estilo input_seguranca" type="text" name="txtCodSeguranca" id="txtCodSeguranca">
                          </div>
 
-                         <input class="botao_pagamento font-titulo" type="button" value="Finalizar Compra" id="btnFinalizarCompra" name="btnFinalizarCompra">
+                         <input class="botao_pagamento font-titulo" type="submit" value="Finalizar Compra" id="btnFinalizarCompra" name="btnFinalizarCompra">
                      </div>
                  </div>
              </form>
          </div>
        </div>
       <footer>   <?php require_once('footer.html')?> </footer>
-     
-     
-      <script src="js/pagamento.js">
-        </script>
+      <script src="js/pagamento.js"></script>
+      <script src="js/pagarme.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
     </body>
 </html>

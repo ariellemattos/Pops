@@ -116,6 +116,7 @@
     </form>
 
     <footer><?php require_once 'footer.html'; ?></footer>
-    <script src="js/pagamento.js"></script>
+    <script src="js/pagamento.js">
+        </script>
   </body>
 </html>
