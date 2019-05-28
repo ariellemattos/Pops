@@ -292,3 +292,7 @@ footer{
   font-size: 17px;
   
 }
+
+.swal2-popup {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}

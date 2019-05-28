@@ -6,7 +6,11 @@ if(isset($_GET['logout'])){
   @setcookie("cnpj", $_COOKIE['cnpj'], 1);
   unset($_COOKIE['id_p_fisica']);
   unset($_COOKIE['cnpj']);
+  //remove variaveis de sessão criadas em JS
+  echo("<script>sessionStorage.clear();</script>");
 }
+
+
 
 if(isset($_COOKIE['id_p_fisica'])){
 

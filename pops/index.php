@@ -17,6 +17,7 @@
     $(document).ready(function(){
           //SELECIONAR DADOS VIA COOKIE
           getAllDataPJ();
+          getAllData();
     });
     function teste()
     {

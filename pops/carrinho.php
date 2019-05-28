@@ -52,6 +52,10 @@
 
 
   <body>
+    <script>
+      var itemList = new Array(); //armazena os itens para ser inserido na API 
+      var itens;
+    </script>
     <header><?php require_once 'header.php'; ?></header>
 
         <!-- Título da página -->
@@ -77,6 +81,19 @@
 
                 //percorrendo os produtos do carrinho
                 foreach($_SESSION['carrinho'] as $produtos) {
+                  //manipulando js
+                  echo("
+                  <script>
+                       itens = {
+                         id: '".$produtos['id']."',
+                         title: '".$produtos['nome']."',
+                         unit_price: ".($produtos['valorUnitario'] * 100).",
+                         quantity: ".$produtos['quantidade'].",
+                         tangible: true
+                      }
+                      itemList.push(itens);
+                      
+                  </script>");
                 
             ?>
 
@@ -119,6 +136,10 @@
             <?php
                 $cont++;
                 }
+                echo("<script>
+                          sessionStorage.setItem('itemList', JSON.stringify(itemList));
+                      </script>");
+                
             ?>
 
             <!-- DIV SUB TOTAL -->
@@ -163,6 +184,8 @@
             window.location.reload();
           }
           </script>
+          <script src="js/pagamento.js">
+        </script>
     </body>
 
 
