@@ -1,19 +1,11 @@
-
 <?php
-
 if(isset($_GET['logout'])){
   @setcookie("id_p_fisica", $_COOKIE['id_p_fisica'], 1);
   @setcookie("cnpj", $_COOKIE['cnpj'], 1);
   unset($_COOKIE['id_p_fisica']);
   unset($_COOKIE['cnpj']);
-  //remove variaveis de sessão criadas em JS
-  echo("<script>sessionStorage.clear();</script>");
 }
-
-
-
 if(isset($_COOKIE['id_p_fisica'])){
-
 ?>
 
   <div class="mini_painel">
@@ -33,9 +25,10 @@ if(isset($_COOKIE['id_p_fisica'])){
 
     <div class="mini_painel">
     <div class="dropdown">
-      <div class="dropbtn">
+      <button class="dropbtn">
         <div id="responsavel_header"></div>
 
+      </button>
       <div class="dropdown-content">
         <a href="painel_pessoa_juridica.php">Perfil</a>
         <a href="index.php?logout">Sair</a>
