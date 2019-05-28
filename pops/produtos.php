@@ -13,7 +13,7 @@
     <script src="js/event.js"></script>
     <script src="js/effects.js"></script>
 
-    <script type="text/javascript">
+    <script>
 
     $(document).ready(function(id){
       // //CHAMAR MODAL

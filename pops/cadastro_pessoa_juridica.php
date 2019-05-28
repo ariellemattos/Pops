@@ -35,9 +35,9 @@
         <link rel="stylesheet" type="text/css" href="css/titulo_pagina.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <!-- CHAMANDO O JQUERY -->
-        <script src="js/jquery.js">
+        <script src="js/jquery.js"></script>
         <script src="js/effects.js"></script>
-        </script>
+
         <!-- CHAMANDO O ARQUIVO DE EVENTOS EM JQUERY -->
         <script src="js/event.js">
         </script>
@@ -63,7 +63,7 @@
                     <div class="caixa_input">
                         <!-- CNPJ -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj" maxlenght="18">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj" maxlength="18">
                         </div>
                         <!-- Razão Social -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
@@ -102,7 +102,7 @@
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
                             <div class="caixa_input largura_fixa_div_3 selectForm">
                                 <select class="slt_estado formatacao_inputs borda_inputs largura_fixa_inputs_3 slt_estado" id="sltEstado" name="sltEstado">
-                                    <option disabled selected name="slcEstado">Estado:</option>
+                                    <option disabled selected >Estado:</option>
                                     <option value="Acre">AC</option>
                                     <option value="Alagoas">AL</option>
                                     <option value="Amapá">AP</option>

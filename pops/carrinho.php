@@ -101,7 +101,7 @@
                         <input class="botao_qtd" type="button" id="plus" value='-' onclick="process(<?php echo($produtos['id']) ?>, <?php echo $cont?>, -1)">
                     </div>
                     <div class="caixa_quantidade">
-                        <input class="quantidade text" id="quant<?php echo $cont?>" name="quant<?php echo $cont?>"  min="0" size="1" type="text" value="<?php echo $produtos['quantidade']; ?>" maxlength="5" >
+                        <input class="quantidade text" id="quant<?php echo $cont?>" name="quant<?php echo $cont?>"   size="1" type="text" value="<?php echo $produtos['quantidade']; ?>" maxlength="5" >
                     </div>
                     <div class="caixa_botao_qtd">
                         <input class="botao_qtd" type="button" id="minus" value='+' onclick="process(<?php echo($produtos['id']) ?>, <?php echo $cont?>, 1)">

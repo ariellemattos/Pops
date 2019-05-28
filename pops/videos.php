@@ -46,7 +46,7 @@
             <div class="caixa_principal_video">
                 <!-- caixa do video que contém titulo e o vídeo box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);-->
                 <div class="caixa_video div_esquerda caixa_aumentar">
-                  <iframe class="caixa_video div_esquerda caixa_aumentar" src="<?php echo ($result['caminho']) ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe class="caixa_video div_esquerda caixa_aumentar" src="<?php echo ($result['caminho']) ?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
 
