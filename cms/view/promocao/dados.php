@@ -11,6 +11,17 @@ $path_url = null;
 $path_local = $_SESSION['path_local'];
 $path_url = $_SESSION['path_url'];
 
+// Verificando se o objeto existe
+if (isset($_POST["btnFiltrar"])) {
+  // Importando a classe Controller de pessoa fisica
+  require_once "$path_local/cms/controller/controllerPromocao.php";
+  // Instância da Controller de pessoa fisica
+  $controllerPromocao = new ControllerPromocoes();
+  // Chamando o método de inserir um novo registro
+  $controllerPromocao->filtrarPromocao();
+}
+
+
 ?>
 
 <div class="title_paginas centralizarX">
@@ -18,10 +29,10 @@ $path_url = $_SESSION['path_url'];
 </div>
 <div class="caixa_filtro centralizarX">
   <div class="caixa_input centralizarX">
-    <form action="#">
+    <form action="#" method="POST">
       <label for="fname">Buscar</label>
-      <input type="text" id="fname" name="firstname" placeholder="">
-      <input type="submit" value="Filtrar">
+      <input type="text" id="txtFiltrar" name="txtFiltrar" placeholder="">
+      <input type="submit" name="btnFiltrar" value="Filtrar">
     </form>
   </div>
 </div>
