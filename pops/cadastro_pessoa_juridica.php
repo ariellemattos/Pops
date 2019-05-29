@@ -8,6 +8,9 @@
   $path_local = $_SESSION['path_local'];
   $path_url = $_SESSION['path_url'];
 
+    $titulo = "Cadastro - pessoa juridica";
+    $botao = "Cadastrar"
+
   // Verificando se o objeto existe
   if (isset($_POST["btnCad"])) {
     // Importando a classe Controller de pessoa fisica
@@ -18,6 +21,41 @@
 
     // Chamando o método de inserir um novo registro
     $controllerPessoaJuridica->inserirRegistro();
+
+
+  }
+
+  if (isset($_GET['id'])) {
+    // Importando a controller de enquetes
+    require_once "$path_local/cms/controller/controllerPessoaJuridica.php";
+
+    // Instânciando a classe do controler
+    $controllerPessoaJuridica = new ControllerPessoaJurica();
+
+    // Result set que recebe os dados
+    $rsUser = $controllerPessoaJuridica->buscarRegistro();
+
+    $id = $_GET["id"];
+
+    $nome_fantasia=  $rsUser->getNomeFantasia();
+    $razao_social = $rsUser->getRazaoSocial();
+    $logradouro=$rsUser->getLogradouro();
+    $numero = $rsUser->getNumero();
+    $bairro = $rsUser->getBairro();
+    $cep = $rsUser->getCep();
+    $cidade = $rsUser->getCidade();
+    $responsavel = $rsUser->getResponsavel();
+    $email= $rsUser->getEmail();
+    $telefone= $rsUser->getTelefone();
+    $celular= $rsUser->getCelular();
+    $usuario=$rsUser->getUsuario();
+    $senha = $rsUser->getSenha();
+
+    $titulo = "Edição - pessoa juridica";
+
+      $botao = "Salvar"
+
+
   }
 
 
@@ -51,7 +89,7 @@
 
         <!-- Título da página -->
         <div class="titulo_pagina font-titulo">
-            <h1>Cadastro - pessoa juridica</h1>
+            <h1><?= $titulo?></h1>
         </div>
 
         <!-- Caixa central do formulário que ocupa 1200 da tela -->
@@ -63,16 +101,16 @@
                     <div class="caixa_input">
                         <!-- CNPJ -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj" maxlength="18">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CNPJ" name="txtCnpj" id="txtCnpj" maxlength="18" value="<?= @$id ?>">
                         </div>
                         <!-- Razão Social -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Razão Social" name="txtRazaoSocial" id="txtRazaoSocial" onkeypress="return validarCampos(event, 'number', this.id);">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Razão Social" name="txtRazaoSocial" id="txtRazaoSocial" value="<?= @$razao_social?>" onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
 
                         <!-- Nome Fantasia-->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Nome fantasia" name="txtNomeFantasia" id="txtNomeFantasia" onkeypress="return validarCampos(event, 'number', this.id);">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Nome fantasia" name="txtNomeFantasia" id="txtNomeFantasia" value="<?= @$nome_fantasia?>" nkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
                     </div>
 
@@ -80,23 +118,23 @@
                     <div class="caixa_input">
                         <!-- Logradouro-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouro" id="txtLogradouro" onkeypress="return validarCampos(event, 'number', this.id);">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Logradouro" name="txtLogradouro" id="txtLogradouro" value="<?= @$logradouro?>" onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
                         <!-- num -->
                         <div class="caixa_inputs_form caixa_inputs_form_minima">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Nº" name="txtNum" id="txtNum" maxlength="4" onkeypress="return validarCampos(event, 'caracter', this.id);">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Nº" name="txtNum" id="txtNum" value="<?= @$numero?>" maxlength="4" onkeypress="return validarCampos(event, 'caracter', this.id);">
                         </div>
                         <!-- Bairro-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairro" id="txtBairro" onkeypress="return validarCampos(event, 'number', this.id);">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Bairro" name="txtBairro" id="txtBairro" value="<?= @$bairro?>" onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
                         <!-- CEP-->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="CEP" name="txtCep" id="txtCep">
+                            <input class="input_estilo inputs_form" type="text" placeholder="CEP" name="txtCep" id="txtCep" value="<?= @$cep?>">
                         </div>
                         <!-- Cidade -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Cidade" name="txtCidade" id="txtCidade" onkeypress="return validarCampos(event, 'number', this.id);">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Cidade" name="txtCidade" id="txtCidade" value="<?= @$cidade?>" onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
                         <!-- Estado -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
@@ -141,22 +179,22 @@
                     <div class="caixa_input">
                         <!-- Responsavel pelo Contato -->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Responsável pelo contato" name="txtRespContato" id="txtRespContato" onkeypress="return validarCampos(event, 'number', this.id);" >
+                            <input class="input_estilo inputs_form" type="text" placeholder="Responsável pelo contato" value="<?= @$responsavel?>" name="txtRespContato" id="txtRespContato" onkeypress="return validarCampos(event, 'number', this.id);" >
                         </div>
 
                         <!-- Email-->
                         <div class="caixa_inputs_form caixa_inputs_form_medio">
-                            <input class="input_estilo inputs_form" type="email" placeholder="Email" name="txtEmail" id="txtEmail">
+                            <input class="input_estilo inputs_form" type="email" placeholder="Email" name="txtEmail" id="txtEmail" value="<?= @$email?>">
                         </div>
 
                         <!-- Telefone -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Telefone" name="txtTelefone" id="txtTelefone">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Telefone" name="txtTelefone" id="txtTelefone" value="<?= @$telefone?>">
                         </div>
 
                         <!-- Celular  -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="Celular" name="txtCelular" id="txtCelular">
+                            <input class="input_estilo inputs_form" type="text" placeholder="Celular" name="txtCelular" id="txtCelular" value="<?= @$celular?>">
                         </div>
                     </div>
 
@@ -169,18 +207,18 @@
                         </div>
                         <!-- Usuário -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="text" placeholder="User" name="txtUser" id="txtUser"  onkeypress="return validarCampos(event, 'number', this.id);">
+                            <input class="input_estilo inputs_form" type="text" placeholder="User" value="<?= @$usuario ?>" name="txtUser" id="txtUser"  onkeypress="return validarCampos(event, 'number', this.id);">
                         </div>
 
                         <!-- Senha -->
                         <div class="caixa_inputs_form caixa_inputs_form_pequena">
-                            <input class="input_estilo inputs_form" type="password" placeholder="Senha" name="txtSenha" id="txtSenha">
+                            <input class="input_estilo inputs_form" type="password" placeholder="Senha" name="txtSenha" id="txtSenha" value="<?= @$senha?>">
                         </div>
                     </div>
 
                     <!-- LINHA 4 BOTÃO -->
                     <div class="caixa_botao_pj">
-                        <input class="botao_pj" type="submit" value="Cadastrar" name="btnCad" id="btnCad">
+                        <input class="botao_pj" type="submit" value="<?= $botao ?>" name="btnCad" id="btnCad" >
                     </div>
 
                 </div>

@@ -151,10 +151,10 @@ class PessoaJuridicaDAO{
     }
 
     public function selectById($cnpj){
-      $sql = "SELECT pj.*, e.logradouro, e.bairro, e.cidade, e.cep
-              FROM tbl_pessoa_juridica AS pj
-              INNER JOIN tbl_endereco AS e ON pj.id_endereco = e.id_endereco
-              WHERE pj.cnpj =  $cnpj;";
+      $sql = "SELECT pj.*, e.logradouro, e.bairro, e.cidade, e.cep, e.numero
+            FROM tbl_pessoa_juridica AS pj
+            INNER JOIN tbl_endereco AS e ON pj.id_endereco = e.id_endereco
+              WHERE pj.cnpj = $cnpj;";
 
       // Recebendo a função que faz a conexão com BD
       $con = $this->conexao->connectDatabase();
@@ -170,10 +170,16 @@ class PessoaJuridicaDAO{
         $user->setNomeFantasia($rsUser['nome_fantasia']);
         $user->setEmail($rsUser['email']);
         $user->setCelular($rsUser['celular']);
+        $user->setResponsavel($rsUser['responsavel']);
         $user->setTelefone($rsUser['telefone']);
         $user->setCidade($rsUser['cidade']);
         $user->setLogradouro($rsUser['logradouro']);
         $user->setFoto($rsUser['foto']);
+        $user->setUsuario($rsUser['usuario']);
+        $user->setSenha($rsUser['senha']);
+        $user->setNumero($rsUser['numero']);
+        $user->setBairro($rsUser['bairro']);
+        $user->setCep($rsUser['cep']);
       }
       //Fechar a conexão com o BD
       $this->conexao->closeDatabase();

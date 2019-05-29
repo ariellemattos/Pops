@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>POP'S - Painel Pessoa Jurídica</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        
+
         <link rel="stylesheet" type="text/css" href="css/arielle.css">
         <link rel="stylesheet" type="text/css" href="css/reset.css">
         <link rel="stylesheet" type="text/css" href="css/painel_pessoa_juridica.css">
@@ -18,7 +18,7 @@
         <!-- CHAMANDO O ARQUIVO DE EVENTOS EM JQUERY -->
         <script src="js/event.js">
         </script>
-        
+
         <script>
         $(document).ready(function(){
           //SELECIONAR DADOS VIA COOKIE
@@ -35,7 +35,7 @@
             callModal('modal-anuncio.php');
             $('#container').fadeIn(600);
         });
-          
+
           //CHAMAR MODAL
           $('#btnNovoAcesso').click(function(){
             callModal('modal_perfil_secundario.php');
@@ -51,9 +51,13 @@
               }
             });
           }
+
+          function editar(id){
+            window.location.href = "cadastro_pessoa_juridica.php?id="+id;
+          }
         </script>
-        
-        
+
+
     </head>
 
     <body>
@@ -80,11 +84,11 @@
                     </div>
                     <!-- Razão Social -->
                     <p class="centralizar_texto font-titulo font-negrito identidade_pj_font" id='razao_social'></p>
-                     <a href="#" onclick="logout()" class="centralizar_texto font-texto" id='logout'>Fazer Logout</a>
+                    <img src="../cms/view/img/editar.png"  title="icon" class="iconEditarFis" onclick="editar(<?php echo $_COOKIE['cnpj']; ?>)">
                     <p class="centralizar_texto font-texto" id='responsavel'></p>
-                   
+
                 </div>
-                
+
                 <!-- Caixa dos dados -->
                 <div class="caixa_geral_dados caixa_crescer centralizar_caixa">
                     <div class="grupo_form caixa_crescer elemento_esquerda">
@@ -140,22 +144,22 @@
                       Criar anúncio
                     </div>
                     <div id="container_card_anuncio"></div>
-                  
+
                 </div>
 
                 <!-- Acesso -->
                 <div class="caixa_acesso centralizar_caixa">
-                    
+
                         <!-- caixa que contem um h1 e o botao de add novo acesso -->
                         <div class="caixa_botao_acesso">
                             <h1 class="font-titulo font-negrito identidade_pj_font">Acesso</h1>
                             <input class="font-texto botao_padrao_pj" type="button" value="Adicionar novo acesso" name="btnNovoAcesso" id="btnNovoAcesso">
                         </div>
                         <!-- caixa dos acessos adicionados -->
-                        
+
                             <h1 class="font-titulo font-negrito">Acessos adicionados:</h1>
                             <div id="container_perfil"></div>
-                        
+
                     </div>
 
                 <!-- Meus Pedidos -->
@@ -199,40 +203,40 @@
         </div>
 
         <footer> <?php require_once('footer.html')?> </footer>
-      
+
         <script>
                 $(document).ready(function(){
                   //SELECIONAR DADOS VIA COOKIE
                   getAllData();
-        
+
                   //SELECIONAR DADOS DA LISTA DE PERFIL
                   getPerfilData();
-        
+
                   //SELECIONAR DADOS DE ANÚNCIOS
                   getAdData();
-        
+
                   //CHAMAR MODAL
                   $('#Anuncio').click(function(){
                     callModal('modal-anuncio.php');
                     $('#container').fadeIn(600);
-        
+
                   });
-        
+
                   //CHAMAR MODAL
                  $('.edit').on("click", function(){
                     callModal('modal-anuncio.php');
                     $('#container').fadeIn(600);
-        
+
                  });
-        
-               
-                  
-                  
+
+
+
+
                   //CHAMAR MODAL
                   $('#btnNovoAcesso').click(function(){
                     callModal('modal_perfil_secundario.php');
                     $('#container').fadeIn(600);
-        
+
                   });
                 });
                 function callModal(_url){
@@ -244,9 +248,9 @@
                       }
                     });
                   }
-                
-                  
+
+
                 </script>
-       
+
     </body>
 </html>
