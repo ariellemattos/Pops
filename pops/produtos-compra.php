@@ -48,7 +48,8 @@
             </div>
         </div>
       <?php } ?>
-
       </div>
+      </div>
+      <footer><?php require_once 'footer.html'; ?></footer>
       </body>
   </html>
